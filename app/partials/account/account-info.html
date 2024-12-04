@@ -1,0 +1,61 @@
+<section class="account">
+    <div class="account__container container">
+        <div class="account__breadcrumbs breadcrumbs">
+            <ul class="breadcrumbs__list list-reset">
+                <li class="breadcrumbs__item">
+                    <a href="#" class="breadcrumbs__link" title="Главная"></a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Личный кабинет
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="account__container container container--holder">
+        <h1 class="account__title title">Личный кабинет</h1>
+        <nav class="account__nav">
+            <a href="#" class="account__tab">Заказы</a>
+            <a href="#" class="account__tab account__tab--active">Личные данные</a>
+            <a href="#" class="account__tab">Подписки</a>
+            <a href="#" class="account__tab">Купленные товары</a>
+        </nav>
+        <form action="#" class="account__form form">
+            <div class="form__body">
+                <label class="form__label label label--user">
+                    <input type="text" name="Имя" class="form__input input" placeholder="Имя">
+                </label>
+                <label class="form__label label label--user">
+                    <input type="text" name="Фамилия" class="form__input input" placeholder="Фамилия">
+                </label>
+                <label class="form__label label label--tel">
+                    <input type="tel" name="Телефон" class="form__input input" placeholder="Телефон *" required>
+                </label>
+                <label class="form__label label label--email">
+                    <input type="email" name="Email" class="form__input input" placeholder="Email *" required>
+                </label>
+                <label class="form__label label label--date">
+                    <input type="text" name="Дата-рождения" class="form__input input" placeholder="__-__-____">
+                </label>
+            </div>
+            <div class="form__body">
+                <label class="form__label label label--lock">
+                    <input type="password" id="input-password" name="Пароль" class="form__input input" placeholder="Пароль" autocomplete required>
+                </label>
+                <label class="form__label label label--lock">
+                    <input type="password" id="input-password-confirm" name="Пароль" class="form__input input" placeholder="Пароль" autocomplete required>
+                </label>
+            </div>
+            <div class="form__bottom">
+                <button type="reset" class="form__button button button--grey">
+                    <span class="button__text">Отмена</span>
+                </button>
+                <button type="submit" class="form__button button">
+                    <span class="button__text">Сохранить</span>
+                    <svg class="button__icon" width="14" height="14">
+                        <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </div>
+</section>

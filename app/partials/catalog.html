@@ -1,0 +1,486 @@
+<section class="catalog">
+    <div class="catalog__container container">
+        <div class="catalog__breadcrumbs breadcrumbs">
+            <ul class="breadcrumbs__list list-reset">
+                <li class="breadcrumbs__item">
+                    <a href="#" class="breadcrumbs__link" title="Главная"></a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#" class="breadcrumbs__link">Каталог</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Сумки
+                </li>
+            </ul>
+        </div>
+        <div class="catalog__control control">
+            <h1 class="catalog__title title">Сумки</h1>
+            <div class="control__bar">
+                <button id="button-filter" class="control__button btn-reset">
+                    <span>фильтр</span>
+                </button>
+                <form action="/" class="control__form form-control">
+                    <div class="form-control__body">
+                        <fieldset class="form-control__fieldset">
+                            <legend class="form-control__legend">Размеры</legend>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[size]" value="23,5х25х20,5">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">23,5×25×20,5</span>
+                                <span class="checkbox__count">12</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox checkbox--disabled">
+                                <input class="checkbox__input" type="checkbox" name="filter[size]" value="23,5х25х20,5">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">23,5×25×20,5</span>
+                                <span class="checkbox__count">0</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox checkbox--disabled">
+                                <input class="checkbox__input" type="checkbox" checked name="filter[size]" value="23,5х25х20,5">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">23,5×25×20,5</span>
+                                <span class="checkbox__count">12</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" disabled name="filter[size]" value="23,5х25х20,5">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">23,5×25×20,5</span>
+                                <span class="checkbox__count">12</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" disabled checked name="filter[size]" value="23,5х25х20,5">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">23,5×25×20,5</span>
+                                <span class="checkbox__count">12</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[size]" value="23,5х25х20,5">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">23,5×25×20,5</span>
+                                <span class="checkbox__count">12</span>
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-control__fieldset">
+                            <legend class="form-control__legend">Материал</legend>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[material]" value="Кожа">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/skin.png" alt="Кожа">
+                                <span class="checkbox__text">Кожа</span>
+                                <span class="checkbox__count">126</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[material]" value="Кожа крокодила">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/crocodile.png" alt="Кожа крокодила">
+                                <span class="checkbox__text">Кожа крокодила</span>
+                                <span class="checkbox__count">126</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[material]" value="Кожа питона">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/piton.png" alt="Кожа питона">
+                                <span class="checkbox__text">Кожа питона</span>
+                                <span class="checkbox__count">126</span>
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-control__fieldset">
+                            <legend class="form-control__legend">Цвет</legend>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[color]" value="Мультиколор">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/color-01.png" alt="Мультиколор">
+                                <span class="checkbox__text">Мультиколор</span>
+                                <span class="checkbox__count">75</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[color]" value="Серый">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/color-02.png" alt="Серый">
+                                <span class="checkbox__text">Серый</span>
+                                <span class="checkbox__count">75</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[color]" value="Синий">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/color-03.png" alt="Синий">
+                                <span class="checkbox__text">Синий</span>
+                                <span class="checkbox__count">75</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[color]" value="Красный">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/color-04.png" alt="Красный">
+                                <span class="checkbox__text">Красный</span>
+                                <span class="checkbox__count">75</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[color]" value="Оранжевый">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/color-05.png" alt="Оранжевый">
+                                <span class="checkbox__text">Оранжевый</span>
+                                <span class="checkbox__count">75</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[color]" value="Розовый">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/color-06.png" alt="Розовый">
+                                <span class="checkbox__text">Розовый</span>
+                                <span class="checkbox__count">75</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[color]" value="Черный">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/color-07.png" alt="Черный">
+                                <span class="checkbox__text">Черный</span>
+                                <span class="checkbox__count">75</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[color]" value="Коричневый">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/color-08.png" alt="Коричневый">
+                                <span class="checkbox__text">Коричневый</span>
+                                <span class="checkbox__count">75</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[color]" value="Зеленый">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <img class="checkbox__icon" width="24" height="24" src="./img/filter/color-09.png" alt="Зеленый">
+                                <span class="checkbox__text">Зеленый</span>
+                                <span class="checkbox__count">75</span>
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-control__fieldset">
+                            <legend class="form-control__legend">Коллекция</legend>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[collection]" value="Love Из">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">Love Из</span>
+                                <span class="checkbox__count">73</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[collection]" value="Love Из">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">Love Из</span>
+                                <span class="checkbox__count">73</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[collection]" value="Love Из">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">Love Из</span>
+                                <span class="checkbox__count">73</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[collection]" value="Love Из">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">Love Из</span>
+                                <span class="checkbox__count">73</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[collection]" value="Love Из">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">Love Из</span>
+                                <span class="checkbox__count">73</span>
+                            </label>
+                            <label class="form-control__checkbox checkbox">
+                                <input class="checkbox__input" type="checkbox" name="filter[collection]" value="Love Из">
+                                <span class="checkbox__box" aria-label="checkbox"></span>
+                                <span class="checkbox__text">Love Из</span>
+                                <span class="checkbox__count">73</span>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="form-control__bottom">
+                        <button type="reset" class="form-control__button button button--grey">Сбросить фильтр</button>
+                        <button type="submit" class="form-control__button button">Применить <span>(146)</span></button>
+                    </div>
+                </form>
+                <a href="#" id="button-sort-price" class="control__button">
+                    <span>по цене</span>
+                </a>
+                <a href="#" id="button-sort-popularity" class="control__button control__button--reverse button-control">
+                    <span>по популярности</span>
+                </a>
+                <button id="button-view" class="control__button btn-reset" aria-label="Сменить вид">
+                </button>
+            </div>
+        </div>
+        <ul class="catalog__list list-reset">
+            <li class="catalog__item">
+                <article class="catalog__card card">
+                    <div class="card__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="./img/catalog/card-01-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/catalog/card-01-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/catalog/card-01.webp" type="image/webp">
+                                    <img class="card__image img" width="420" height="480" src="./img/catalog/card-01.png" alt="card">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <h2 class="card__title">
+                        <a href="#" class="card__link">Рюкзак Сити «Человек в котелке»</a>
+                    </h2>
+                    <div class="card__price price">
+                        <div class="price__cost">780 000 ₽</div>
+                    </div>
+                    <div class="card__status card__status--grey">Нет в наличии</div>
+                    <button class="card__heart btn-reset" aria-label="Добавить в избранное">
+                        <svg class="card__icon" width="30" height="30" stroke-width="0">
+                            <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                        </svg>
+                    </button>
+                </article>
+            </li>
+            <li class="catalog__item">
+                <article class="catalog__card card">
+                    <div class="card__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="./img/catalog/card-02-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/catalog/card-02-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/catalog/card-02.webp" type="image/webp">
+                                    <img class="card__image img" width="420" height="480" src="./img/catalog/card-02.png" alt="card">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <h2 class="card__title">
+                        <a href="#" class="card__link">Клатч Бумеранг «Хребет Дракона»</a>
+                    </h2>
+                    <div class="card__price price">
+                        <div class="price__cost">750 000 ₽</div>
+                    </div>
+                    <button class="card__heart card__heart--active btn-reset" aria-label="Добавить в избранное">
+                        <svg class="card__icon" width="30" height="30" stroke-width="0">
+                            <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                        </svg>
+                    </button>
+                </article>
+            </li>
+            <li class="catalog__item">
+                <article class="catalog__card card">
+                    <div class="card__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="./img/catalog/card-03-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/catalog/card-03-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/catalog/card-03.webp" type="image/webp">
+                                    <img class="card__image img" width="420" height="480" src="./img/catalog/card-03.png" alt="card">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="./img/catalog/card-03-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/catalog/card-03-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/catalog/card-03.webp" type="image/webp">
+                                    <img class="card__image img" width="420" height="480" src="./img/catalog/card-03.png" alt="card">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="./img/catalog/card-03-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/catalog/card-03-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/catalog/card-03.webp" type="image/webp">
+                                    <img class="card__image img" width="420" height="480" src="./img/catalog/card-03.png" alt="card">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <h2 class="card__title">
+                        <a href="#" class="card__link">Портфель Voyage Croco в Черном</a>
+                    </h2>
+                    <div class="card__price price">
+                        <div class="price__cost">640 000 ₽</div>
+                    </div>
+                    <div class="card__status">Предзаказ</div>
+                    <button class="card__heart btn-reset" aria-label="Добавить в избранное">
+                        <svg class="card__icon" width="30" height="30" stroke-width="0">
+                            <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                        </svg>
+                    </button>
+                </article>
+            </li>
+            <li class="catalog__item">
+                <article class="catalog__card card">
+                    <div class="card__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="./img/catalog/card-04-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/catalog/card-04-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/catalog/card-04.webp" type="image/webp">
+                                    <img class="card__image img" width="420" height="480" src="./img/catalog/card-04.png" alt="card">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <h2 class="card__title">
+                        <a href="#" class="card__link">Клатч Комета «Человек в котелке</a>
+                    </h2>
+                    <div class="card__price price">
+                        <div class="price__sell">-20%</div>
+                        <div class="price__cost price__cost--old">1 150 000 ₽</div>
+                        <div class="price__cost">950 000 ₽</div>
+                    </div>
+                    <button class="card__heart btn-reset" aria-label="Добавить в избранное">
+                        <svg class="card__icon" width="30" height="30" stroke-width="0">
+                            <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                        </svg>
+                    </button>
+                </article>
+            </li>
+            <li class="catalog__item">
+                <article class="catalog__card card">
+                    <div class="card__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="./img/catalog/card-05-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/catalog/card-05-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/catalog/card-05.webp" type="image/webp">
+                                    <img class="card__image img" width="420" height="480" src="./img/catalog/card-05.png" alt="card">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <h2 class="card__title">
+                        <a href="#" class="card__link">Клатч Версаль «Дракон»</a>
+                    </h2>
+                    <div class="card__price price">
+                        <div class="price__cost">830 000 ₽</div>
+                    </div>
+                    <button class="card__heart btn-reset" aria-label="Добавить в избранное">
+                        <svg class="card__icon" width="30" height="30" stroke-width="0">
+                            <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                        </svg>
+                    </button>
+                </article>
+            </li>
+            <li class="catalog__item">
+                <article class="catalog__card card">
+                    <div class="card__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="./img/catalog/card-06-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/catalog/card-06-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/catalog/card-06.webp" type="image/webp">
+                                    <img class="card__image img" width="420" height="480" src="./img/catalog/card-06.png" alt="card">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <h2 class="card__title">
+                        <a href="#" class="card__link">Портфель Voyage «Поцелуй»</a>
+                    </h2>
+                    <div class="card__price price">
+                        <div class="price__cost">830 000 ₽</div>
+                    </div>
+                    <button class="card__heart btn-reset" aria-label="Добавить в избранное">
+                        <svg class="card__icon" width="30" height="30" stroke-width="0">
+                            <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                        </svg>
+                    </button>
+                </article>
+            </li>
+            <li class="catalog__item">
+                <article class="catalog__card card">
+                    <div class="card__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="./img/catalog/card-07-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/catalog/card-07-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/catalog/card-07.webp" type="image/webp">
+                                    <img class="card__image img" width="420" height="480" src="./img/catalog/card-07.png" alt="card">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <h2 class="card__title">
+                        <a href="#" class="card__link">Дубленка Nude Норка</a>
+                    </h2>
+                    <div class="card__price price">
+                        <div class="price__cost">670 000 ₽</div>
+                    </div>
+                    <button class="card__heart btn-reset" aria-label="Добавить в избранное">
+                        <svg class="card__icon" width="30" height="30" stroke-width="0">
+                            <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                        </svg>
+                    </button>
+                </article>
+            </li>
+            <li class="catalog__item">
+                <article class="catalog__card card">
+                    <div class="card__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="./img/catalog/card-08-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/catalog/card-08-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/catalog/card-08.webp" type="image/webp">
+                                    <img class="card__image img" width="420" height="480" src="./img/catalog/card-08.png" alt="card">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <h2 class="card__title">
+                        <a href="#" class="card__link">Клатч Версаль «Портрет девушки»</a>
+                    </h2>
+                    <div class="card__price price">
+                        <div class="price__cost">780 000 ₽</div>
+                    </div>
+                    <button class="card__heart btn-reset" aria-label="Добавить в избранное">
+                        <svg class="card__icon" width="30" height="30" stroke-width="0">
+                            <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                        </svg>
+                    </button>
+                </article>
+            </li>
+        </ul>
+        <div class="catalog__pages pages">
+            <button class="pages__button button button--grey">
+                <span class="button__text">Загрузить еще</span>
+                <svg class="button__icon button__icon--down" width="12" height="18" stroke-width="0">
+                    <use xlink:href="./img/sprite.svg#arrow"></use>
+                </svg>
+            </button>
+            <ul class="pages__list list-reset">
+                <li class="pages__item  pages__item--arrow">
+                    <a href="#" class="pages__link"></a>
+                </li>
+                <li class="pages__item">
+                    <a href="#" class="pages__link">1</a>
+                </li>
+                <li class="pages__item pages__item--active">
+                    2
+                </li>
+                <li class="pages__item pages__item--dots">
+                   …
+                </li>
+                <li class="pages__item">
+                    <a href="#" class="pages__link">14</a>
+                </li>
+                <li class="pages__item">
+                    <a href="#" class="pages__link">15</a>
+                </li>
+                <li class="pages__item  pages__item--arrow">
+                    <a href="#" class="pages__link"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

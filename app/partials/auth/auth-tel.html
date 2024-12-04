@@ -1,0 +1,45 @@
+<section class="auth">
+    <div class="auth__container container">
+        <div class="auth__breadcrumbs breadcrumbs">
+            <ul class="breadcrumbs__list list-reset">
+                <li class="breadcrumbs__item">
+                    <a href="#" class="breadcrumbs__link" title="Главная"></a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Вход/Регистрация
+                </li>
+            </ul>
+        </div>
+        <h1 class="auth__title title">Вход/Регистрация</h1>
+        <form action="#" class="auth__form form">
+            <div class="form__body">
+                <label class="form__label label label--intl">
+                    <button id="form-button-intl" type="button" class="form__button btn-reset" data-country="RU" aria-label="Поменять код города страны">
+                        <svg class="button__icon button__icon--down" width="12" height="18" stroke-width="0">
+                            <use xlink:href="./img/sprite.svg#arrow"></use>
+                        </svg>
+                    </button>
+                    <input type="tel" name="Телефон" class="form__input input" placeholder="+7">
+                    <div id="form-country-select" class="form__dropdown form__dropdown--hidden">
+                        <button type="button" class="form__option btn-reset" data-country="RU" data-code="+7">Россия</button>
+                        <button type="button" class="form__option btn-reset" data-country="BY" data-code="+375">Беларусь</button>
+                        <button type="button" class="form__option btn-reset" data-country="KZ" data-code="+7">Казахстан</button>
+                    </div>
+                </label>
+            </div>
+            <button type="submit" class="form__button button button--big">
+                <span class="button__text">Войти</span>
+                <svg class="button__icon" width="14" height="14">
+                    <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                </svg>
+            </button>
+        </form>
+        <nav class="auth__nav">
+            <ul class="auth__list list-reset">
+                <li class="auth__item">
+                    Не удалось войти по смс? <a href="#" class="auth__link">Войти по email</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
