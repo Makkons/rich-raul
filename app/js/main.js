@@ -483,15 +483,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_map_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/map.js */ "./src/js/components/map.js");
 /* harmony import */ var _components_smoothScroll_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/smoothScroll.js */ "./src/js/components/smoothScroll.js");
 /* harmony import */ var _components_control_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/control.js */ "./src/js/components/control.js");
-/* harmony import */ var _components_basket_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/basket.js */ "./src/js/components/basket.js");
-/* harmony import */ var _components_cart_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/cart.js */ "./src/js/components/cart.js");
-/* harmony import */ var _components_masker_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/masker.js */ "./src/js/components/masker.js");
-/* harmony import */ var _components_getCode_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/getCode.js */ "./src/js/components/getCode.js");
-/* harmony import */ var _components_datePicker_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/datePicker.js */ "./src/js/components/datePicker.js");
-/* harmony import */ var _components_confirmPassword_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/confirmPassword.js */ "./src/js/components/confirmPassword.js");
-/* harmony import */ var _components_checkInput_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/checkInput.js */ "./src/js/components/checkInput.js");
-/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
-
+/* harmony import */ var _components_cart_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/cart.js */ "./src/js/components/cart.js");
+/* harmony import */ var _components_masker_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/masker.js */ "./src/js/components/masker.js");
+/* harmony import */ var _components_getCode_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/getCode.js */ "./src/js/components/getCode.js");
+/* harmony import */ var _components_datePicker_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/datePicker.js */ "./src/js/components/datePicker.js");
+/* harmony import */ var _components_confirmPassword_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/confirmPassword.js */ "./src/js/components/confirmPassword.js");
+/* harmony import */ var _components_checkInput_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/checkInput.js */ "./src/js/components/checkInput.js");
+/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
 
 
 
@@ -532,10 +530,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/js/components/basket.js":
-/*!*************************************!*\
-  !*** ./src/js/components/basket.js ***!
-  \*************************************/
+/***/ "./src/js/components/cart.js":
+/*!***********************************!*\
+  !*** ./src/js/components/cart.js ***!
+  \***********************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -903,19 +901,6 @@ if (basketButton) {
   renderBasket();
   renderCart();
 }
-
-/***/ }),
-
-/***/ "./src/js/components/cart.js":
-/*!***********************************!*\
-  !*** ./src/js/components/cart.js ***!
-  \***********************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const cart = document.querySelector('.cart');
-if (cart) {}
 
 /***/ }),
 
@@ -12658,4 +12643,3 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map
