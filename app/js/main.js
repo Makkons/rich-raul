@@ -221,6 +221,212 @@ class GraphModal {
 
 /***/ }),
 
+/***/ "./node_modules/marquee3000/marquee3k.js":
+/*!***********************************************!*\
+  !*** ./node_modules/marquee3000/marquee3k.js ***!
+  \***********************************************/
+/***/ (function(module, exports) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * MARQUEE 3000 MARQUEE 3000 MARQUEE 3000 MARQUEE 3000 MARQUEE 3000
+ * http://github.com/ezekielaquino/marquee3000
+ * Marquees for the new millennium v1.0
+ * MIT License
+ */
+
+;(function(root, factory) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+}(this, function() {
+  'use strict';
+
+  let animationId = 0;
+
+  class Marquee3k {
+    constructor(element, options) {
+      this.element = element;
+      this.selector = options.selector;
+      this.speed = element.dataset.speed || 0.25;
+      this.pausable = element.dataset.pausable;
+      this.reverse = element.dataset.reverse;
+      this.paused = false;
+      this.parent = element.parentElement;
+      this.parentProps = this.parent.getBoundingClientRect();
+      this.content = element.children[0];
+      this.innerContent = this.content.innerHTML;
+      this.wrapStyles = '';
+      this.offset = 0;
+
+      this._setupWrapper();
+      this._setupContent();
+      this._setupEvents();
+
+      this.wrapper.appendChild(this.content);
+      this.element.appendChild(this.wrapper);
+    }
+
+    _setupWrapper() {
+      this.wrapper = document.createElement('div');
+      this.wrapper.classList.add('marquee3k__wrapper');
+      this.wrapper.style.whiteSpace = 'nowrap';
+    }
+
+    _setupContent() {
+      this.content.classList.add(`${this.selector}__copy`);
+      this.content.style.display = 'inline-block';
+      this.contentWidth = this.content.offsetWidth;
+
+      this.requiredReps = this.contentWidth > this.parentProps.width ? 2 : Math.ceil((this.parentProps.width - this.contentWidth) / this.contentWidth) + 1;
+
+      for (let i = 0; i < this.requiredReps; i++) {
+        this._createClone();
+      }
+
+      if (this.reverse) {
+        this.offset = this.contentWidth * -1;
+      }
+
+      this.element.classList.add('is-init');
+    }
+
+    _setupEvents() {
+      this.element.addEventListener('mouseenter', () => {
+        if (this.pausable) this.paused = true;
+      });
+
+      this.element.addEventListener('mouseleave', () => {
+        if (this.pausable) this.paused = false;
+      });
+    }
+
+    _createClone() {
+      const clone = this.content.cloneNode(true);
+      clone.style.display = 'inline-block';
+      clone.classList.add(`${this.selector}__copy`);
+      this.wrapper.appendChild(clone);
+    }
+
+    animate() {
+      if (!this.paused) {
+        const isScrolled = this.reverse ? this.offset < 0 : this.offset > this.contentWidth * -1;
+        const direction = this.reverse ? -1 : 1;
+        const reset = this.reverse ? this.contentWidth * -1 : 0;
+
+        if (isScrolled) this.offset -= this.speed * direction;
+        else this.offset = reset;
+
+        this.wrapper.style.whiteSpace = 'nowrap';
+        this.wrapper.style.transform = `translate(${this.offset}px, 0) translateZ(0)`;
+      }
+    }
+
+    _refresh() {
+      this.contentWidth = this.content.offsetWidth;
+    }
+
+    repopulate(difference, isLarger) {
+      this.contentWidth = this.content.offsetWidth;
+
+      if (isLarger) {
+        const amount = Math.ceil(difference / this.contentWidth) + 1;
+
+        for (let i = 0; i < amount; i++) {
+          this._createClone();
+        }
+      }
+    }
+
+    static refresh(index) {
+      MARQUEES[index]._refresh();
+    }
+
+    static pause(index) {
+      MARQUEES[index].paused = true;
+    }
+
+    static play(index) {
+      MARQUEES[index].paused = false;
+    }
+
+    static toggle(index) {
+      MARQUEES[index].paused = !MARQUEES[index].paused;
+    }
+
+    static refreshAll() {
+      for (let i = 0; i < MARQUEES.length; i++) {
+        MARQUEES[i]._refresh();
+      }
+    }
+
+    static pauseAll() {
+      for (let i = 0; i < MARQUEES.length; i++) {
+        MARQUEES[i].paused = true;
+      }
+    }
+
+    static playAll() {
+      for (let i = 0; i < MARQUEES.length; i++) {
+        MARQUEES[i].paused = false;
+      }
+    }
+
+    static toggleAll() {
+      for (let i = 0; i < MARQUEES.length; i++) {
+        MARQUEES[i].paused = !MARQUEES[i].paused;
+      }
+    }
+
+    static init(options = { selector: 'marquee3k' }) {
+      if (animationId) window.cancelAnimationFrame(animationId);
+
+      window.MARQUEES = [];
+      const marquees = Array.from(document.querySelectorAll(`.${options.selector}`));
+      let previousWidth = window.innerWidth;
+      let timer;
+
+      for (let i = 0; i < marquees.length; i++) {
+        const marquee = marquees[i];
+        const instance = new Marquee3k(marquee, options);
+        MARQUEES.push(instance);
+      }
+
+      animate();
+
+      function animate() {
+        for (let i = 0; i < MARQUEES.length; i++) {
+          MARQUEES[i].animate();
+        }
+        animationId = window.requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', () => {
+        clearTimeout(timer);
+
+        timer = setTimeout(() => {
+          const isLarger = previousWidth < window.innerWidth;
+          const difference = window.innerWidth - previousWidth;
+
+          for (let i = 0; i < MARQUEES.length; i++) {
+            MARQUEES[i].repopulate(difference, isLarger);
+          }
+
+          previousWidth = this.innerWidth;
+        }, 250);
+      });
+    }
+  }
+
+  return Marquee3k;
+
+}));
+
+
+/***/ }),
+
 /***/ "./node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js":
 /*!************************************************************************!*\
   !*** ./node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js ***!
@@ -489,7 +695,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_datePicker_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/datePicker.js */ "./src/js/components/datePicker.js");
 /* harmony import */ var _components_confirmPassword_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/confirmPassword.js */ "./src/js/components/confirmPassword.js");
 /* harmony import */ var _components_checkInput_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/checkInput.js */ "./src/js/components/checkInput.js");
-/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
+/* harmony import */ var _components_marquee_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/marquee.js */ "./src/js/components/marquee.js");
+/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
+
 
 
 
@@ -554,6 +762,12 @@ if (basketButton) {
   const cartPriceTotal = document.querySelector('#cart-price-total');
   const cartButtonNull = document.querySelector('#cart-button-null');
   const cartWrapper = document.querySelector('.cart__wrap');
+  const checkoutTitle = document.querySelector('.checkout .checkout__title');
+  const checkoutForm = document.querySelector('.checkout .checkout__form');
+  const checkoutList = document.querySelector('.checkout .order-form__list');
+  const checkoutPriceTotal = document.querySelector('.checkout .value__price span');
+  const checkoutButtonNull = document.querySelector('#checkout-button-null');
+  const checkoutContainer = document.querySelector('.checkout .container--holder');
 
   // Массив товаров для примера (можно динамически загружать с сервера)
   const initialProducts = [{
@@ -684,7 +898,7 @@ if (basketButton) {
             `;
       basketList.appendChild(itemElement);
     });
-    updateMoreButton();
+    isMoreButton();
     updateBasketMode();
     updateTotalPrice(basketPriceTotal);
     updateTotalQuantity();
@@ -750,6 +964,44 @@ if (basketButton) {
     updateTotalQuantity();
   }
 
+  // Функция рендеринга товаров на странице корзине
+  function renderCheckout() {
+    if (!checkoutList) return;
+    checkoutList.innerHTML = ''; // Очистить содержимое корзины
+
+    cartItems.forEach((item, index) => {
+      const itemElement = document.createElement('li');
+      itemElement.classList.add('order-form__item');
+      let itemHTML = `
+           <a href="${item.link}" class="order-form__picture">
+               <img width="62" height="70" class="order-form__image img"
+                    src="${item.image}"
+                    alt="${item.title}">
+           </a>
+           <div class="order-form__info">
+               <div class="order-form__wrap">
+                   <a href="${item.link}" class="order-form__link">
+                       <h3 class="order-form__heading">${item.title}</h3>
+                   </a>
+                   <div class="order-form__parameter">
+                       <span class="order-form__caption">Размер:</span>
+                       <span class="order-form__text">${item.parameter['Размер']}</span>
+                   </div>
+               </div>
+               <div class="order-form__wrap">
+                   ${item.price?.discount !== undefined ? `<span class="order-form__price order-form__price--old">${formatNumber(item.price.oldValue) + ' ' + item.price.currency}</span>` : ''}           
+                   <span class="order-form__price"><span class="order-form__count">x${item.quantity}</span>${formatNumber(item.price.value) + ' ' + item.price.currency}</span>
+                   <span class="order-form__amount">${formatNumber(item.price.value * item.quantity) + ' ' + item.price.currency}₽</span>
+               </div>
+           </div>
+         `;
+      itemElement.innerHTML = itemHTML;
+      checkoutList.appendChild(itemElement);
+    });
+    updateCheckoutMode();
+    updateTotalPrice(checkoutPriceTotal);
+  }
+
   // Функция обновления количества товара
   function updateQuantity(index, change) {
     cartItems[index].quantity += change;
@@ -757,6 +1009,7 @@ if (basketButton) {
     saveCart();
     renderBasket();
     renderCart();
+    renderCheckout();
   }
 
   // Функция удаления товара
@@ -765,6 +1018,7 @@ if (basketButton) {
     saveCart();
     renderBasket();
     renderCart();
+    renderCheckout();
   }
 
   // Функция сохранения корзины в localStorage
@@ -807,8 +1061,23 @@ if (basketButton) {
     }
   }
 
+  // Функция установки режима корзины
+  function updateCheckoutMode() {
+    if (cartItems.length === 0) {
+      checkoutTitle.textContent = 'Ваша корзина пустая';
+      checkoutForm.style.display = 'none';
+      checkoutButtonNull.style.display = 'flex';
+      checkoutContainer.classList.add('container--center');
+    } else {
+      checkoutTitle.textContent = 'Оформление заказа';
+      checkoutForm.style.display = 'grid';
+      checkoutButtonNull.style.display = 'none';
+      checkoutContainer.classList.remove('container--center');
+    }
+  }
+
   // Функция обновления кнопки "смотреть еще"
-  function updateMoreButton() {
+  function isMoreButton() {
     const forms = ['позицию', 'позиции', 'позиций'];
     const countView = cartItems.length - viewMoreCount;
     basketButtonMoreCount.textContent = `${countView} ${getDeclension(countView, forms)}`;
@@ -840,7 +1109,7 @@ if (basketButton) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
   }
 
-  // Функция возвращает правильную форму слова "позиция" в зависимости от числа
+  // Функция возвращает правильную форму слов
   function getDeclension(number, forms) {
     const [one, few, many] = forms;
     const mod10 = number % 10;
@@ -857,8 +1126,8 @@ if (basketButton) {
     return many; // Все остальные случаи — форма "позиций"
   }
 
-  // События для кнопок изменения количества и удаления товаров
-  basketForm.addEventListener('click', event => {
+  // События для кнопок виджета корзины
+  basketForm?.addEventListener('click', event => {
     if (event.target.classList.contains('quantity__button--increment')) {
       const index = event.target.getAttribute('data-index');
       updateQuantity(index, 1);
@@ -876,6 +1145,8 @@ if (basketButton) {
       renderBasket();
     }
   });
+
+  // События для кнопок страницы корзины
   cartForm?.addEventListener('click', event => {
     if (event.target.classList.contains('quantity__button--increment')) {
       const index = event.target.getAttribute('data-index');
@@ -891,7 +1162,7 @@ if (basketButton) {
     }
   });
 
-  // Событие для кнопки Корзины
+  // Событие для иконки Корзины в шапке
   basketButton.addEventListener('click', event => {
     viewMoreCount = 4;
     renderBasket();
@@ -900,6 +1171,7 @@ if (basketButton) {
   // Первоначальный рендеринг корзины
   renderBasket();
   renderCart();
+  renderCheckout();
 }
 
 /***/ }),
@@ -1217,7 +1489,7 @@ menuItems.forEach(item => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const inputs = document?.querySelectorAll('.form--subscribe .input');
+const inputs = document?.querySelectorAll('.label--nested .input');
 inputs.forEach(item => {
   item.addEventListener('input', function () {
     this.value !== '' ? item.classList.add('form__input--filled') : item.classList.remove('form__input--filled');
@@ -1334,6 +1606,85 @@ function functionMap() {
 
 /***/ }),
 
+/***/ "./src/js/components/marquee.js":
+/*!**************************************!*\
+  !*** ./src/js/components/marquee.js ***!
+  \**************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var marquee3000__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! marquee3000 */ "./node_modules/marquee3000/marquee3k.js");
+/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
+
+
+const marque = document.querySelector('.marquee');
+if (marque) {
+  const marquee3k = marque?.querySelector('.marquee3k');
+  const marqueeBody = marque?.querySelector('.marquee__body');
+  const cloneMarquee = marqueeBody?.cloneNode(true);
+  const btnCloseMarque = marque?.querySelector('.marquee__close');
+  const throttleInitMarquee = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_1__.throttle)(() => {
+    initMarquee();
+  });
+  window.addEventListener('resize', throttleInitMarquee);
+  function initMarquee() {
+    if (isMarqueeWidth() && !isMarqueeInit() && !isHiddenMarquee()) {
+      marquee3000__WEBPACK_IMPORTED_MODULE_0__.init();
+      marquee3000__WEBPACK_IMPORTED_MODULE_0__.refreshAll();
+    } else if (!isMarqueeWidth() && isMarqueeInit()) {
+      const marqueeWrapper = marque.querySelector('.marquee3k__wrapper');
+      marqueeWrapper.remove();
+      marquee3k.appendChild(cloneMarquee);
+      marquee3k.classList.remove('is-init');
+      marquee3000__WEBPACK_IMPORTED_MODULE_0__.refreshAll();
+    } else if (isHiddenMarquee()) {
+      marque.classList.remove('marquee--active');
+    }
+  }
+  function isMarqueeWidth() {
+    let totalWidth = 0;
+    const offsetWidth = 200;
+    const childElements = marque?.querySelector('.marquee__body').children;
+    Array.from(childElements).forEach(child => {
+      const childWidth = child.offsetWidth;
+      totalWidth += childWidth;
+    });
+    return totalWidth >= window.innerWidth - offsetWidth ? true : false;
+  }
+  function isMarqueeInit() {
+    return marquee3k.classList.contains('is-init');
+  }
+  function isHiddenMarquee() {
+    return getItemWithExpiration('isHiddenMarque');
+  }
+  function setItemWithExpiration(key, value, expirationTime) {
+    const data = {
+      value: value,
+      expiration: Date.now() + expirationTime
+    };
+    localStorage.setItem(key, JSON.stringify(data));
+  }
+  function getItemWithExpiration(key) {
+    const data = JSON.parse(localStorage.getItem(key));
+    if (!data) {
+      return null;
+    }
+    if (Date.now() > data.expiration) {
+      localStorage.removeItem(key);
+      return null;
+    }
+    return data.value;
+  }
+  btnCloseMarque.addEventListener('click', function () {
+    marque.remove();
+    setItemWithExpiration('isHiddenMarque', 'true', 7 * 24 * 60 * 60 * 1000);
+  });
+  initMarquee();
+}
+
+/***/ }),
+
 /***/ "./src/js/components/masker.js":
 /*!*************************************!*\
   !*** ./src/js/components/masker.js ***!
@@ -1349,36 +1700,51 @@ if (tel.length) {
   const countryButton = document.querySelector('#form-button-intl');
   const countryDropdown = document.querySelector('#form-country-select');
   const countryOptions = countryDropdown?.querySelectorAll('.form__option');
+  const countryInput = document.querySelector('#form-country-input');
   const telMaskList = {
     'RU': ['+9 999 999-99-99', '+9 999 999-99-99'],
     'BY': ['+999 99 999 9999', '+999 99 999 9999'],
     'KZ': ['+9 999 999-99-99', '+9 999 999-99-99']
   };
+  let countryCode = '7';
+  let countryText = 'Россия';
+  let boundInputHandler = inputHandler.bind(undefined, telMaskList.RU, 11, countryCode);
   tel.forEach(tel => {
     vanilla_masker__WEBPACK_IMPORTED_MODULE_0__(tel).maskPattern(telMaskList.RU[0]);
-    tel.addEventListener('input', inputHandler.bind(undefined, telMaskList.RU, 11), false);
+    tel.addEventListener('input', boundInputHandler, false);
   });
   if (countryButton) {
     // Показать или скрыть список стран при клике на кнопку
     countryButton.addEventListener('click', function () {
       countryDropdown.classList.toggle('form__dropdown--hidden');
     });
+    if (countryInput) {
+      countryInput.value = countryText;
+    }
 
     // Обработать выбор страны из списка
     countryOptions.forEach(option => {
       option.addEventListener('click', function () {
-        const countryCode = option.dataset.code;
+        countryCode = option.dataset.code;
         const countryShortName = option.dataset.country;
         const telMask = telMaskList[countryShortName];
+        const tel = this.closest('.label').querySelector('input[type="tel"]');
 
         // Обновить кнопку и placeholder
         countryButton.dataset.country = countryShortName;
-        tel[0].placeholder = countryCode;
-        vanilla_masker__WEBPACK_IMPORTED_MODULE_0__(tel[0]).maskPattern(telMask[0]);
-        tel[0].addEventListener('input', inputHandler.bind(undefined, telMask, 11), false);
+        tel.placeholder = countryCode;
+        tel.value = '';
+        vanilla_masker__WEBPACK_IMPORTED_MODULE_0__(tel).maskPattern(telMask[0]);
+        tel.removeEventListener('input', boundInputHandler, false);
+        boundInputHandler = inputHandler.bind(undefined, telMask, 11, countryCode);
+        tel.addEventListener('input', boundInputHandler, false);
 
         // Скрыть выпадающий список
         countryDropdown.classList.add('form__dropdown--hidden');
+        tel.focus();
+        if (countryInput) {
+          countryInput.value = this.textContent;
+        }
       });
     });
 
@@ -1389,16 +1755,16 @@ if (tel.length) {
       }
     });
   }
-  function inputHandler(masks, max, event) {
+  function inputHandler(masks, max, countryCode, event) {
     const c = event.target;
     let v = c.value.replace(/\D/g, '');
-
-    // let vArr = v.split('');
-    // if (vArr[0] !== '7') {
-    //     vArr[0] = '7';
-    //     v = vArr.join('');
-    // }
-
+    let code = countryCode.replace(/\D/g, '');
+    let vArr = v.split('');
+    let currentCode = vArr.slice(0, code.length).join('');
+    if (currentCode !== code) {
+      vArr[0] = code;
+      v = vArr.join('');
+    }
     const m = c.value.length > max ? 1 : 0;
     vanilla_masker__WEBPACK_IMPORTED_MODULE_0__(c).unMask();
     vanilla_masker__WEBPACK_IMPORTED_MODULE_0__(c).maskPattern(masks[m]);
@@ -1622,6 +1988,33 @@ const newsDetailSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.ne
     },
     961: {
       slidesPerView: 3,
+      spaceBetween: 40
+    }
+  }
+});
+const interestSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.interest__swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  breakpoints: {
+    621: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    961: {
+      slidesPerView: 3,
+      spaceBetween: 40
+    },
+    1441: {
+      slidesPerView: 4,
       spaceBetween: 40
     }
   }

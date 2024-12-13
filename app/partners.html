@@ -21,6 +21,32 @@
    <body class="page__body">
       <div class="site-container">
          <!-- ШАПКА в двух версиях, прзрачная просто - класс "header" и более узкая по высоте с серым фоном - класс "header--slim" -->
+<div class="marquee marquee--active">
+  <div class="marquee__container container">
+    <div class="marquee__marquee3k marquee3k" data-speed="0.25" data-pausable="true">
+      <div class="marquee__body">
+        <div class="marquee__date">
+          <svg class="marquee__icon" width="24" height="24">
+            <use xlink:href="./img/sprite.svg#calendar"></use>
+          </svg>
+          <time class="marquee__time" datetime="2024-09-30">30 августа 2024</time>
+        </div>
+        <p class="marquee__text">Показ недели Моды в Санкт-Петербурге 2024</p>
+        <a href="#" class="marquee__button button button--accent">
+          <span class="button__text">Подробнее</span>
+          <svg class="button__icon" width="12" height="12">
+            <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <button class="marquee__close btn-reset" aria-label="Закрыть шторку">
+    <svg width="24" height="24" stroke-width="2">
+      <use xlink:href="./img/sprite.svg#close"></use>
+    </svg>
+  </button>
+</div>
 <header id="header" class="header header--light fixed-block" data-menu>
   <div class="header__container container">
     <div class="header__bar">
@@ -1027,9 +1053,9 @@
                </li>
             </ul>
          </div>
-         <form action="/" class="footer__form form form--subscribe">
-            <label for="footer-email" class="form__label label">
-               <input class="form__input input" type="email" id="footer-email" placeholder="Введите email">
+         <form action="/" class="footer__form form">
+            <label class="form__label label label--nested">
+               <input class="form__input input" type="email" placeholder="Введите email">
                <button type="submit" class="form__button button button--grey">
                   <span class="button__text">Подписаться</span>
                   <svg class="button__icon" width="12" height="12">

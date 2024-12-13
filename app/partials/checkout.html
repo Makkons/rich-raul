@@ -1,0 +1,237 @@
+<section class="checkout">
+    <div class="checkout__container container">
+        <div class="checkout__breadcrumbs breadcrumbs">
+            <ul class="breadcrumbs__list list-reset">
+                <li class="breadcrumbs__item">
+                    <a href="#" class="breadcrumbs__link" title="Главная"></a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="#" class="breadcrumbs__link" title="Главная">Корзина</a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Оформление заказа
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="checkout__container container container--holder">
+        <h1 class="checkout__title title">Оформление заказа</h1>
+        <form action="#" class="checkout__form form">
+            <div class="form__data">
+                <div class="form__main">
+                    <label class="form__label label label--user">
+                        <input type="text" name="Имя" class="form__input input" placeholder="Имя">
+                    </label>
+                    <label class="form__label label label--user">
+                        <input type="text" name="Фамилия" class="form__input input" placeholder="Фамилия">
+                    </label>
+                    <label class="form__label label label--intl">
+                        <button id="form-button-intl" type="button" class="form__button btn-reset" data-country="RU" aria-label="Поменять код города страны">
+                            <svg class="button__icon button__icon--down" width="12" height="18" stroke-width="0">
+                                <use xlink:href="./img/sprite.svg#arrow"></use>
+                            </svg>
+                        </button>
+                        <input type="tel" name="Телефон" class="form__input input" placeholder="+7">
+                        <div id="form-country-select" class="form__dropdown form__dropdown--hidden">
+                            <button type="button" class="form__option btn-reset" data-country="RU" data-code="+7">Россия</button>
+                            <button type="button" class="form__option btn-reset" data-country="BY" data-code="+375">Беларусь</button>
+                            <button type="button" class="form__option btn-reset" data-country="KZ" data-code="+7">Казахстан</button>
+                        </div>
+                    </label>
+                    <label class="form__label label label--email">
+                        <input type="email" name="Email" class="form__input input" placeholder="Email">
+                    </label>
+                    <label class="form__label label label--local">
+                        <input id="form-country-input" type="text" name="Страна" class="form__input input" placeholder="Страна">
+                    </label>
+                    <label class="form__label label label--local">
+                        <input type="text" name="Город" class="form__input input" placeholder="Город">
+                    </label>
+                </div>
+                <div class="form__other">
+                    <div class="form__row">
+                        <h3 class="form__caption">Доставка</h3>
+                        <ul class="form__radio-list list-reset">
+                            <li class="form__radio radio">
+                                <label class="radio__label">
+                                    <input class="radio__input input-reset" type="radio" name="Доставка"
+                                           value="Самовывоз">
+                                    <span class="radio__name">
+                                            <span class="radio__text">Самовывоз</span>
+                                        </span>
+                                </label>
+                            </li>
+                            <li class="form__radio radio">
+                                <label class="radio__label">
+                                    <input class="radio__input input-reset" type="radio" name="Доставка"
+                                           value="СДЭК Пункт выдачи">
+                                    <span class="radio__name">
+                                            <span class="radio__text">СДЭК Пункт выдачи</span>
+                                        </span>
+                                </label>
+                            </li>
+                            <li class="form__radio radio">
+                                <label class="radio__label">
+                                    <input class="radio__input input-reset" type="radio" name="Доставка"
+                                           value="СДЭК Доставка курьером" checked>
+                                    <span class="radio__name">
+                                            <span class="radio__text">СДЭК Доставка курьером</span>
+                                        </span>
+                                </label>
+                                <p class="radio__desc">Доставка заказа курьером компании СДЭК</p>
+                            </li>
+                            <li class="form__radio radio">
+                                <label class="radio__label">
+                                    <input class="radio__input input-reset" type="radio" name="Доставка"
+                                           value="Международная доставка">
+                                    <span class="radio__name">
+                                            <span class="radio__text">Международная доставка</span>
+                                            <span class="radio__subtext">(цена по согласованию с менеджером)</span>
+                                        </span>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="form__address">
+                            <label class="form__label label label--clear">
+                                <span class="label__text">Улица *</span>
+                                <input type="text" name="Улица" class="form__input input" placeholder="" required>
+                            </label>
+                            <label class="form__label label label--clear">
+                                <span class="label__text">Дом/строение *</span>
+                                <input type="text" name="Улица" class="form__input input" placeholder="" required>
+                            </label>
+                            <label class="form__label label label--clear">
+                                <span class="label__text">Квартира/офис *</span>
+                                <input type="text" name="Улица" class="form__input input" placeholder="">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <h3 class="form__caption">Оплата</h3>
+                        <ul class="form__radio-list list-reset">
+                            <li class="form__radio radio">
+                                <label class="radio__label">
+                                    <input class="radio__input input-reset" type="radio" name="Оплата" value="PayKeeper"
+                                           checked>
+                                    <span class="radio__name">
+                                            <span class="radio__text">PayKeeper</span>
+                                        </span>
+                                </label>
+                                <p class="radio__desc">Оплата картой через PayKeeper</p>
+                            </li>
+                            <li class="form__radio radio">
+                                <label class="radio__label">
+                                    <input class="radio__input input-reset" type="radio" name="Оплата"
+                                           value="Оплата частями Яндекс.Сплит">
+                                    <span class="radio__name">
+                                            <span class="radio__text">Оплата частями Яндекс.Сплит</span>
+                                        </span>
+                                </label>
+                            </li>
+                            <li class="form__radio radio">
+                                <label class="radio__label">
+                                    <input class="radio__input input-reset" type="radio" name="Оплата" value="Долями">
+                                    <span class="radio__name">
+                                            <span class="radio__text">Долями</span>
+                                        </span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form__detail">
+                <div class="form__order order-form">
+                    <div class="order-form__box">
+                        <h2 class="order-form__title">Ваш заказ</h2>
+                        <ul class="order-form__list list-reset">
+                            <li class="order-form__item">
+                                <a href="#" class="order-form__picture">
+                                    <img width="62" height="70" class="order-form__image img"
+                                         src="./img/catalog/card-01.png"
+                                         alt="Куртка Авиатор в меху">
+                                </a>
+                                <div class="order-form__info">
+                                    <div class="order-form__wrap">
+                                        <a href="#" class="order-form__link">
+                                            <h3 class="order-form__heading">Куртка Авиатор в меху</h3>
+                                        </a>
+                                        <div class="order-form__parameter">
+                                            <span class="order-form__caption">Размер:</span>
+                                            <span class="order-form__text">М</span>
+                                        </div>
+                                    </div>
+                                    <div class="order-form__wrap">
+                                        <span class="order-form__price order-form__price--old">1 150 000 ₽</span>
+                                        <span class="order-form__price"><span
+                                                class="order-form__count">x1</span>850 000 ₽</span>
+                                        <span class="order-form__amount">850 000 ₽</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="order-form__item">
+                                <a href="#" class="order-form__picture">
+                                    <img width="62" height="70" class="order-form__image img"
+                                         src="./img/catalog/card-02.png"
+                                         alt="Портфель Voyage “Над городом”">
+                                </a>
+                                <div class="order-form__info">
+                                    <div class="order-form__wrap">
+                                        <a href="#" class="order-form__link">
+                                            <h3 class="order-form__heading">Портфель Voyage «Над городом»</h3>
+                                        </a>
+                                        <div class="order-form__parameter">
+                                            <span class="order-form__caption">Размер:</span>
+                                            <span class="order-form__text">36*33*11</span>
+                                        </div>
+                                    </div>
+                                    <div class="order-form__wrap">
+                                        <span class="order-form__price"><span class="order-form__count">x2</span>1 450 000 ₽</span>
+                                        <span class="order-form__amount">2 900 000 ₽</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="order-form__total">
+                        <label class="order-form__label label label--nested label--sale">
+                            <input class="form__input input" type="text" placeholder="Промокод">
+                            <button type="submit" class="form__button button">
+                                <span class="button__text">Применить</span>
+                                <svg class="button__icon" width="12" height="12">
+                                    <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                                </svg>
+                            </button>
+                        </label>
+                        <div class="order-form__value value">
+                            <output class="value__discount" name="Скидка: ">-20%</output>
+                            <output class="value__old" name="Без-скидки: ">350 000 ₽</output>
+                            <output class="value__price" name="Итого: ">итого <span>280 000 ₽</span></output>
+                        </div>
+                    </div>
+                    <div class="order-form__confirm">
+                        <label class="order-form__checkbox checkbox">
+                            <input class="checkbox__input" type="checkbox" name="Новости" checked>
+                            <span class="checkbox__box" aria-label="checkbox"></span>
+                            <span class="checkbox__text">Нажимая на кнопку «оформить заказ» вы соглашаетесь с <a
+                                    href="#" target="_blank">политикой конфиденциальности</a></span>
+                        </label>
+                        <button type="submit" class="order-form__button button button--big">
+                            <span class="button__text">Оформить заказ</span>
+                            <svg class="button__icon" width="18" height="18">
+                                <use xlink:href="./img/sprite.svg#icon-bag"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <a href="#" id="checkout-button-null" class="checkout__button button button--big button--grey" style="display: flex;">
+            <span class="button__text">Перейти в каталог</span>
+            <svg class="button__icon" width="14" height="14">
+                <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+            </svg>
+        </a>
+    </div>
+    </div>
+</section>
