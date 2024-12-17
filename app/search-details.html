@@ -20,7 +20,7 @@
 
    <body class="page__body">
       <div class="site-container">
-         <!-- ШАПКА в двух версиях, прзрачная просто - класс "header" и более узкая по высоте с серым фоном - класс "header--slim" -->
+         <!-- ШАПКА в двух версиях, прозрачная просто - класс "header" и более узкая по высоте с серым фоном - класс "header--slim" -->
 <div class="marquee marquee--active">
   <div class="marquee__container container">
     <div class="marquee__marquee3k marquee3k" data-speed="0.25" data-pausable="true">
@@ -887,6 +887,84 @@
       </form>
     </div>
   </div>
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="product-callback">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title">Сообщить о поступлении</h2>
+      <form action="#" class="graph-modal__form form">
+        <div class="form__body">
+          <label class="form__label label label--email">
+            <input type="email" name="Email" class="form__input input" placeholder="Email">
+          </label>
+        </div>
+        <p class="form__descriptions">
+          Нажимая на кнопку «отправить» вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a>
+        </p>
+        <button type="submit" class="form__button button button--big">
+          <span class="button__text">Отправить</span>
+          <svg class="button__icon" width="14" height="14">
+            <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="graph-modal__content" style="display: none">
+      <div class="graph-modal__icon icon-confirmation">
+        <svg width="40" height="40">
+          <use xlink:href="./img/sprite.svg#check"></use>
+        </svg>
+      </div>
+      <h2 class="graph-modal__title title">Вы уже подписаны на товар</h2>
+    </div>
+    <div class="graph-modal__content" style="display:none">
+      <div class="graph-modal__icon icon-confirmation">
+        <svg width="40" height="40">
+          <use xlink:href="./img/sprite.svg#check"></use>
+        </svg>
+      </div>
+      <h2 class="graph-modal__title title">Спасибо за подписку на товар</h2>
+      <p class="graph-modal__subtitle subtitle">Мы уведомим вас как только он появится в наличии на указанный email</p>
+    </div>
+  </div>
+  <div class="graph-modal__container graph-modal__container--product" role="dialog" aria-modal="true" data-graph-target="product">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content product-modal">
+      <h2 class="product-modal__title title">Товар добавлен в корзину</h2>
+      <form action="#" class="product-modal__form">
+<!--        <div class="product-modal__wrap">-->
+<!--          <img width="280" height="320" class="product-modal__image img" src="./img/product/bag/picture-01.png" alt="Портфель Voyage «Над городом»">-->
+<!--          <div class="product-modal__body">-->
+<!--            <h3 class="product-modal__heading">Портфель Voyage «Над городом»</h3>-->
+<!--            <ul class="product-modal__list">-->
+<!--              <li class="product-modal__item">-->
+<!--                <span class="product-modal__caption">Размер:</span>-->
+<!--                <span class="product-modal__text">M</span>-->
+<!--              </li>-->
+<!--              <li class="product-modal__item">-->
+<!--                <span class="product-modal__caption">Цвет:</span>-->
+<!--                <span class="product-modal__text">Черный</span>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--            <output class="product-modal__output" name="Итого:" id="product-price-total">2 560 000 ₽</output>-->
+<!--            <div class="product-modal__row">-->
+<!--              <a href="/cart.html" class="product-modal__button button button&#45;&#45;big button&#45;&#45;grey">-->
+<!--                <span class="button__text">Перейти в корзину</span>-->
+<!--                <svg class="button__icon" width="14" height="14">-->
+<!--                  <use xlink:href="./img/sprite.svg#arrow-btn"></use>-->
+<!--                </svg>-->
+<!--              </a>-->
+<!--              <a href="/checkout.html" class="product-modal__button button button&#45;&#45;big">-->
+<!--                <span class="button__text">Оформить заказ</span>-->
+<!--                <svg class="button__icon" width="18" height="18">-->
+<!--                  <use xlink:href="./img/sprite.svg#icon-bag"></use>-->
+<!--                </svg>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+      </form>
+    </div>
+  </div>
   <div class="graph-modal__container graph-modal__container--order" role="dialog" aria-modal="true" data-graph-target="order">
     <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
     <div class="graph-modal__content order-modal">
@@ -1025,7 +1103,7 @@
             <button class="item-basket__remove" aria-label="Удалить товар"></button>
           </li>-->
         </ul>
-        <button id="basket-button-more" class="basket__button button button--grey">
+        <button id="basket-button-more" type="button" class="basket__button button button--grey">
           <span class="button__text">Смотреть еще <span class="button__count">2 позиции</span></span>
           <svg class="button__icon button__icon--down" width="12" height="18" stroke-width="0">
             <use xlink:href="./img/sprite.svg#arrow"></use>
@@ -1036,13 +1114,13 @@
           <output class="basket__output" name="Итого:" id="basket-price-total">2 560 000 ₽</output>
         </div>
         <div class="basket__row">
-          <a href="#" class="basket__button button button--big button--grey">
+          <a href="/cart.html" class="basket__button button button--big button--grey">
             <span class="button__text">Перейти в корзину</span>
             <svg class="button__icon" width="14" height="14">
               <use xlink:href="./img/sprite.svg#arrow-btn"></use>
             </svg>
           </a>
-          <a href="#" class="basket__button button button--big">
+          <a href="/checkout.html" class="basket__button button button--big">
             <span class="button__text">Оформить заказ</span>
             <svg class="button__icon" width="18" height="18">
               <use xlink:href="./img/sprite.svg#icon-bag"></use>

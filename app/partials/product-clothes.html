@@ -20,72 +20,244 @@
             </ul>
         </div>
         <div class="product__wrapper">
-            <div class="product__gallery">
-
+            <div class="product__box">
+                <div class="product__gallery">
+                    <div class="product__swiper-list swiper-list swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide swiper-list__slide">
+                                <picture>
+                                    <source srcset="./img/product/clothes/picture-01-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/product/clothes/picture-01-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/product/clothes/picture-01.webp" type="image/webp">
+                                    <img class="swiper-list__image img" width="247" height="280" src="./img/product/clothes/picture-01.png" alt="Сумка">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide swiper-list__slide">
+                                <picture>
+                                    <source srcset="./img/product/clothes/picture-02-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/product/clothes/picture-02-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/product/clothes/picture-02.webp" type="image/webp">
+                                    <img class="swiper-list__image img" width="247" height="280" src="./img/product/clothes/picture-02.png" alt="Сумка">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide swiper-list__slide">
+                                <picture>
+                                    <source srcset="./img/product/clothes/picture-03-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/product/clothes/picture-03-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/product/clothes/picture-03.webp" type="image/webp">
+                                    <img class="swiper-list__image img" width="247" height="280" src="./img/product/clothes/picture-03.png" alt="Сумка">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide swiper-list__slide">
+                                <picture>
+                                    <source srcset="./img/product/clothes/picture-04-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/product/clothes/picture-04-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/product/clothes/picture-04.webp" type="image/webp">
+                                    <img class="swiper-list__image img" width="247" height="280" src="./img/product/clothes/picture-04.png" alt="Сумка">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next-blur"></div>
+                        <div class="swiper-button-prev-blur"></div>
+                    </div>
+                    <div class="product__swiper-details swiper-details swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide swiper-details__slide">
+                                <picture>
+                                    <source srcset="./img/product/clothes/picture-01-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/product/clothes/picture-01-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/product/clothes/picture-01.webp" type="image/webp">
+                                    <img class="swiper-details__image img" width="766" height="880" src="./img/product/clothes/picture-01.png" alt="Сумка">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide swiper-details__slide">
+                                <picture>
+                                    <source srcset="./img/product/clothes/picture-02-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/product/clothes/picture-02-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/product/clothes/picture-02.webp" type="image/webp">
+                                    <img class="swiper-details__image img" width="766" height="880" src="./img/product/clothes/picture-02.png" alt="Сумка">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide swiper-details__slide">
+                                <picture>
+                                    <source srcset="./img/product/clothes/picture-03-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/product/clothes/picture-03-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/product/clothes/picture-03.webp" type="image/webp">
+                                    <img class="swiper-details__image img" width="766" height="880" src="./img/product/clothes/picture-03.png" alt="Сумка">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide swiper-details__slide">
+                                <picture>
+                                    <source srcset="./img/product/clothes/picture-04-mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="./img/product/clothes/picture-04-mobile.png" media="(max-width: 768px)">
+                                    <source srcset="./img/product/clothes/picture-04.webp" type="image/webp">
+                                    <img class="swiper-details__image img" width="766" height="880" src="./img/product/clothes/picture-04.png" alt="Сумка">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="product__status status status--grey" style="display: none">Нет в наличии</div>
+                        <button class="swiper-button-close btn-reset">
+                            <svg width="14" height="14">
+                                <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                            </svg>
+                            <span>Вернуться назад</span>
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="product__info">
                 <form action="" class="product__form">
-                    <div class="product__brand">
-                        Бренд
-                        <img width="67" height="20" src="./img/brands/ante-kovac.png" alt="ANTE KOVAC">
+                    <div class="product__head">
+                        <div class="product__brand">
+                            Бренд
+                            <a href="#">
+                                <img width="67" height="20" src="./img/brands/ante-kovac.png" alt="ANTE KOVAC">
+                            </a>
+                        </div>
+                        <h1 class="product__title">Куртка Авиатор в меху</h1>
+                        <p class="product__subtitle">Пример краткого описания в одну строку</p>
                     </div>
-                    <h1 class="product__title">Портфель Voyage «Над городом»</h1>
-                    <p class="product__subtitle">Пример краткого описания в одну строку</p>
                     <div class="product__parameter parameter-product">
                         <div class="parameter-product__col">
                             <p class="parameter-product__caption">Размеры</p>
-                            <div class="parameter-product__item">
-                                <p class="parameter-product__text">36*33*11</p>
+                            <div class="parameter-product__wrap">
+                                <ul class="parameter-product__list parameter-product__list--size list-reset">
+                                    <li class="parameter-product__item">
+                                        <label class="parameter-product__label">
+                                            <input class="parameter-product__input visually-hidden" data-material="1" type="radio" name="Размер"
+                                                   value="S">
+                                            <p class="parameter-product__text">S</p>
+                                        </label>
+                                    </li>
+                                    <li class="parameter-product__item">
+                                        <label class="parameter-product__label">
+                                            <input class="parameter-product__input visually-hidden" data-material="2" type="radio" checked name="Размер"
+                                                   value="M">
+                                            <p class="parameter-product__text">M</p>
+                                        </label>
+                                    </li>
+                                    <li class="parameter-product__item">
+                                        <label class="parameter-product__label">
+                                            <input class="parameter-product__input visually-hidden" data-material="3" type="radio" name="Размер"
+                                                   value="L">
+                                            <p class="parameter-product__text">L</p>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <a href="#" target="_blank" class="parameter-product__link">Таблица размеров</a>
                             </div>
                         </div>
                         <div class="parameter-product__col">
-                            <p class="parameter-product__caption">Материал</p>
-                            <div class="parameter-product__item">
-                                <img class="parameter-product__icon" width="24" height="24" src="./img/filter/crocodile.png" alt="Кожа крокодила">
-                                <p class="parameter-product__text">Кожа крокодил</p>
-                            </div>
+                            <p class="parameter-product__caption">Цвет</p>
+                            <ul class="parameter-product__list parameter-product__list--color list-reset">
+                                <li class="parameter-product__item">
+                                    <label class="parameter-product__label">
+                                        <input class="parameter-product__input visually-hidden" data-productId="1" type="radio" checked name="Цвет"
+                                               value="Черный">
+                                        <img class="parameter-product__icon" width="24" height="24" src="./img/filter/color-07.png" alt="Черный">
+                                        <span class="parameter-product__txt">Черный</span>
+                                    </label>
+                                </li>
+                                <li class="parameter-product__item">
+                                    <label class="parameter-product__label">
+                                        <input class="parameter-product__input visually-hidden" data-productId="2" type="radio" name="Цвет"
+                                               value="Серый">
+                                        <img class="parameter-product__icon" width="24" height="24" src="./img/filter/color-02.png" alt="Серый">
+                                        <span class="parameter-product__txt">Серый</span>
+                                    </label>
+                                </li>
+                                <li class="parameter-product__item">
+                                    <label class="parameter-product__label">
+                                        <input class="parameter-product__input visually-hidden" data-productId="3" type="radio" name="Цвет"
+                                               value="Синий">
+                                        <img class="parameter-product__icon" width="24" height="24" src="./img/filter/color-03.png" alt="Синий">
+                                        <span class="parameter-product__txt">Синий</span>
+                                    </label>
+                                </li>
+                                <li class="parameter-product__item">
+                                    <label class="parameter-product__label">
+                                        <input class="parameter-product__input visually-hidden" data-productId="4" type="radio" name="Цвет"
+                                               value="Красный">
+                                        <img class="parameter-product__icon" width="24" height="24" src="./img/filter/color-04.png" alt="Красный">
+                                        <span class="parameter-product__txt">Красный</span>
+                                    </label>
+                                </li>
+                                <li class="parameter-product__item">
+                                    <label class="parameter-product__label">
+                                        <input class="parameter-product__input visually-hidden" data-productId="5" type="radio" name="Цвет"
+                                               value="Оранжевый">
+                                        <img class="parameter-product__icon" width="24" height="24" src="./img/filter/color-05.png" alt="Оранжевый">
+                                        <span class="parameter-product__txt">Оранжевый</span>
+                                    </label>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="parameter-product__col">
-                            <p class="parameter-product__caption">Размеры</p>
-                            <div class="parameter-product__item">
-                                <img class="parameter-product__icon" width="24" height="24" src="./img/filter/crocodile.png" alt="Кожа крокодила">
-                                <p class="parameter-product__text">Кожа крокодил</p>
-                            </div>
-                        </div>
-                        <div class="parameter-product__col">
-                            <p class="parameter-product__caption">Аромат</p>
-                            <div class="parameter-product__item">
-                                <p class="parameter-product__text">Персик и лайм</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product__collection collection-product">
-                        <img class="collection-product__icon" width="12" height="16" src="./img/favicon.png" alt="favicon">
-                        <p class="collection-product__text">Коллекция Винсент Ван Гог</p>
                     </div>
                     <div class="product__confirm">
                         <div class="product__value value">
-                            <output class="value__discount" name="Скидка: ">-20%</output>
-                            <output class="value__old" name="Без-скидки: ">350 000 ₽</output>
                             <output class="value__price" name="Итого: ">1 610 000 ₽</output>
                         </div>
-                        <button type="button" class="product__button button button--big">
+                        <button type="button" id="product-button-add" class="product__button button button--big">
                             <span class="button__text">Добавить в корзину</span>
+                            <svg class="button__icon" width="18" height="18">
+                                <use xlink:href="./img/sprite.svg#icon-bag"></use>
+                            </svg>
+                        </button>
+                        <button type="button" id="product-button-callback" class="product__button button button--big" data-graph-path="product-callback" style="display: none">
+                            <span class="button__text">Сообщить о поступлении</span>
                             <svg class="button__icon" width="18" height="18">
                                 <use xlink:href="./img/sprite.svg#icon-bag"></use>
                             </svg>
                         </button>
                     </div>
                 </form>
-                <div class="product__description">
-
+                <div class="product__description description-product">
+                    <div class="description-product__row">
+                        <p class="description-product__caption">Характеристики</p>
+                        <ul class="description-product__list list-reset">
+                            <li class="description-product__item">
+                                <span class="description-product__heading">Материал</span>
+                                <span class="description-product__details">
+                                    <img class="description-product__icon" width="24" height="24" src="./img/filter/crocodile.png" alt="Кожа крокодила">
+                                    <span class="description-product__txt">Кожа крокодила</span>
+                                </span>
+                            </li>
+                            <li class="description-product__item">
+                                <span class="description-product__heading">Коллекция</span>
+                                <span class="description-product__details">Винсент Ван Гог</span>
+                            </li>
+                            <li class="description-product__item">
+                                <span class="description-product__heading">Цвет</span>
+                                <span class="description-product__details">
+                                    <img class="description-product__icon" width="24" height="24" src="./img/filter/color-02.png" alt="Серый">
+                                    <span class="description-product__txt">Серый</span>
+                                </span>
+                            </li>
+                            <li class="description-product__item">
+                                <span class="description-product__heading">Размер</span>
+                                <span class="description-product__details">М</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="description-product__row">
+                        <p class="description-product__caption">Описание</p>
+                        <p class="description-product__text">Платье прямого силуэта с умеренным объёмом. Застежка-поло, воротник отложной на отрезной стойке. Линия плеча спущенная, рукав длинный. Машинная вышивка в технике ришелье в виде флральных мотивов</p>
+                    </div>
+                    <div class="description-product__row">
+                        <p class="description-product__caption">Состав</p>
+                        <p class="description-product__text">80% норка, 20% хлопок</p>
+                    </div>
+                    <div class="description-product__row">
+                        <p class="description-product__caption">Детали и уход</p>
+                        <p class="description-product__text">Линия плеча спущенная, рукав длинный. Машинная вышивка в технике ришелье в виде флральных мотивов.Платье прямого силуэта с умеренным объёмом. Застежка-поло, воротник отложной на отрезной стойке</p>
+                    </div>
                 </div>
-                <button class="product__heart btn-reset" aria-label="Добавить в избранное">
-                    <svg class="product__icon" width="30" height="30" stroke-width="0">
-                        <use xlink:href="./img/sprite.svg#icon-heart"></use>
-                    </svg>
-                </button>
             </div>
+            <button class="product__heart heart heart--active btn-reset" aria-label="Добавить в избранное">
+                <svg class="heart__icon" width="40" height="40" stroke-width="0">
+                    <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                </svg>
+            </button>
         </div>
     </div>
 </section>
