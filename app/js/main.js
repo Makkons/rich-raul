@@ -3646,19 +3646,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.ResizeObserver = resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_1__["default"];
-const simpleBar = new simplebar__WEBPACK_IMPORTED_MODULE_0__["default"](document.querySelector('.product__description'), {
-  autoHide: false
-});
-simpleBar.getScrollElement().addEventListener('scroll', event => {
-  const target = event.target;
-  const parentTarget = target.closest('.simplebar-offset');
-  const isScrollEnd = Math.ceil(target.scrollTop + target.clientHeight) >= Math.ceil(target.scrollHeight);
-  if (isScrollEnd) {
-    parentTarget.classList.add('scrollEnd');
-  } else {
-    parentTarget.classList.remove('scrollEnd');
-  }
-});
+const poductDescription = document.querySelector('.product__description');
+if (poductDescription) {
+  const simpleBar = new simplebar__WEBPACK_IMPORTED_MODULE_0__["default"](poductDescription, {
+    autoHide: false
+  });
+  simpleBar.getScrollElement().addEventListener('scroll', event => {
+    const target = event.target;
+    const parentTarget = target.closest('.simplebar-offset');
+    const isScrollEnd = Math.ceil(target.scrollTop + target.clientHeight) >= Math.ceil(target.scrollHeight);
+    if (isScrollEnd) {
+      parentTarget.classList.add('scrollEnd');
+    } else {
+      parentTarget.classList.remove('scrollEnd');
+    }
+  });
+}
 
 /***/ }),
 
