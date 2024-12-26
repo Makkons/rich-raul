@@ -21,31 +21,33 @@
    <body class="page__body">
       <div class="site-container">
          <!-- ШАПКА в двух версиях, прозрачная просто - класс "header" и более узкая по высоте с серым фоном - класс "header--slim" -->
-<div class="marquee marquee--active">
+<div class="marquee marquee--active fixed-block">
   <div class="marquee__container container">
-    <div class="marquee__marquee3k marquee3k" data-speed="0.25" data-pausable="true">
-      <div class="marquee__body">
-        <div class="marquee__date">
-          <svg class="marquee__icon" width="24" height="24">
-            <use xlink:href="./img/sprite.svg#calendar"></use>
-          </svg>
-          <time class="marquee__time" datetime="2024-09-30">30 августа 2024</time>
-        </div>
-        <p class="marquee__text">Показ недели Моды в Санкт-Петербурге 2024</p>
-        <a href="#" class="marquee__button button button--accent">
-          <span class="button__text">Подробнее</span>
-          <svg class="button__icon" width="12" height="12">
-            <use xlink:href="./img/sprite.svg#arrow-btn"></use>
-          </svg>
-        </a>
+    <div class="marquee__body">
+      <div class="marquee__date">
+        <svg class="marquee__icon" width="24" height="24">
+          <use xlink:href="./img/sprite.svg#calendar"></use>
+        </svg>
+        <time class="marquee__time" datetime="2024-09-30">30 августа 2024</time>
       </div>
+      <div class="marquee__marquee3k marquee3k" data-speed="0.25" data-pausable="true">
+        <div class="marquee__content">
+          <p class="marquee__text">Показ недели Моды в Санкт-Петербурге 2024 sadkasjkk</p>
+        </div>
+      </div>
+      <a href="#" class="marquee__button button button--accent">
+        <span class="button__text">Подробнее</span>
+        <svg class="button__icon" width="12" height="12">
+          <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+        </svg>
+      </a>
     </div>
+    <button class="marquee__close btn-reset" aria-label="Закрыть шторку">
+      <svg width="24" height="24" stroke-width="2">
+        <use xlink:href="./img/sprite.svg#close"></use>
+      </svg>
+    </button>
   </div>
-  <button class="marquee__close btn-reset" aria-label="Закрыть шторку">
-    <svg width="24" height="24" stroke-width="2">
-      <use xlink:href="./img/sprite.svg#close"></use>
-    </svg>
-  </button>
 </div>
 <header id="header" class="header header--slim fixed-block" data-menu>
   <div class="header__container container">
@@ -580,49 +582,59 @@
                             <div class="sections__item-columns">
                                 <ul class="sections__item-list">
                                     <li class="sections__item-element">
-                                        <picture>
-                                            <source srcset="./img/main/bestsellers-02-mobile.webp" media="(max-width: 768px)" type="image/webp" />
-                                            <source srcset="./img/main/bestsellers-02-mobile.png" media="(max-width: 768px)" />
-                                            <source srcset="./img/main/bestsellers-02.webp" type="image/webp" />
-                                            <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-02.png" alt="Аксессуары" />
-                                        </picture>
-                                        <a href="/catalog/women/aksessuari/" class="sections__item-link button button--blur">Аксессуары</a>
+                                        <a href="/catalog/women/aksessuari/" class="sections__item-link">
+                                            <picture>
+                                                <source srcset="./img/main/bestsellers-02-mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                                                <source srcset="./img/main/bestsellers-02-mobile.png" media="(max-width: 768px)" />
+                                                <source srcset="./img/main/bestsellers-02.webp" type="image/webp" />
+                                                <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-02.png" alt="Аксессуары" />
+                                            </picture>
+                                            <span class="sections__button button button--blur">Аксессуары</span>
+                                        </a>
                                     </li>
                                     <li class="sections__item-element">
-                                        <picture>
-                                            <source srcset="./img/main/bestsellers-02-mobile.webp" media="(max-width: 768px)" type="image/webp" />
-                                            <source srcset="./img/main/bestsellers-02-mobile.png" media="(max-width: 768px)" />
-                                            <source srcset="./img/main/bestsellers-02.webp" type="image/webp" />
-                                            <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-02.png" alt="Аксессуары" />
-                                        </picture>
-                                        <a href="/catalog/women/obuv/" class="sections__item-link button button--blur">Обувь</a>
+                                        <a href="/catalog/women/obuv/" class="sections__item-link">
+                                            <picture>
+                                                <source srcset="./img/main/bestsellers-02-mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                                                <source srcset="./img/main/bestsellers-02-mobile.png" media="(max-width: 768px)" />
+                                                <source srcset="./img/main/bestsellers-02.webp" type="image/webp" />
+                                                <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-02.png" alt="Аксессуары" />
+                                            </picture>
+                                            <span class="sections__button button button--blur">Обувь</span>
+                                        </a>
                                     </li>
                                     <li class="sections__item-element">
-                                        <picture>
-                                            <source srcset="./img/main/bestsellers-02-mobile.webp" media="(max-width: 768px)" type="image/webp" />
-                                            <source srcset="./img/main/bestsellers-02-mobile.png" media="(max-width: 768px)" />
-                                            <source srcset="./img/main/bestsellers-02.webp" type="image/webp" />
-                                            <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-02.png" alt="Аксессуары" />
-                                        </picture>
-                                        <a href="/catalog/women/odejda/" class="sections__item-link button button--blur">Одежда</a>
+                                        <a href="/catalog/women/odejda/" class="sections__item-link">
+                                            <picture>
+                                                <source srcset="./img/main/bestsellers-02-mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                                                <source srcset="./img/main/bestsellers-02-mobile.png" media="(max-width: 768px)" />
+                                                <source srcset="./img/main/bestsellers-02.webp" type="image/webp" />
+                                                <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-02.png" alt="Аксессуары" />
+                                            </picture>
+                                            <span class="sections__button button button--blur">Одежда</span>
+                                        </a>
                                     </li>
                                     <li class="sections__item-element">
-                                        <picture>
-                                            <source srcset="./img/main/bestsellers-02-mobile.webp" media="(max-width: 768px)" type="image/webp" />
-                                            <source srcset="./img/main/bestsellers-02-mobile.png" media="(max-width: 768px)" />
-                                            <source srcset="./img/main/bestsellers-02.webp" type="image/webp" />
-                                            <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-02.png" alt="Аксессуары" />
-                                        </picture>
-                                        <a href="/catalog/women/sport/" class="sections__item-link button button--blur">Спортивная одежда</a>
+                                        <a href="/catalog/women/sport/" class="sections__item-link">
+                                            <picture>
+                                                <source srcset="./img/main/bestsellers-02-mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                                                <source srcset="./img/main/bestsellers-02-mobile.png" media="(max-width: 768px)" />
+                                                <source srcset="./img/main/bestsellers-02.webp" type="image/webp" />
+                                                <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-02.png" alt="Аксессуары" />
+                                            </picture>
+                                            <span class="sections__button button button--blur">Спортивная одежда</span>
+                                        </a>
                                     </li>
                                     <li class="sections__item-element">
-                                        <picture>
-                                            <source srcset="./img/main/bestsellers-02-mobile.webp" media="(max-width: 768px)" type="image/webp" />
-                                            <source srcset="./img/main/bestsellers-02-mobile.png" media="(max-width: 768px)" />
-                                            <source srcset="./img/main/bestsellers-02.webp" type="image/webp" />
-                                            <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-02.png" alt="Аксессуары" />
-                                        </picture>
-                                        <a href="/catalog/women/symki/" class="sections__item-link button button--blur">Сумки</a>
+                                        <a href="/catalog/women/symki/" class="sections__item-link">
+                                            <picture>
+                                                <source srcset="./img/main/bestsellers-02-mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                                                <source srcset="./img/main/bestsellers-02-mobile.png" media="(max-width: 768px)" />
+                                                <source srcset="./img/main/bestsellers-02.webp" type="image/webp" />
+                                                <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-02.png" alt="Аксессуары" />
+                                            </picture>
+                                            <span class="sections__button button button--blur">Сумки</span>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -891,40 +903,48 @@
                             <div class="sections__item-columns">
                                 <ul class="sections__item-list">
                                     <li class="sections__item-element">
-                                        <picture>
-                                            <source srcset="./img/main/bestsellers-01-mobile.webp" media="(max-width: 768px)" type="image/webp" />
-                                            <source srcset="./img/main/bestsellers-01-mobile.png" media="(max-width: 768px)" />
-                                            <source srcset="./img/main/bestsellers-01.webp" type="image/webp" />
-                                            <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-01.png" alt="Аксессуары" />
-                                        </picture>
-                                        <a href="/catalog/men/aksessuarimen/" class="sections__item-link button button--blur">Аксессуары</a>
+                                        <a href="/catalog/men/aksessuarimen/" class="sections__item-link">
+                                            <picture>
+                                                <source srcset="./img/main/bestsellers-01-mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                                                <source srcset="./img/main/bestsellers-01-mobile.png" media="(max-width: 768px)" />
+                                                <source srcset="./img/main/bestsellers-01.webp" type="image/webp" />
+                                                <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-01.png" alt="Аксессуары" />
+                                            </picture>
+                                            <span class="sections__button button button--blur">Аксессуары</span>
+                                        </a>
                                     </li>
                                     <li class="sections__item-element">
-                                        <picture>
-                                            <source srcset="./img/main/bestsellers-01-mobile.webp" media="(max-width: 768px)" type="image/webp" />
-                                            <source srcset="./img/main/bestsellers-01-mobile.png" media="(max-width: 768px)" />
-                                            <source srcset="./img/main/bestsellers-01.webp" type="image/webp" />
-                                            <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-01.png" alt="Аксессуары" />
-                                        </picture>
-                                        <a href="/catalog/men/obuvmen/" class="sections__item-link button button--blur">Обувь</a>
+                                        <a href="/catalog/men/obuvmen/" class="sections__item-link">
+                                            <picture>
+                                                <source srcset="./img/main/bestsellers-01-mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                                                <source srcset="./img/main/bestsellers-01-mobile.png" media="(max-width: 768px)" />
+                                                <source srcset="./img/main/bestsellers-01.webp" type="image/webp" />
+                                                <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-01.png" alt="Аксессуары" />
+                                            </picture>
+                                            <span class="sections__button button button--blur">Обувь</span>
+                                        </a>
                                     </li>
                                     <li class="sections__item-element">
-                                        <picture>
-                                            <source srcset="./img/main/bestsellers-01-mobile.webp" media="(max-width: 768px)" type="image/webp" />
-                                            <source srcset="./img/main/bestsellers-01-mobile.png" media="(max-width: 768px)" />
-                                            <source srcset="./img/main/bestsellers-01.webp" type="image/webp" />
-                                            <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-01.png" alt="Аксессуары" />
-                                        </picture>
-                                        <a href="/catalog/men/aksessuarimen/" class="sections__item-link button button--blur">Одежда</a>
+                                        <a href="/catalog/men/aksessuarimen/" class="sections__item-link">
+                                            <picture>
+                                                <source srcset="./img/main/bestsellers-01-mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                                                <source srcset="./img/main/bestsellers-01-mobile.png" media="(max-width: 768px)" />
+                                                <source srcset="./img/main/bestsellers-01.webp" type="image/webp" />
+                                                <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-01.png" alt="Аксессуары" />
+                                            </picture>
+                                            <span class="sections__button button button--blur">Одежда</span>
+                                        </a>
                                     </li>
                                     <li class="sections__item-element">
-                                        <picture>
-                                            <source srcset="./img/main/bestsellers-01-mobile.webp" media="(max-width: 768px)" type="image/webp" />
-                                            <source srcset="./img/main/bestsellers-01-mobile.png" media="(max-width: 768px)" />
-                                            <source srcset="./img/main/bestsellers-01.webp" type="image/webp" />
-                                            <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-01.png" alt="Аксессуары" />
-                                        </picture>
-                                        <a href="/catalog/men/sumkimen/" class="sections__item-link button button--blur">Сумки</a>
+                                        <a href="/catalog/men/sumkimen/" class="sections__item-link">
+                                            <picture>
+                                                <source srcset="./img/main/bestsellers-01-mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                                                <source srcset="./img/main/bestsellers-01-mobile.png" media="(max-width: 768px)" />
+                                                <source srcset="./img/main/bestsellers-01.webp" type="image/webp" />
+                                                <img class="sections__item-image img" width="573" height="806" src="./img/main/bestsellers-01.png" alt="Аксессуары" />
+                                            </picture>
+                                            <span class="sections__button button button--blur">Сумки</span>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -1272,6 +1292,19 @@
       </form>
     </div>
   </div>
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="product-remove">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title">Вы точно хотите удалить товар?</h2>
+      <p class="graph-modal__subtitle subtitle">Вы точно хотите удалить выбранный товар? Отменить данное действие будет невозможно.</p>
+      <button class="graph-modal__button button button--big">
+        <span class="button__text">Удалить</span>
+        <svg class="button__icon" width="14" height="14">
+          <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
   <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="product-callback">
     <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
     <div class="graph-modal__content">
@@ -1597,7 +1630,7 @@
                <img class="logo__image img" src="./img/logo.png" width="142" height="90" alt="RICH&RAUL">
             </picture>
          </a>
-         <a href="#" class="footer__slogan">Новая идентичность</a>
+         <span class="footer__slogan">Новая идентичность</span>
          <div class="footer__social social">
             <ul class="social__list list-reset">
                <li class="social__item">
@@ -1642,7 +1675,7 @@
             </label>
          </form>
          <a href="#" class="footer__description">Пользовательское соглашение</a>
-         <a href="#" class="footer__description">Торговая марка — RICH&RAUL</a>
+         <span class="footer__description">Торговая марка — RICH&RAUL</span>
       </div>
    </div>
 </footer>
