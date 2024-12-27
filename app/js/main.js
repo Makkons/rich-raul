@@ -2928,10 +2928,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_datePicker_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/datePicker.js */ "./src/js/components/datePicker.js");
 /* harmony import */ var _components_confirmPassword_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/confirmPassword.js */ "./src/js/components/confirmPassword.js");
 /* harmony import */ var _components_checkInput_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/checkInput.js */ "./src/js/components/checkInput.js");
-/* harmony import */ var _components_marquee_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/marquee.js */ "./src/js/components/marquee.js");
-/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
-/* harmony import */ var _components_product_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/product.js */ "./src/js/components/product.js");
-/* harmony import */ var _components_simplebar_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/simplebar.js */ "./src/js/components/simplebar.js");
+/* harmony import */ var _components_cancelOrder_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/cancelOrder.js */ "./src/js/components/cancelOrder.js");
+/* harmony import */ var _components_marquee_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/marquee.js */ "./src/js/components/marquee.js");
+/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
+/* harmony import */ var _components_product_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/product.js */ "./src/js/components/product.js");
+/* harmony import */ var _components_simplebar_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/simplebar.js */ "./src/js/components/simplebar.js");
+
 
 
 
@@ -2971,6 +2973,26 @@ __webpack_require__.r(__webpack_exports__);
   documentEl: document,
   htmlEl: document.documentElement,
   bodyEl: document.body
+});
+
+/***/ }),
+
+/***/ "./src/js/components/cancelOrder.js":
+/*!******************************************!*\
+  !*** ./src/js/components/cancelOrder.js ***!
+  \******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const buttonCancelOrder = document.querySelector('#button-cancel-order');
+buttonCancelOrder?.addEventListener('click', () => {
+  const response = confirm('Вы точно хотите отменить заказ?');
+  if (!response) {
+    console.log('Нет');
+    return;
+  }
+  console.log('Да');
 });
 
 /***/ }),
@@ -3132,12 +3154,12 @@ if (basketButton) {
                   <h3 class="item-basket__title">${item.title}</h3>
                 </a>
                 <div class="item-basket__quantity quantity">
-                  <button class="quantity__button quantity__button--decrement" data-index="${index}" aria-label="Убавить количество"></button>
+                  <button type="button" class="quantity__button quantity__button--decrement" data-index="${index}" aria-label="Убавить количество"></button>
                   <span class="quantity__count">${item.quantity}</span>
-                  <button class="quantity__button quantity__button--increment" data-index="${index}" aria-label="Добавить количество"></button>
+                  <button type="button" class="quantity__button quantity__button--increment" data-index="${index}" aria-label="Добавить количество"></button>
                 </div>
                 <output class="item-basket__output" name="Цена: ">${formatNumber(item.price.value * item.quantity) + ' ' + item.price.currency}</output>
-                <button class="item-basket__remove" data-index="${index}" aria-label="Удалить товар"></button>
+                <button type="button" class="item-basket__remove" data-index="${index}" aria-label="Удалить товар"></button>
             `;
       basketList.appendChild(itemElement);
     });
@@ -3188,16 +3210,16 @@ if (basketButton) {
            <div class="item-cart__col">
                <h3 class="item-cart__heading">Количество</h3>
                <div class="item-cart__quantity quantity">
-                   <button class="quantity__button quantity__button--decrement" data-index="${index}" aria-label="Убавить количество"></button>
+                   <button type="button" class="quantity__button quantity__button--decrement" data-index="${index}" aria-label="Убавить количество"></button>
                    <span class="quantity__count">${item.quantity}</span>
-                   <button class="quantity__button quantity__button--increment" data-index="${index}" aria-label="Добавить количество"></button>
+                   <button type="button" class="quantity__button quantity__button--increment" data-index="${index}" aria-label="Добавить количество"></button>
                </div>
            </div>
            <div class="item-cart__col">
                <h3 class="item-cart__heading">Сумма</h3>
                <output class="item-cart__total" name="Сумма: ">${formatNumber(item.price.value * item.quantity) + ' ' + item.price.currency}</output>
            </div>
-           <button class="item-cart__remove" data-index="${index}" aria-label="Удалить товар"></button>
+           <button type="button" class="item-cart__remove" data-index="${index}" aria-label="Удалить товар"></button>
          `;
       itemElement.innerHTML = itemHTML;
       cartList.appendChild(itemElement);
@@ -4467,6 +4489,14 @@ const cardSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.card__sw
   pagination: {
     el: '.swiper-pagination',
     clickable: true
+  },
+  on: {
+    click: function () {
+      const container = this.el;
+      const card = container.parentElement;
+      const href = card.querySelector('a').href;
+      location.href = href;
+    }
   }
 });
 const newsDetailSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.news-details__swiper', {
@@ -4591,7 +4621,7 @@ const productListSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.p
   breakpoints: {
     1441: {
       slidesPerView: 3,
-      direction: "vertical",
+      direction: 'vertical',
       spaceBetween: 20
     }
   }
