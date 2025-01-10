@@ -3697,8 +3697,10 @@ const getScrollBarWidth = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_burger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/burger.js */ "./src/js/functions/burger.js");
 /* harmony import */ var _functions_header_height_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/header-height.js */ "./src/js/functions/header-height.js");
-/* harmony import */ var _functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../functions/scrollBar-width.js */ "./src/js/functions/scrollBar-width.js");
-/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
+/* harmony import */ var _functions_marquee_height_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../functions/marquee-height.js */ "./src/js/functions/marquee-height.js");
+/* harmony import */ var _functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../functions/scrollBar-width.js */ "./src/js/functions/scrollBar-width.js");
+/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
+
 
 
 
@@ -3710,17 +3712,19 @@ const headerSlim = header.classList.contains('header--slim');
 const headerLight = header.classList.contains('header--light');
 setMainTop();
 (0,_functions_header_height_js__WEBPACK_IMPORTED_MODULE_1__.getHeaderHeight)();
-(0,_functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_2__.getScrollBarWidth)();
+(0,_functions_marquee_height_js__WEBPACK_IMPORTED_MODULE_2__.getMarqueeHeight)();
+(0,_functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_3__.getScrollBarWidth)();
 setClassOnScroll(header, headerSlim, 'header--slim', true, 20);
 removeClassOnScroll(header, headerLight, 'header--light', 20);
-let throttleGetHeaderHeight = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_3__.throttle)(() => {
+let throttleGetHeight = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_4__.throttle)(() => {
   (0,_functions_header_height_js__WEBPACK_IMPORTED_MODULE_1__.getHeaderHeight)();
+  (0,_functions_marquee_height_js__WEBPACK_IMPORTED_MODULE_2__.getMarqueeHeight)();
 });
-let throttleSetClassOnScroll = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_3__.throttle)(() => {
+let throttleSetClassOnScroll = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_4__.throttle)(() => {
   setClassOnScroll(header, headerSlim, 'header--slim', 20);
   removeClassOnScroll(header, headerLight, 'header--light', 20);
 });
-window.addEventListener('resize', throttleGetHeaderHeight);
+window.addEventListener('resize', throttleGetHeight);
 window.addEventListener('scroll', throttleSetClassOnScroll);
 function setClassOnScroll(element, isClassName, className, heightOffset) {
   const isBodyTop = body.classList.contains('disable-scroll') ? true : false;
@@ -5026,6 +5030,24 @@ __webpack_require__.r(__webpack_exports__);
 const isElementInViewport = el => {
   const rect = el.getBoundingClientRect();
   return rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.bottom > 0 && rect.left < (window.innerWidth || document.documentElement.clientWidth) && rect.right > 0;
+};
+
+/***/ }),
+
+/***/ "./src/js/functions/marquee-height.js":
+/*!********************************************!*\
+  !*** ./src/js/functions/marquee-height.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getMarqueeHeight: () => (/* binding */ getMarqueeHeight)
+/* harmony export */ });
+const getMarqueeHeight = () => {
+  const marqueeHeight = document?.querySelector('.marquee').offsetHeight;
+  document.querySelector(':root').style.setProperty('--marquee-height', `${marqueeHeight}px`);
 };
 
 /***/ }),
