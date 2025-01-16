@@ -605,6 +605,13 @@
                     <label class="form__label label label--local">
                         <input type="text" name="Город" class="form__input input" placeholder="Город">
                     </label>
+                    <label class="form__label label label__select select">
+                        <input type="text" name="Оплата" placeholder="Оплата" class="form__input input" value="" readonly required>
+                        <div class="select__content">
+                            <div class="select__option" data-value="Наличные">Наличные</div>
+                            <div class="select__option" data-value="Безналичные">Безналичные</div>
+                        </div>
+                    </label>
                 </div>
                 <div class="form__other">
                     <div class="form__row">
@@ -752,15 +759,45 @@
                         </ul>
                     </div>
                     <div class="order-form__total">
+                        <ul class="cart__total list-reset">
+                            <li class="cart__total-item">
+                                <span class="cart__caption">Доставка</span>
+                                <output class="cart__output" name="Доставка:" id="cart-discount-total">3 000 ₽</output>
+                            </li>
+                        </ul>
+                        <!--Обычный промокод-->
                         <label class="order-form__label label label--nested label--sale">
-                            <input class="form__input input" type="text" placeholder="Промокод">
-                            <button type="submit" class="form__button button">
+                            <input class="form__input input" type="text" placeholder="Промокод" value="">
+                            <button type="button" class="form__button button">
                                 <span class="button__text">Применить</span>
                                 <svg class="button__icon" width="12" height="12">
                                     <use xlink:href="./img/sprite.svg#arrow-btn"></use>
                                 </svg>
                             </button>
                         </label>
+                        <!--Обычный промокод Конец-->
+                        <!--Промокод применен. Добавился класс "label--success" и изменен текст кнопки-->
+                        <label class="order-form__label label label--nested label--sale label--success">
+                            <input class="form__input input" type="text" placeholder="Промокод" value="Zima2024">
+                            <button type="button" class="form__button button">
+                                <span class="button__text">Отменить</span>
+                                <svg class="button__icon" width="12" height="12">
+                                    <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                                </svg>
+                            </button>
+                        </label>
+                        <!--Промокод применен Конец-->
+                        <!--Промокод Ошибка. Добавился класс "label--error"-->
+                        <label class="order-form__label label label--nested label--sale label--error">
+                            <input class="form__input input" type="text" placeholder="Промокод" value="Zimuuu2023">
+                            <button type="button" class="form__button button">
+                                <span class="button__text">Применить</span>
+                                <svg class="button__icon" width="12" height="12">
+                                    <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                                </svg>
+                            </button>
+                        </label>
+                        <!--Промокод Ошибка Конец-->
                         <div class="order-form__value value">
                             <output class="value__discount" name="Скидка: ">-20%</output>
                             <output class="value__old" name="Без-скидки: ">350 000 ₽</output>
