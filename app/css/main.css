@@ -63,7 +63,7 @@
 }
 @font-face {
   font-family: "Bebas Neue Cyrillic";
-  src: url("../fonts/BebasNeueCyrillic.woff2") format("woff2");
+  src: url("../fonts/Bebas-Neue.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -140,19 +140,8 @@ a {
 .main--top .breadcrumbs {
   position: absolute;
   z-index: 50;
-  margin-top: calc(var(--header-height) - 2.1875rem);
+  margin-top: calc(var(--header-height));
 }
-@media (max-width: 60rem) {
-  .main--top .breadcrumbs {
-    margin-top: calc(var(--header-height) - 1.5625rem);
-  }
-}
-@media (max-width: 38.75rem) {
-  .main--top .breadcrumbs {
-    margin-top: calc(var(--header-height));
-  }
-}
-
 .header--light + .main--top .breadcrumbs__item {
   color: var(--light-color);
 }
@@ -529,7 +518,7 @@ footer {
   display: none;
 }
 .logo__image {
-  width: 8.875rem;
+  width: 12.5rem;
   -webkit-transition: width 0.3s ease 0s;
   transition: width 0.3s ease 0s;
 }
@@ -538,17 +527,17 @@ footer {
 }
 @media (max-width: 60rem) {
   .logo__image {
-    width: 7.5rem;
+    width: 10rem;
   }
 }
 @media (max-width: 48rem) {
   .logo__image {
-    width: 5.875rem;
+    width: 8.75rem;
   }
 }
 @media (max-width: 38.75rem) {
   .logo__image {
-    width: 4rem;
+    width: 6.25rem;
   }
 }
 
@@ -732,7 +721,7 @@ footer {
 }
 
 .burger {
-  --burger-line-height: calc(2 / 16 * 1rem);
+  --burger-line-height: calc(1 / 16 * 1rem);
   position: relative;
   border: none;
   padding: 0;
@@ -763,11 +752,6 @@ footer {
     display: none;
   }
 }
-@media (any-hover: hover) {
-  .burger:hover:not(.burger--active) .burger__line {
-    width: 1.5rem;
-  }
-}
 .burger::before, .burger::after {
   content: "";
   position: absolute;
@@ -789,7 +773,7 @@ footer {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 0.875rem;
+  width: 1.5rem;
   border-radius: 0.75rem;
   height: var(--burger-line-height);
   background: currentColor;
@@ -2826,32 +2810,21 @@ footer {
   }
 }
 .header--slim .logo__image {
-  width: 6rem;
+  width: 8.75rem;
 }
 @media (max-width: 48rem) {
   .header--slim .logo__image {
-    width: 5.875rem;
+    width: 7.5rem;
   }
 }
 @media (max-width: 38.75rem) {
   .header--slim .logo__image {
-    width: 4rem;
+    width: 5rem;
   }
 }
 .header--slim .header__container {
   -webkit-transition: min-height 0.3s ease 0s;
   transition: min-height 0.3s ease 0s;
-  min-height: 3.875rem;
-}
-@media (max-width: 48rem) {
-  .header--slim .header__container {
-    min-height: 3.75rem;
-  }
-}
-@media (max-width: 38.75rem) {
-  .header--slim .header__container {
-    min-height: 2.625rem;
-  }
 }
 .header--light .logo__picture, .header--light .logo__image {
   display: none;
@@ -2899,27 +2872,17 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  min-height: 5.875rem;
+  min-height: 2.5rem;
 }
 @media (max-width: 60rem) {
   .header__container {
-    min-height: 4.875rem;
-  }
-}
-@media (max-width: 48rem) {
-  .header__container {
-    min-height: 3.75rem;
-  }
-}
-@media (max-width: 38.75rem) {
-  .header__container {
-    min-height: 2.625rem;
+    min-height: 1.875rem;
   }
 }
 .header__bar {
@@ -2932,12 +2895,7 @@ footer {
 }
 @media (max-width: 38.75rem) {
   .header__bar:first-child {
-    margin-right: 1.25rem;
-  }
-}
-@media (max-width: 38.75rem) {
-  .header__bar {
-    margin-top: 0.5625rem;
+    margin-right: 0.9375rem;
   }
 }
 .header__burger {
@@ -2960,7 +2918,7 @@ footer {
 }
 @media (max-width: 38.75rem) {
   .header__burger {
-    margin-right: 1.25rem;
+    margin-right: 0.9375rem;
   }
 }
 .header__icon {
@@ -3061,15 +3019,15 @@ footer {
 }
 @media (max-width: 38.75rem) {
   .header__link {
-    top: 0.25rem;
+    top: 0.125rem;
   }
 }
 .header__link:not(:last-child) {
-  margin-right: 3.75rem;
+  margin-right: 3.125rem;
 }
 @media (max-width: 48rem) {
   .header__link:not(:last-child) {
-    margin-right: 3.125rem;
+    margin-right: 2.5rem;
   }
 }
 @media (max-width: 38.75rem) {
@@ -3513,7 +3471,7 @@ footer {
   top: 0;
   width: 100%;
   background: var(--light-color);
-  z-index: 25;
+  z-index: 55;
 }
 .marquee--active {
   display: block;
