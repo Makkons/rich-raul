@@ -3625,7 +3625,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.addEventListener('click', e => {
       if (!select.contains(e.target)) {
-        content.classList.remove('show');
+        select.classList.remove('show');
       }
     });
   });
@@ -4469,7 +4469,8 @@ const sliderSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider
   loop: true,
   autoplay: {
     delay: 5000,
-    disableOnInteraction: true
+    disableOnInteraction: true,
+    pauseOnMouseEnter: true
   },
   pagination: {
     el: '.swiper-pagination',
@@ -4834,57 +4835,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_isElementInViewport_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/isElementInViewport.js */ "./src/js/functions/isElementInViewport.js");
 
 
-const playVideo = document?.querySelectorAll('.play__video');
-const playButton = document?.querySelectorAll('.play__button');
-if (playVideo.length > 0) {
-  let throttleUpdateSource = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__.throttle)(() => {
-    updateSource();
+const play = document?.querySelectorAll('.play');
+if (play.length > 0) {
+  let throttleUpdateVideo = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__.throttle)(() => {
+    updateVideo();
   });
-  window.addEventListener('DOMContentLoaded', updateSource);
-  window.addEventListener('scroll', throttleUpdateSource);
-  window.addEventListener('resize', throttleUpdateSource);
-  function updateSource() {
-    playVideo.forEach(video => {
-      if ((0,_functions_isElementInViewport_js__WEBPACK_IMPORTED_MODULE_1__.isElementInViewport)(video.closest('section'))) {
+  window.addEventListener('DOMContentLoaded', updateVideo);
+  window.addEventListener('scroll', throttleUpdateVideo);
+  window.addEventListener('resize', throttleUpdateVideo);
+  play.forEach(item => {
+    const video = item.querySelector('video');
+    video.addEventListener('click', function () {
+      controlVideo(video);
+      item.classList.toggle('play--active');
+    });
+  });
+  function updateVideo() {
+    play.forEach(item => {
+      const video = item.querySelector('video');
+      if ((0,_functions_isElementInViewport_js__WEBPACK_IMPORTED_MODULE_1__.isElementInViewport)(item)) {
         const isMobile = window.innerWidth <= 768;
-        const source = document.querySelectorAll('.play__video source');
+        const source = video.querySelectorAll('.play__video source');
         source.forEach(source => {
           const newSrc = isMobile ? source.getAttribute('data-mobile-src') : source.getAttribute('data-desktop-src');
+          if (source.getAttribute('src') === newSrc) return;
           source.src = newSrc;
+          video.load();
         });
-        video.load();
+      } else if (!video.paused) {
+        video.pause();
+        item.classList.remove('play--active');
       }
     });
   }
-}
-if (playButton.length > 0) {
-  let isTouchDevice = false;
-  window.addEventListener('touchstart', () => {
-    isTouchDevice = true;
-  }, {
-    once: true
-  });
-  playButton.forEach(item => {
-    const video = item.parentNode.querySelector('video');
-    item.addEventListener('mouseenter', function () {
-      if (isTouchDevice) {
-        return;
-      }
-      controlVideo(video);
-    });
-    item.addEventListener('mouseleave', function () {
-      if (isTouchDevice) {
-        return;
-      }
-      controlVideo(video);
-    });
-    item.addEventListener('click', function () {
-      if (isTouchDevice) {
-        controlVideo(video);
-        item.classList.toggle('play__button--active');
-      }
-    });
-  });
   function controlVideo(video) {
     if (video && video.paused) {
       video.play();
