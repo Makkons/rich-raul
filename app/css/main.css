@@ -522,6 +522,9 @@ footer {
   -webkit-transition: width 0.3s ease 0s;
   transition: width 0.3s ease 0s;
 }
+.logo__image--lions {
+  width: 8.875rem;
+}
 .logo__image--light {
   display: none;
 }
