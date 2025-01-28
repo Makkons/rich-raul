@@ -4475,6 +4475,16 @@ const sliderSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider
   pagination: {
     el: '.swiper-pagination',
     clickable: true
+  },
+  on: {
+    slideChange: function (swiper) {
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      const slideVideo = activeSlide.querySelector('video');
+      if (slideVideo) {
+        slideVideo.load();
+        slideVideo.play();
+      }
+    }
   }
 });
 const sliderAboutSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-about__swiper', {
@@ -4556,6 +4566,14 @@ const cardSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.card__sw
       const card = container.parentElement;
       const href = card.querySelector('a').href;
       location.href = href;
+    },
+    slideChange: function (swiper) {
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      const slideVideo = activeSlide.querySelector('video');
+      if (slideVideo) {
+        slideVideo.load();
+        slideVideo.play();
+      }
     }
   }
 });
@@ -4647,6 +4665,14 @@ const productDetailsSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](
           (0,_functions_enable_scroll_js__WEBPACK_IMPORTED_MODULE_3__.enableScroll)();
         }
       }
+    },
+    slideChange: function (swiper) {
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      const slideVideo = activeSlide.querySelector('video');
+      if (slideVideo) {
+        slideVideo.load();
+        slideVideo.play();
+      }
     }
   }
 });
@@ -4675,6 +4701,14 @@ const productListSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.p
       if (clickedSlide) {
         const clickedIndex = clickedSlide.getAttribute('data-swiper-slide-index');
         this.slideToLoop(clickedIndex);
+      }
+    },
+    slideChange: function (swiper) {
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      const slideVideo = activeSlide.querySelector('video');
+      if (slideVideo) {
+        slideVideo.load();
+        slideVideo.play();
       }
     }
   },
@@ -4715,6 +4749,16 @@ if (showroom) {
         breakpoints: {
           621: {
             spaceBetween: 30
+          }
+        },
+        on: {
+          slideChange: function (swiper) {
+            const activeSlide = swiper.slides[swiper.activeIndex];
+            const slideVideo = activeSlide.querySelector('video');
+            if (slideVideo) {
+              slideVideo.load();
+              slideVideo.play();
+            }
           }
         }
       });
@@ -4843,29 +4887,38 @@ if (play.length > 0) {
   window.addEventListener('DOMContentLoaded', updateVideo);
   window.addEventListener('scroll', throttleUpdateVideo);
   window.addEventListener('resize', throttleUpdateVideo);
-  play.forEach(item => {
-    const video = item.querySelector('video');
-    video.addEventListener('click', function () {
-      controlVideo(video);
-      item.classList.toggle('play--active');
-    });
-  });
+
+  // play.forEach((item) => {
+  //    const video = item.querySelector('video');
+  //
+  //    video.addEventListener('click', function () {
+  //       controlVideo(video);
+  //       item.classList.toggle('play--active');
+  //    });
+  // });
+
   function updateVideo() {
     play.forEach(item => {
       const video = item.querySelector('video');
       if ((0,_functions_isElementInViewport_js__WEBPACK_IMPORTED_MODULE_1__.isElementInViewport)(item)) {
         const isMobile = window.innerWidth <= 768;
-        const source = video.querySelectorAll('.play__video source');
+        let source = video.querySelectorAll('.play__video source');
+        if (source[0].closest('.swiper')) {
+          source = source[0].closest('.swiper').querySelectorAll('.play__video source');
+        }
         source.forEach(source => {
           const newSrc = isMobile ? source.getAttribute('data-mobile-src') : source.getAttribute('data-desktop-src');
           if (source.getAttribute('src') === newSrc) return;
           source.src = newSrc;
           video.load();
+          video.play();
         });
-      } else if (!video.paused) {
-        video.pause();
-        item.classList.remove('play--active');
       }
+      // } else if (!video.paused) {
+      //    video.pause();
+      //    item.classList.remove('play--active');
+      //
+      // }
     });
   }
   function controlVideo(video) {

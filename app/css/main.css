@@ -1917,7 +1917,11 @@ footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  cursor: pointer;
+}
+.play__link, .play > a {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 .play--active .play__button {
   opacity: 0;
@@ -1961,6 +1965,7 @@ footer {
   }
 }
 .play__button {
+  display: none;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
