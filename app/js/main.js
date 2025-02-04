@@ -4429,6 +4429,19 @@ const heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.hero__sw
     clickable: true
   }
 });
+const gallerySwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.gallery__swiper', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+});
 const atelierSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.atelier__swiper', {
   slidesPerView: 1,
   spaceBetween: 0,
@@ -4907,7 +4920,7 @@ if (play.length > 0) {
           source = source[0].closest('.swiper').querySelectorAll('.play__video source');
         }
         source.forEach(source => {
-          const newSrc = isMobile ? source.getAttribute('data-mobile-src') : source.getAttribute('data-desktop-src');
+          const newSrc = isMobile && source.getAttribute('data-mobile-src') ? source.getAttribute('data-mobile-src') : source.getAttribute('data-desktop-src');
           if (source.getAttribute('src') === newSrc) return;
           source.src = newSrc;
           video.load();
