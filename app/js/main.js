@@ -2934,6 +2934,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_product_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/product.js */ "./src/js/components/product.js");
 /* harmony import */ var _components_simplebar_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/simplebar.js */ "./src/js/components/simplebar.js");
 /* harmony import */ var _components_customSelect_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/customSelect.js */ "./src/js/components/customSelect.js");
+/* harmony import */ var _components_search_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/search.js */ "./src/js/components/search.js");
+
 
 
 
@@ -4332,6 +4334,57 @@ if (productButtonAdd) {
 
 /***/ }),
 
+/***/ "./src/js/components/search.js":
+/*!*************************************!*\
+  !*** ./src/js/components/search.js ***!
+  \*************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_debounce_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/debounce.js */ "./src/js/functions/debounce.js");
+
+const search = document.querySelector('.search');
+const searchInput = search?.querySelector('#search-input');
+const searchDropdown = search?.querySelector('.search__dropdown');
+const searchLoading = search?.querySelector('.search__loading');
+const searchList = search?.querySelector('.search__list');
+if (search) {
+  const debouncedSearch = (0,_functions_debounce_js__WEBPACK_IMPORTED_MODULE_0__.debounce)(value => handleSearch(value), 1000);
+  searchInput.addEventListener('input', function () {
+    if (!this.value) {
+      handleSearch(this.value);
+      debouncedSearch(this.value);
+      return;
+    }
+    searchLoading.classList.add('show');
+    searchList.classList.remove('show');
+    animateHeight(searchDropdown.querySelector('.show'));
+    debouncedSearch(this.value);
+  });
+}
+function handleSearch(value) {
+  const isActive = search.classList.contains('search--active') && value;
+  if (isActive) {
+    searchLoading.classList.toggle('show');
+    searchList.classList.toggle('show');
+    animateHeight(searchDropdown.querySelector('.show'));
+  } else {
+    animateHeight();
+  }
+}
+function animateHeight(showElement) {
+  if (!showElement) {
+    searchDropdown.style.height = '0';
+    return;
+  }
+  requestAnimationFrame(() => {
+    searchDropdown.style.height = showElement.offsetHeight + 'px';
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/components/simplebar.js":
 /*!****************************************!*\
   !*** ./src/js/components/simplebar.js ***!
@@ -5051,6 +5104,30 @@ __webpack_require__.r(__webpack_exports__);
     btn?.setAttribute('aria-label', label);
   }
 })();
+
+/***/ }),
+
+/***/ "./src/js/functions/debounce.js":
+/*!**************************************!*\
+  !*** ./src/js/functions/debounce.js ***!
+  \**************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   debounce: () => (/* binding */ debounce)
+/* harmony export */ });
+const debounce = (func, delay) => {
+  let timeoutId;
+  return function () {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func.apply(this, args), delay);
+  };
+};
 
 /***/ }),
 

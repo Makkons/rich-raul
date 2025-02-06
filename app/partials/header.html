@@ -494,41 +494,46 @@
           </li>
         </ul>
       </nav>
-      <div class="header__search search">
+      <search class="header__search search">
         <form action="/" class="search__form" data-hold>
           <label for="search-input" class="search__label label">
             <input id="search-input" class="search__input input" name="Поиск" type="text" placeholder="Что вы ищете?">
           </label>
+          <div class="search__dropdown">
+            <div class="search__loading">
+              <img class="search__loader" width="50" height="67" src="/upload/demo/img/favicon.png" alt="Lion">
+            </div>
+            <ul class="search__list list-reset" data-hold>
+              <li class="search__item">
+                <img width="53" height="60" src="./img/favourites/card-01.png" alt="Куртка Авиатор в меху" class="search__image img">
+                <a href="#" class="search__link">Куртка Авиатор в меху</a>
+                <span class="search__price">350 000 ₽</span>
+              </li>
+              <li class="search__item">
+                <img width="53" height="60" src="./img/favourites/card-02.png" alt="Портфель Voyage “Над городом”" class="search__image img">
+                <a href="#" class="search__link">Портфель Voyage «Над городом»</a>
+                <span class="search__price">750 000 ₽</span>
+              </li>
+              <li class="search__item">
+                <img width="53" height="60" src="./img/favourites/card-03.png" alt="Тренч из Питона" class="search__image img">
+                <a href="#" class="search__link">Тренч из Питона</a>
+                <span class="search__price">680 000 ₽</span>
+              </li>
+              <li class="search__item">
+                <img width="53" height="60" src="./img/favourites/card-04.png" alt="Дубленка Nude Норка" class="search__image img">
+                <a href="#" class="search__link">Дубленка Nude Норка</a>
+                <span class="search__price">1 150 000 ₽</span>
+              </li>
+            </ul>
+          </div>
         </form>
-        <ul class="search__list list-reset" data-hold>
-          <li class="search__item">
-            <img width="53" height="60" src="./img/favourites/card-01.png" alt="Куртка Авиатор в меху" class="search__image img">
-            <a href="#" class="search__link">Куртка Авиатор в меху</a>
-            <span class="search__price">350 000 ₽</span>
-          </li>
-          <li class="search__item">
-            <img width="53" height="60" src="./img/favourites/card-02.png" alt="Портфель Voyage “Над городом”" class="search__image img">
-            <a href="#" class="search__link">Портфель Voyage «Над городом»</a>
-            <span class="search__price">750 000 ₽</span>
-          </li>
-          <li class="search__item">
-            <img width="53" height="60" src="./img/favourites/card-03.png" alt="Тренч из Питона" class="search__image img">
-            <a href="#" class="search__link">Тренч из Питона</a>
-            <span class="search__price">680 000 ₽</span>
-          </li>
-          <li class="search__item">
-            <img width="53" height="60" src="./img/favourites/card-04.png" alt="Дубленка Nude Норка" class="search__image img">
-            <a href="#" class="search__link">Дубленка Nude Норка</a>
-            <span class="search__price">1 150 000 ₽</span>
-          </li>
-        </ul>
         <button class="search__button button button--grey" data-close>
           <svg width="12" height="12" class="button__icon" stroke-width="2">
             <use xlink:href="./img/sprite.svg#close"></use>
           </svg>
           <span class="button__text">Закрыть</span>
         </button>
-      </div>
+      </search>
     </aside>
   </div>
 </header>
