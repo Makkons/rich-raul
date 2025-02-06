@@ -4936,7 +4936,11 @@ if (play.length > 0) {
           if (source.getAttribute('src') === newSrc) return;
           source.src = newSrc;
           video.load();
-          video.play();
+          video.addEventListener('loadeddata', () => {
+            video.play().catch(error => {
+              console.error('Ошибка воспроизведения:', error);
+            });
+          });
         });
       }
       // } else if (!video.paused) {
