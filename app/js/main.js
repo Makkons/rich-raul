@@ -4560,7 +4560,11 @@ const sliderSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider
       const slideVideo = activeSlide.querySelector('video');
       if (slideVideo) {
         slideVideo.load();
-        slideVideo.play();
+        slideVideo.addEventListener('loadeddata', () => {
+          slideVideo.play().catch(error => {
+            console.error('Ошибка воспроизведения:', error);
+          });
+        });
       }
     }
   }
@@ -4650,7 +4654,11 @@ const cardSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.card__sw
       const slideVideo = activeSlide.querySelector('video');
       if (slideVideo) {
         slideVideo.load();
-        slideVideo.play();
+        slideVideo.addEventListener('loadeddata', () => {
+          slideVideo.play().catch(error => {
+            console.error('Ошибка воспроизведения:', error);
+          });
+        });
       }
     }
   }
@@ -4749,7 +4757,11 @@ const productDetailsSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](
       const slideVideo = activeSlide.querySelector('video');
       if (slideVideo) {
         slideVideo.load();
-        slideVideo.play();
+        slideVideo.addEventListener('loadeddata', () => {
+          slideVideo.play().catch(error => {
+            console.error('Ошибка воспроизведения:', error);
+          });
+        });
       }
     }
   }
@@ -4786,7 +4798,11 @@ const productListSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.p
       const slideVideo = activeSlide.querySelector('video');
       if (slideVideo) {
         slideVideo.load();
-        slideVideo.play();
+        slideVideo.addEventListener('loadeddata', () => {
+          slideVideo.play().catch(error => {
+            console.error('Ошибка воспроизведения:', error);
+          });
+        });
       }
     }
   },
@@ -4835,7 +4851,11 @@ if (showroom) {
             const slideVideo = activeSlide.querySelector('video');
             if (slideVideo) {
               slideVideo.load();
-              slideVideo.play();
+              slideVideo.addEventListener('loadeddata', () => {
+                slideVideo.play().catch(error => {
+                  console.error('Ошибка воспроизведения:', error);
+                });
+              });
             }
           }
         }

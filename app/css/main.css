@@ -3269,6 +3269,12 @@ footer {
 .search__list.show {
   display: block;
 }
+.search__list.show .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
 @media (max-width: 60rem) {
   .search__list {
     margin-bottom: 1.875rem;
