@@ -4686,6 +4686,29 @@ const newsDetailSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.ne
     }
   }
 });
+const styleSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.style__swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  breakpoints: {
+    621: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    961: {
+      slidesPerView: 3,
+      spaceBetween: 36
+    }
+  }
+});
 const interestSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.interest__swiper', {
   slidesPerView: 1,
   spaceBetween: 20,
