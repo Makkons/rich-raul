@@ -5046,13 +5046,14 @@ if (play.length > 0) {
       // }
     });
   }
-  function controlVideo(video) {
-    if (video && video.paused) {
-      video.play();
-    } else if (video) {
-      video.pause();
-    }
-  }
+
+  // function controlVideo(video) {
+  //    if (video && video.paused) {
+  //       video.play();
+  //    } else if (video) {
+  //       video.pause();
+  //    }
+  // }
 }
 
 /***/ }),
