@@ -10511,8 +10511,8 @@ footer {
 .footer__bottom .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 11% 18% 1fr 32% 12.0625rem;
-  grid-template-columns: 11% 18% 1fr 32% 12.0625rem;
+  -ms-grid-columns: 14% 15% 1fr 32% 12.0625rem;
+  grid-template-columns: 14% 15% 1fr 32% 12.0625rem;
   gap: 0.9375rem;
 }
 .footer__bottom .container > * {
@@ -10554,20 +10554,23 @@ footer {
   padding: 2.8125rem 2.5rem 2.8125rem 0;
   border-right: 0.0625rem solid rgba(0, 0, 0, 0.08);
 }
+.footer__logo .logo__svg {
+  width: 9.875rem;
+  height: auto;
+}
 @media (max-width: 60rem) {
   .footer__logo {
     padding: 0;
     border: 0;
+  }
+  .footer__logo .logo__svg {
+    width: 8.75rem;
   }
 }
 @media (max-width: 48rem) {
   .footer__logo {
     margin-bottom: 0.875rem;
   }
-}
-.footer__logo .logo__svg {
-  width: 3.75rem;
-  height: auto;
 }
 .footer__slogan {
   font-weight: 500;

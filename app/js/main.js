@@ -3483,7 +3483,7 @@ __webpack_require__.r(__webpack_exports__);
 const label = document.querySelectorAll('.label');
 if (label.length) {
   label.forEach(item => {
-    const input = item.querySelector('input');
+    const input = item.querySelector('input') || item.querySelector('textarea');
     input?.addEventListener('input', function () {
       toggleActiveClass(this);
       if (item.classList.contains('label--error')) {
