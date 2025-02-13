@@ -7674,8 +7674,8 @@ footer {
 .theses__grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1.2fr 0.8fr;
-  grid-template-columns: 1.2fr 0.8fr;
+  -ms-grid-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 3.75rem 3.125rem;
 }
 @media (max-width: 60rem) {
@@ -7718,6 +7718,12 @@ footer {
 .theses__content .theses__title {
   text-align: left;
   margin-bottom: 2rem;
+  width: 100%;
+}
+@media (max-width: 60rem) {
+  .theses__content .theses__title {
+    text-align: center;
+  }
 }
 .theses__content .theses__list {
   -ms-flex-wrap: nowrap;
@@ -7749,7 +7755,6 @@ footer {
   }
 }
 .theses__content .theses__text {
-  max-width: 65%;
   width: 100%;
 }
 @media (max-width: 90rem) {
