@@ -2858,6 +2858,20 @@ footer {
     padding: 0.625rem 0;
   }
 }
+.header .logo__svg {
+  width: 10rem;
+  max-height: 3.125rem;
+}
+@media (max-width: 48rem) {
+  .header .logo__svg {
+    width: 7.5rem;
+  }
+}
+@media (max-width: 38.75rem) {
+  .header .logo__svg {
+    width: 6.25rem;
+  }
+}
 .header--slim {
   background: var(--bg-color);
   padding: 0.9375rem 0;
@@ -2872,16 +2886,16 @@ footer {
     padding: 0.625rem 0;
   }
 }
-.header--slim .logo__image {
-  width: 8.75rem;
+.header--slim .logo__svg {
+  width: 7.5rem;
 }
 @media (max-width: 48rem) {
-  .header--slim .logo__image {
-    width: 7.5rem;
+  .header--slim .logo__svg {
+    width: 6.25rem;
   }
 }
 @media (max-width: 38.75rem) {
-  .header--slim .logo__image {
+  .header--slim .logo__svg {
     width: 5rem;
   }
 }
@@ -2889,13 +2903,8 @@ footer {
   -webkit-transition: min-height 0.3s ease 0s;
   transition: min-height 0.3s ease 0s;
 }
-.header--light:not(.header--slim) .logo__picture,
-.header--light:not(.header--slim) .logo__image {
-  display: none;
-}
-.header--light:not(.header--slim) .logo__picture--light,
-.header--light:not(.header--slim) .logo__image--light {
-  display: block;
+.header--light:not(.header--slim) .logo__svg {
+  fill: var(--light-color);
 }
 @media (any-hover: hover) {
   .header--light:not(.header--slim) .header__icon--count:hover svg {
@@ -2937,11 +2946,8 @@ footer {
 .header--dark.header--slim .burger--active {
   color: var(--main-color);
 }
-.header--dark.header--slim .header__picture {
-  display: none;
-}
-.header--dark.header--slim .logo__picture--light, .header--dark.header--slim .logo__image--light {
-  display: block;
+.header--dark.header--slim .logo__svg {
+  fill: var(--light-color);
 }
 .header.menu--active .header__aside, .header.search--active .header__aside {
   opacity: 1;
@@ -3091,6 +3097,11 @@ footer {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  height: auto;
+}
+.header__logo .logo__svg {
+  -webkit-transition: width 0.3s ease 0s;
+  transition: width 0.3s ease 0s;
 }
 @media (max-width: 38.75rem) {
   .header__logo + .header__bar {
@@ -10549,8 +10560,9 @@ footer {
     margin-bottom: 0.875rem;
   }
 }
-.footer__logo .logo__image {
-  width: 5.9375rem;
+.footer__logo .logo__svg {
+  width: 3.75rem;
+  height: auto;
 }
 .footer__slogan {
   font-weight: 500;
