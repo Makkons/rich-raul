@@ -4454,6 +4454,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   feedbackSwiper: () => (/* binding */ feedbackSwiper)
+/* harmony export */ });
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
 /* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
 /* harmony import */ var _functions_disable_scroll_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../functions/disable-scroll.js */ "./src/js/functions/disable-scroll.js");
@@ -4634,6 +4637,19 @@ const collectionsPartnersSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["defau
     }
   }
 });
+const collectionsPartnersNewSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.main__new .collections__swiper--partners', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+});
 const cardSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.card__swiper', {
   slidesPerView: 1,
   spaceBetween: 0,
@@ -4709,6 +4725,29 @@ const styleSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.style__
     }
   }
 });
+const feedbackSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.feedback__swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  breakpoints: {
+    621: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    961: {
+      slidesPerView: 3,
+      spaceBetween: 36
+    }
+  }
+});
 const interestSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.interest__swiper', {
   slidesPerView: 1,
   spaceBetween: 20,
@@ -4748,6 +4787,15 @@ const heroPartnersSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.
     769: {
       slidesPerView: 2
     }
+  }
+});
+const heroPartnersNewSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.main__new .hero-partners__swiper', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
   }
 });
 const productDetailsSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product__swiper-details', {
