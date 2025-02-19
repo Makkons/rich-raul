@@ -4483,6 +4483,18 @@ const heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.hero__sw
   pagination: {
     el: '.swiper-pagination',
     clickable: true
+  },
+  on: {
+    slideChange: function (swiper) {
+      const header = document.querySelector('.header');
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      const theme = activeSlide.dataset.theme;
+      if (theme === 'light') {
+        header.classList.add('header--light');
+      } else {
+        header.classList.remove('header--light');
+      }
+    }
   }
 });
 const gallerySwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.gallery__swiper', {
