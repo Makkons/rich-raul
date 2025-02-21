@@ -3792,9 +3792,10 @@ function removeClassOnScroll(element, isClassName, className, heightOffset) {
   }
 }
 function setMainTop() {
-  if (!headerSlim) {
-    main.classList.add('main--top');
-  }
+  const brandsNewPage = !!document.querySelector('.main__new .brands');
+  const shouldExclude = brandsNewPage || headerSlim;
+  if (shouldExclude) return;
+  main.classList.add('main--top');
 }
 
 /***/ }),
