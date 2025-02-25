@@ -4561,11 +4561,11 @@ footer {
   -o-object-fit: contain;
   object-fit: contain;
 }
-.article-brands__text {
+.article-brands__text:not(:last-child) {
   margin-bottom: 1.875rem;
 }
 @media (max-width: 38.75rem) {
-  .article-brands__text {
+  .article-brands__text:not(:last-child) {
     margin-bottom: 1.25rem;
   }
 }
