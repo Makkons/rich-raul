@@ -3747,8 +3747,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_burger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/burger.js */ "./src/js/functions/burger.js");
 /* harmony import */ var _functions_header_height_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/header-height.js */ "./src/js/functions/header-height.js");
 /* harmony import */ var _functions_marquee_height_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../functions/marquee-height.js */ "./src/js/functions/marquee-height.js");
-/* harmony import */ var _functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../functions/scrollBar-width.js */ "./src/js/functions/scrollBar-width.js");
-/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
+/* harmony import */ var _functions_breadcrumbs_height_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../functions/breadcrumbs-height.js */ "./src/js/functions/breadcrumbs-height.js");
+/* harmony import */ var _functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../functions/scrollBar-width.js */ "./src/js/functions/scrollBar-width.js");
+/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
+
 
 
 
@@ -3762,14 +3764,16 @@ const headerLight = header.classList.contains('header--light');
 setMainTop();
 (0,_functions_header_height_js__WEBPACK_IMPORTED_MODULE_1__.getHeaderHeight)();
 (0,_functions_marquee_height_js__WEBPACK_IMPORTED_MODULE_2__.getMarqueeHeight)();
-(0,_functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_3__.getScrollBarWidth)();
+(0,_functions_breadcrumbs_height_js__WEBPACK_IMPORTED_MODULE_3__.getBreadcrumbsHeight)();
+(0,_functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_4__.getScrollBarWidth)();
 setClassOnScroll(header, headerSlim, 'header--slim', true, 20);
 removeClassOnScroll(header, headerLight, 'header--light', 20);
-let throttleGetHeight = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_4__.throttle)(() => {
+let throttleGetHeight = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_5__.throttle)(() => {
   (0,_functions_header_height_js__WEBPACK_IMPORTED_MODULE_1__.getHeaderHeight)();
   (0,_functions_marquee_height_js__WEBPACK_IMPORTED_MODULE_2__.getMarqueeHeight)();
+  (0,_functions_breadcrumbs_height_js__WEBPACK_IMPORTED_MODULE_3__.getBreadcrumbsHeight)();
 });
-let throttleSetClassOnScroll = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_4__.throttle)(() => {
+let throttleSetClassOnScroll = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_5__.throttle)(() => {
   setClassOnScroll(header, headerSlim, 'header--slim', 20);
   removeClassOnScroll(header, headerLight, 'header--light', 20);
 });
@@ -4802,6 +4806,19 @@ const heroPartnersSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.
     }
   }
 });
+const catalogSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.catalog__swiper', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  }
+});
 const heroPartnersNewSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.main__new .hero-partners__swiper', {
   slidesPerView: 1,
   spaceBetween: 0,
@@ -5116,6 +5133,29 @@ if (play.length > 0) {
   //    }
   // }
 }
+
+/***/ }),
+
+/***/ "./src/js/functions/breadcrumbs-height.js":
+/*!************************************************!*\
+  !*** ./src/js/functions/breadcrumbs-height.js ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getBreadcrumbsHeight: () => (/* binding */ getBreadcrumbsHeight)
+/* harmony export */ });
+const getBreadcrumbsHeight = () => {
+  const breadcrumbs = document?.querySelector('.breadcrumbs');
+  if (!breadcrumbs) return;
+  const styles = window.getComputedStyle(breadcrumbs);
+  const marginTop = parseFloat(styles.marginTop) || 0;
+  const marginBottom = parseFloat(styles.marginBottom) || 0;
+  const totalHeight = breadcrumbs.offsetHeight + marginTop + marginBottom;
+  document.querySelector(':root').style.setProperty('--breadcrumbs-height', `${totalHeight}px`);
+};
 
 /***/ }),
 
