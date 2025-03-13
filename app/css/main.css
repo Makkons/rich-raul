@@ -5312,6 +5312,9 @@ footer {
   -o-object-fit: contain;
   object-fit: contain;
 }
+.catalog__swiper.swiper--main .swiper-horizontal > .swiper-pagination-bullets, .catalog__swiper.swiper--main .swiper-pagination-bullets.swiper-pagination-horizontal, .catalog__swiper.swiper--main .swiper-pagination-custom, .catalog__swiper.swiper--main .swiper-pagination-fraction {
+  bottom: 1.25rem;
+}
 .catalog__description {
   font-size: 1.5rem;
   text-align: center;

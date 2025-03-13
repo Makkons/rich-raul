@@ -4810,6 +4810,7 @@ const catalogSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.catal
   slidesPerView: 1,
   spaceBetween: 0,
   loop: true,
+  autoHeight: true,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false
