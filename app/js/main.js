@@ -3821,13 +3821,20 @@ window.addEventListener('touchstart', () => {
 });
 menuItems.forEach(item => {
   item.addEventListener('click', function (event) {
+    event.stopPropagation();
     if (isTouchDevice) {
-      if (item.classList.contains('nav__item--active')) {
+      const isActive = item.classList.contains('nav__item--active');
+      const isButton = event.target.closest('.nav__button');
+      if (isActive && item.querySelector('& > a')?.tagName === 'A' || isButton) {
         return;
       }
-      item.closest('.nav__list').querySelector('& > .nav__item--active')?.classList.remove('nav__item--active');
       event.preventDefault();
-      item.classList.add('nav__item--active');
+      if (isActive) {
+        item.classList.remove('nav__item--active');
+        return;
+      }
+      item.closest('.nav__list').querySelectorAll('.nav__item--active').forEach(activeItem => activeItem.classList.remove('nav__item--active'));
+      item.classList.toggle('nav__item--active');
     }
   });
 });
