@@ -3890,21 +3890,36 @@ function functionMap() {
       YMapDefaultSchemeLayer,
       YMapMarker,
       YMapLayer,
-      YMapFeatureDataSource,
-      GeoCollectionBounds
+      YMapFeatureDataSource
     } = ymaps3;
     const {
       YMapClusterer,
       clusterByGrid
     } = await ymaps3.import('@yandex/ymaps3-clusterer@0.0.1');
-    const coordinates = Array.from(targetMapButton).map(item => {
-      const dataMap = item.dataset.map;
-      const [x, y] = dataMap.split(',').map(coord => parseFloat(coord.trim()));
-      return [y, x];
-    });
+    function getBoundsFromPoints(coords) {
+      let minLat = coords[0][0],
+        maxLat = coords[0][0];
+      let minLng = coords[0][1],
+        maxLng = coords[0][1];
+      coords.forEach(_ref => {
+        let [lat, lng] = _ref;
+        if (lat < minLat) minLat = lat;
+        if (lat > maxLat) maxLat = lat;
+        if (lng < minLng) minLng = lng;
+        if (lng > maxLng) maxLng = lng;
+      });
+      return [[minLat, minLng], [maxLat, maxLng]];
+    }
+    const getCoordinates = dataMap => {
+      return dataMap.split(';').map(coord => {
+        const [x, y] = coord.split(',').map(c => parseFloat(c.trim()));
+        return [y, x];
+      });
+    };
+    const coordinates = Array.from(targetMapButton).flatMap(item => getCoordinates(item.dataset.map));
     const map = new YMap(mapSelector, {
       location: {
-        center: coordinates[0],
+        center: coordinates[0] || [55.751574, 37.573856],
         zoom: 11
       }
     });
@@ -3915,25 +3930,22 @@ function functionMap() {
       type: 'markers',
       zIndex: 1800
     }));
-    const contentPin = document.createElement('div');
-    contentPin.classList.add('map__marker');
-    contentPin.innerHTML = '<img width="17" height="22.5" src="/local/templates/richraul/img/favicon-light.png" alt="icon" />';
     const marker = feature => {
+      const contentPin = createMarkerElement();
       contentPin.setAttribute('data-map', feature.geometry.coordinates.join(', '));
       return new ymaps3.YMapMarker({
         coordinates: feature.geometry.coordinates,
         source: 'my-source'
-      }, contentPin.cloneNode(true));
+      }, contentPin);
     };
     const cluster = (coordinates, features) => new ymaps3.YMapMarker({
       coordinates,
       source: 'my-source'
-    }, circle(features.length).cloneNode(true));
+    }, circle(features.length));
     function circle(count) {
       const circle = document.createElement('div');
       circle.classList.add('circle');
-      circle.innerHTML = `
-            <div class="circle-content"><span class="circle-text">${count}</span></div>`;
+      circle.innerHTML = `<div class="circle-content"><span class="circle-text">${count}</span></div>`;
       return circle;
     }
     const points = coordinates.map((lnglat, i) => ({
@@ -3948,28 +3960,75 @@ function functionMap() {
     }));
     const clusterer = new YMapClusterer({
       method: clusterByGrid({
-        gridSize: 500
+        gridSize: 100
       }),
       features: points,
       marker,
       cluster
     });
     map.addChild(clusterer);
-    // map.setLocation({
-    //     bounds: coordinates
-    // });
-
     targetMapButton.forEach(item => {
       item.addEventListener('click', () => {
-        const [y, x] = item.dataset.map.split(',').map(coord => parseFloat(coord.trim()));
-        map.setLocation({
-          center: [x, y],
-          duration: 1000,
-          zoom: 16
-        });
+        const coords = getCoordinates(item.dataset.map);
+        clearMapMarkers();
+        addMarkersToMap(coords);
+        if (coords.length === 1) {
+          map.setLocation({
+            center: coords[0],
+            duration: 1000,
+            zoom: 16
+          });
+        } else {
+          const bounds = getBoundsFromPoints(coords);
+          const centerLat = (bounds[0][0] + bounds[1][0]) / 2;
+          const centerLng = (bounds[0][1] + bounds[1][1]) / 2;
+          const center = [centerLat, centerLng];
+          const zoom = calculateZoom(bounds);
+          map.setLocation({
+            bounds,
+            duration: 1000
+          });
+          setTimeout(() => {
+            map.setLocation({
+              center,
+              zoom: zoom,
+              duration: 1000
+            });
+          }, 500);
+        }
         activateMap(true);
       });
     });
+    function calculateZoom(bounds) {
+      const [minLat, minLng] = bounds[0];
+      const [maxLat, maxLng] = bounds[1];
+      const latDiff = maxLat - minLat;
+      const lngDiff = maxLng - minLng;
+      const zoomLevel = Math.max(10, 14 - Math.max(latDiff, lngDiff) * 50);
+      return Math.round(zoomLevel);
+    }
+    function clearMapMarkers() {
+      map.children.forEach(child => {
+        if (child instanceof YMapMarker || child instanceof YMapClusterer) {
+          map.removeChild(child);
+        }
+      });
+    }
+    function addMarkersToMap(coordinates) {
+      coordinates.forEach(coord => {
+        const marker = new ymaps3.YMapMarker({
+          coordinates: coord,
+          source: 'my-source'
+        }, createMarkerElement());
+        map.addChild(marker);
+      });
+    }
+    function createMarkerElement() {
+      const contentPin = document.createElement('div');
+      contentPin.classList.add('map__marker');
+      contentPin.innerHTML = '<img width="17" height="22.5" src="/upload/demo/img/favicon-light.png" alt="icon" />';
+      return contentPin;
+    }
     const overlay = document.querySelector(".map__overlay");
     const mapContainer = document.querySelector('.ymaps3x0--map-container');
     let inactivityTimer;
@@ -4482,7 +4541,7 @@ __webpack_require__.r(__webpack_exports__);
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_4__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_4__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_4__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_4__.Thumbs]);
 const showroom = document.querySelector('.showroom');
 const newsOther = document.querySelector('.news--other');
-const boutiquesGallery = document.querySelectorAll('.boutiques__gallery');
+const boutiquesGallery = document.querySelectorAll('.main:not(.main__new) .boutiques__gallery');
 const swiperCloseZoom = document.querySelector('.swiper-button-close');
 const heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.hero__swiper', {
   slidesPerView: 1,

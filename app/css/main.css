@@ -5973,6 +5973,8 @@ footer {
 .boutiques__content {
   margin-right: 1.875rem;
   max-width: 21.375rem;
+}
+.boutiques__content:not(:last-child) {
   margin-bottom: 1.875rem;
 }
 @media (max-width: 60rem) {
@@ -6003,6 +6005,28 @@ footer {
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
+}
+.boutiques__content picture, .boutiques__content .boutiques__logo {
+  display: inline-block;
+}
+.boutiques__content picture:not(:last-child), .boutiques__content .boutiques__logo:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 38.75rem) {
+  .boutiques__content picture:not(:last-child), .boutiques__content .boutiques__logo:not(:last-child) {
+    margin-bottom: 1.125rem;
+  }
+}
+.boutiques__content .boutiques__logo {
+  height: auto;
+}
+@media (max-width: 38.75rem) {
+  .boutiques__content .boutiques__logo {
+    max-width: 11.25rem;
+  }
+}
+.boutiques__text:not(:last-child) {
+  margin-bottom: 0.3125rem;
 }
 @media (max-width: 48rem) {
   .boutiques__text {
@@ -6109,7 +6133,7 @@ footer {
   line-height: 187%;
   color: var(--main-color);
   padding: 0.8125rem 1.875rem 0.75rem;
-  min-height: 3.4375rem;
+  min-height: 2.5rem;
   width: 100%;
   white-space: nowrap;
 }
@@ -6237,6 +6261,94 @@ footer {
 .map__overlay p {
   text-align: center;
   pointer-events: none;
+}
+
+.main__new .boutiques__item {
+  background: transparent;
+}
+@media (max-width: 38.75rem) {
+  .main__new .boutiques__item {
+    margin-bottom: 1.875rem;
+  }
+}
+.main__new .boutiques__box {
+  border: 0.0625rem solid var(--main-color);
+  border-right: 0;
+}
+@media (max-width: 60rem) {
+  .main__new .boutiques__box {
+    border-right: 0.0625rem solid var(--main-color);
+    border-top: 0;
+  }
+}
+@media (max-width: 38.75rem) {
+  .main__new .boutiques__box {
+    padding: 1.875rem 1.25rem;
+  }
+}
+@media (max-width: 60rem) {
+  .main__new .boutiques__wrap {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+}
+.main__new .boutiques__gallery {
+  display: block;
+}
+.main__new .boutiques__content .boutiques__title {
+  text-transform: none;
+}
+.main__new .boutiques__content .title {
+  font-size: 1.875rem;
+}
+@media (max-width: 38.75rem) {
+  .main__new .boutiques__content .title {
+    font-size: 1.5rem;
+  }
+}
+.main__new .boutiques__content .text {
+  font-size: 1rem;
+}
+.main__new .boutiques__button {
+  min-width: 11.25rem;
+}
+.main__new .boutiques__button:not(:last-child) {
+  margin-bottom: 0.875rem;
+}
+.main__new .boutiques__button:has(+ .boutiques__row) {
+  margin-bottom: 2.5rem;
+}
+.main__new .boutiques .contact-boutiques__item {
+  padding: 0;
+}
+.main__new .boutiques .contact-boutiques__item--phone {
+  font-size: 1rem;
+}
+.main__new .boutiques .button--light {
+  border: 0.0625rem solid var(--main-color);
+}
+.main__new .boutiques h2 {
+  font-size: 3.125rem;
+}
+@media (max-width: 48rem) {
+  .main__new .boutiques h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 38.75rem) {
+  .main__new .boutiques h2 {
+    font-size: 2.125rem;
+  }
+}
+@media (max-width: 38.75rem) {
+  .main__new .contact-boutiques__item {
+    min-height: 0rem;
+  }
+}
+.main__new .map .ymaps3x0--map-container {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .error {
