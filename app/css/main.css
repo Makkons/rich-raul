@@ -6286,8 +6286,12 @@ footer {
     padding: 1.875rem 1.25rem;
   }
 }
+.main__new .boutiques__wrap {
+  padding-top: 18%;
+}
 @media (max-width: 60rem) {
   .main__new .boutiques__wrap {
+    padding-top: 0;
     -webkit-box-ordinal-group: 0;
     -ms-flex-order: -1;
     order: -1;
@@ -6321,6 +6325,14 @@ footer {
 }
 .main__new .boutiques .contact-boutiques__item {
   padding: 0;
+}
+.main__new .boutiques .contact-boutiques__item:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 90rem) {
+  .main__new .boutiques .contact-boutiques__item:not(:last-child) {
+    margin-bottom: 0.625rem;
+  }
 }
 .main__new .boutiques .contact-boutiques__item--phone {
   font-size: 1rem;
