@@ -4549,7 +4549,8 @@ const heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.hero__sw
   loop: true,
   autoplay: {
     delay: 5000,
-    disableOnInteraction: false
+    disableOnInteraction: true,
+    pauseOnMouseEnter: true
   },
   pagination: {
     el: '.swiper-pagination',
@@ -4565,6 +4566,7 @@ const heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.hero__sw
       } else {
         header.classList.remove('header--light');
       }
+      loadVideo(activeSlide);
     }
   }
 });
@@ -4643,15 +4645,7 @@ const sliderSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider
   on: {
     slideChange: function (swiper) {
       const activeSlide = swiper.slides[swiper.activeIndex];
-      const slideVideo = activeSlide.querySelector('video');
-      if (slideVideo) {
-        slideVideo.load();
-        slideVideo.addEventListener('loadeddata', () => {
-          slideVideo.play().catch(error => {
-            console.error('Ошибка воспроизведения:', error);
-          });
-        });
-      }
+      loadVideo(activeSlide);
     }
   }
 });
@@ -4750,15 +4744,7 @@ const cardSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.card__sw
     },
     slideChange: function (swiper) {
       const activeSlide = swiper.slides[swiper.activeIndex];
-      const slideVideo = activeSlide.querySelector('video');
-      if (slideVideo) {
-        slideVideo.load();
-        slideVideo.addEventListener('loadeddata', () => {
-          slideVideo.play().catch(error => {
-            console.error('Ошибка воспроизведения:', error);
-          });
-        });
-      }
+      loadVideo(activeSlide);
     }
   }
 });
@@ -4922,15 +4908,7 @@ const productDetailsSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](
     },
     slideChange: function (swiper) {
       const activeSlide = swiper.slides[swiper.activeIndex];
-      const slideVideo = activeSlide.querySelector('video');
-      if (slideVideo) {
-        slideVideo.load();
-        slideVideo.addEventListener('loadeddata', () => {
-          slideVideo.play().catch(error => {
-            console.error('Ошибка воспроизведения:', error);
-          });
-        });
-      }
+      loadVideo(activeSlide);
     }
   }
 });
@@ -4963,15 +4941,7 @@ const productListSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.p
     },
     slideChange: function (swiper) {
       const activeSlide = swiper.slides[swiper.activeIndex];
-      const slideVideo = activeSlide.querySelector('video');
-      if (slideVideo) {
-        slideVideo.load();
-        slideVideo.addEventListener('loadeddata', () => {
-          slideVideo.play().catch(error => {
-            console.error('Ошибка воспроизведения:', error);
-          });
-        });
-      }
+      loadVideo(activeSlide);
     }
   },
   breakpoints: {
@@ -5016,15 +4986,7 @@ if (showroom) {
         on: {
           slideChange: function (swiper) {
             const activeSlide = swiper.slides[swiper.activeIndex];
-            const slideVideo = activeSlide.querySelector('video');
-            if (slideVideo) {
-              slideVideo.load();
-              slideVideo.addEventListener('loadeddata', () => {
-                slideVideo.play().catch(error => {
-                  console.error('Ошибка воспроизведения:', error);
-                });
-              });
-            }
+            loadVideo(activeSlide);
           }
         }
       });
@@ -5129,6 +5091,17 @@ function removeSwiper(parentSwiper, slidesArr, slidesArrClassName) {
     parentSwiper.appendChild(item);
   });
   swiper.remove();
+}
+function loadVideo(slide) {
+  const slideVideo = slide.querySelector('video');
+  if (slideVideo && slideVideo.readyState === 0) {
+    slideVideo.load();
+    slideVideo.addEventListener('loadeddata', () => {
+      slideVideo.play().catch(error => {
+        console.error('Ошибка воспроизведения:', error);
+      });
+    });
+  }
 }
 
 /***/ }),
@@ -5437,6 +5410,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   isElementInViewport: () => (/* binding */ isElementInViewport)
 /* harmony export */ });
 const isElementInViewport = el => {
+  if (!el || typeof el.getBoundingClientRect !== 'function') return false;
+  el = el.closest('.swiper') || el;
   const rect = el.getBoundingClientRect();
   return rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.bottom > 0 && rect.left < (window.innerWidth || document.documentElement.clientWidth) && rect.right > 0;
 };
