@@ -2928,13 +2928,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_datePicker_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/datePicker.js */ "./src/js/components/datePicker.js");
 /* harmony import */ var _components_confirmPassword_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/confirmPassword.js */ "./src/js/components/confirmPassword.js");
 /* harmony import */ var _components_checkInput_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/checkInput.js */ "./src/js/components/checkInput.js");
-/* harmony import */ var _components_cancelOrder_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/cancelOrder.js */ "./src/js/components/cancelOrder.js");
-/* harmony import */ var _components_marquee_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/marquee.js */ "./src/js/components/marquee.js");
-/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
-/* harmony import */ var _components_product_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/product.js */ "./src/js/components/product.js");
-/* harmony import */ var _components_simplebar_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/simplebar.js */ "./src/js/components/simplebar.js");
-/* harmony import */ var _components_customSelect_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/customSelect.js */ "./src/js/components/customSelect.js");
-/* harmony import */ var _components_search_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/search.js */ "./src/js/components/search.js");
+/* harmony import */ var _components_marquee_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/marquee.js */ "./src/js/components/marquee.js");
+/* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
+/* harmony import */ var _components_product_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/product.js */ "./src/js/components/product.js");
+/* harmony import */ var _components_simplebar_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/simplebar.js */ "./src/js/components/simplebar.js");
+/* harmony import */ var _components_customSelect_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/customSelect.js */ "./src/js/components/customSelect.js");
+/* harmony import */ var _components_search_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/search.js */ "./src/js/components/search.js");
 
 
 
@@ -2951,7 +2950,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+// import './components/cancelOrder.js';
 
 
 
@@ -2977,26 +2976,6 @@ __webpack_require__.r(__webpack_exports__);
   documentEl: document,
   htmlEl: document.documentElement,
   bodyEl: document.body
-});
-
-/***/ }),
-
-/***/ "./src/js/components/cancelOrder.js":
-/*!******************************************!*\
-  !*** ./src/js/components/cancelOrder.js ***!
-  \******************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const buttonCancelOrder = document.querySelector('#button-cancel-order');
-buttonCancelOrder?.addEventListener('click', () => {
-  const response = confirm('Вы точно хотите отменить заказ?');
-  if (!response) {
-    console.log('Нет');
-    return;
-  }
-  console.log('Да');
 });
 
 /***/ }),
