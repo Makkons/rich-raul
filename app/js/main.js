@@ -5409,7 +5409,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getMarqueeHeight: () => (/* binding */ getMarqueeHeight)
 /* harmony export */ });
 const getMarqueeHeight = () => {
-  const marqueeHeight = document?.querySelector('.marquee').offsetHeight;
+  const marqueeHeight = document.querySelector('.marquee')?.offsetHeight;
   document.querySelector(':root').style.setProperty('--marquee-height', `${marqueeHeight}px`);
 };
 
