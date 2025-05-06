@@ -166,7 +166,7 @@ a {
   z-index: 50;
   margin-top: calc(var(--header-height));
 }
-.main__new .title {
+.main__new .title, .main__v2 .title {
   font-family: "Cormorant Garamond", serif;
   text-transform: uppercase;
 }
@@ -557,21 +557,21 @@ footer {
   color: var(--light-color);
 }
 
-.main__new h2 {
+.main__new h2, .main__v2 h2 {
   font-size: 4rem;
 }
 @media (max-width: 90rem) {
-  .main__new h2 {
+  .main__new h2, .main__v2 h2 {
     font-size: 3.125rem;
   }
 }
 @media (max-width: 48rem) {
-  .main__new h2 {
+  .main__new h2, .main__v2 h2 {
     font-size: 2.5rem;
   }
 }
 @media (max-width: 38.75rem) {
-  .main__new h2 {
+  .main__new h2, .main__v2 h2 {
     font-size: 2.125rem;
   }
 }
@@ -6300,6 +6300,9 @@ footer {
 .main__new .boutiques__gallery {
   display: block;
 }
+.main__new .boutiques__image {
+  background: var(--bg-color);
+}
 .main__new .boutiques__content .boutiques__title {
   text-transform: none;
 }
@@ -9129,6 +9132,323 @@ footer {
 @media (max-width: 38.75rem) {
   .feedback__swiper .swiper-slide img {
     height: 29.375rem;
+  }
+}
+
+.main__v2 .hero-about {
+  background: var(--main-color);
+  height: 61.25rem;
+}
+.main__v2 .hero-about {
+  height: 980px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .hero-about {
+    height: calc(540px + 440 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .hero-about__container {
+  height: 100%;
+}
+.main__v2 .hero-about__head {
+  color: var(--light-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.main__v2 .hero-about__logo:not(:last-child) {
+  margin-bottom: 110px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .hero-about__logo:not(:last-child) {
+    margin-bottom: calc(60px + 50 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .hero-about__logo-image {
+  midth: 38.125rem;
+}
+.main__v2 .hero-about__subtitle {
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+}
+.main__v2 .hero-about__subtitle {
+  font-size: 36px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .hero-about__subtitle {
+    font-size: calc(24px + 12 * (100vw - 375px) / 1545);
+  }
+}
+
+.main__v2 .theses__hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+@media (max-width: 38.75rem) {
+  .main__v2 .theses__hero {
+    margin-bottom: 2.5rem;
+  }
+}
+.main__v2 .theses__hero .theses__content {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 47.125rem;
+}
+.main__v2 .theses__hero .theses__text {
+  text-align: center;
+}
+.main__v2 .theses__author {
+  color: var(--main-color);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 28% 1fr 28%;
+  grid-template-columns: 28% 1fr 28%;
+  max-width: 88.75rem;
+  text-align: left;
+}
+.main__v2 .theses__author {
+  margin-bottom: 120px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .theses__author {
+    margin-bottom: calc(60px + 60 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .theses__author {
+  gap: 30px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .theses__author {
+    gap: calc(10px + 20 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .theses__author .title {
+  text-align: left;
+  font-family: Roboto, sans-serif;
+  font-weight: 100;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+.main__v2 .theses__author .title {
+  font-size: 36px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .theses__author .title {
+    font-size: calc(12px + 24 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .theses__name {
+  margin: 0;
+  font-weight: 100;
+  white-space: nowrap;
+  text-align: right;
+}
+.main__v2 .theses__name {
+  font-size: 24px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .theses__name {
+    font-size: calc(10px + 14 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .theses__grid {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+@media (max-width: 60rem) {
+  .main__v2 .theses__grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 3.125rem;
+  }
+  .main__v2 .theses__grid .grid-tablet-top {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+}
+.main__v2 .theses__grid:not(:last-child) {
+  margin-bottom: 80px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .theses__grid:not(:last-child) {
+    margin-bottom: calc(50px + 30 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .theses__grid:not(:last-child):has(.theses__play) {
+  margin-bottom: 140px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .theses__grid:not(:last-child):has(.theses__play) {
+    margin-bottom: calc(70px + 70 * (100vw - 375px) / 1545);
+  }
+}
+@media (max-width: 60rem) {
+  .main__v2 .theses__grid:not(:last-child):has(.theses__play) {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 60rem) and (max-width: 1920px) {
+  .main__v2 .theses__grid:not(:last-child):has(.theses__play) {
+    margin-bottom: calc(50px + 30 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .theses__grid--plus .theses__picture {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+}
+@media (max-width: 60rem) {
+  .main__v2 .theses__grid--plus .theses__picture {
+    grid-row: auto;
+  }
+}
+.main__v2 .theses__content {
+  max-width: 100%;
+  padding: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@media (max-width: 60rem) {
+  .main__v2 .theses__content {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+.main__v2 .theses__content .title {
+  max-width: 100%;
+  padding: 0;
+}
+.main__v2 .theses__content--mission {
+  margin: 0 auto;
+  max-width: 34.375rem;
+  padding: 0;
+}
+.main__v2 .theses__content--mission .theses__title, .main__v2 .theses__content--mission .theses__text {
+  text-align: center;
+}
+.main__v2 .theses__image {
+  max-height: 100%;
+}
+@media (max-width: 60rem) {
+  .main__v2 .theses__picture {
+    margin-left: calc(var(--container-offset) * -1);
+    margin-right: calc(var(--container-offset) * -1);
+  }
+}
+.main__v2 .theses__picture--main {
+  padding-top: 140px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .theses__picture--main {
+    padding-top: calc(0px + 140 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .theses__picture--main {
+  padding-bottom: 140px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .theses__picture--main {
+    padding-bottom: calc(0px + 140 * (100vw - 375px) / 1545);
+  }
+}
+@media (max-width: 60rem) {
+  .main__v2 .theses__picture--main .theses__image {
+    min-height: 26.25rem;
+  }
+}
+.main__v2 .theses__picture--main:not(:last-child) {
+  margin-bottom: 3.75rem;
+}
+.main__v2 .theses__play {
+  padding-top: 100%;
+  margin-left: calc(var(--container-offset) * -1);
+  width: calc(100% + var(--container-offset));
+  height: calc(100% + var(--container-offset));
+}
+@media (max-width: 60rem) {
+  .main__v2 .theses__play {
+    width: calc(100% + var(--container-offset) * 2);
+    height: 100%;
+    margin-right: calc(var(--container-offset) * -1);
+  }
+}
+.main__v2 .theses__play .play__video {
+  top: 0;
+  position: absolute;
+}
+.main__v2 .theses__text {
+  font-size: 20px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .theses__text {
+    font-size: calc(12px + 8 * (100vw - 375px) / 1545);
+  }
+}
+@media (max-width: 38.75rem) {
+  .main__v2 .theses__text {
+    max-width: 90%;
+  }
+}
+.main__v2 .theses__blockquote {
+  font-weight: 200;
+}
+.main__v2 .theses__blockquote {
+  font-size: 64px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .theses__blockquote {
+    font-size: calc(32px + 32 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .theses__blockquote:not(:last-child) {
+  margin-bottom: 3.75rem;
+}
+.main__v2 .theses__button {
+  min-width: 10.9375rem;
+  text-decoration: underline;
+}
+
+.main__v2 .feedback {
+  padding-top: 80px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .feedback {
+    padding-top: calc(0px + 80 * (100vw - 375px) / 1545);
+  }
+}
+.main__v2 .feedback {
+  padding-bottom: 80px;
+}
+@media (max-width: 1920px) {
+  .main__v2 .feedback {
+    padding-bottom: calc(0px + 80 * (100vw - 375px) / 1545);
   }
 }
 
