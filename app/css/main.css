@@ -9215,6 +9215,7 @@ footer {
 }
 
 .main__v2 .hero-about {
+  position: relative;
   background: var(--main-color);
   height: 61.25rem;
 }
@@ -9246,6 +9247,18 @@ footer {
   -ms-flex-pack: center;
   justify-content: center;
 }
+.main__v2 .hero-about__play {
+  position: absolute;
+  inset: 0;
+}
+@media (any-hover: hover) {
+  .main__v2 .hero-about__play:hover::before {
+    opacity: 0.5;
+  }
+}
+.main__v2 .hero-about__logo {
+  z-index: 1;
+}
 .main__v2 .hero-about__logo:not(:last-child) {
   margin-bottom: 110px;
 }
@@ -9258,6 +9271,7 @@ footer {
   midth: 38.125rem;
 }
 .main__v2 .hero-about__subtitle {
+  z-index: 1;
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
