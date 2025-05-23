@@ -738,6 +738,38 @@
       </form>
     </div>
   </div>
+  <div class="graph-modal__container graph-modal__container--message" role="dialog" aria-modal="true" data-graph-target="message">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title title--new">Написать письмо директору</h2>
+      <form action="#" class="graph-modal__form form">
+        <div class="form__body">
+          <label class="form__label label label--user">
+            <input type="text" name="Имя" class="form__input input" required placeholder="Ваше имя *">
+          </label>
+          <label class="form__label label label--email">
+            <input type="email" name="Email" class="form__input input" required placeholder="Email *">
+          </label>
+          <label class="form__label label label--tel">
+            <input type="tel" name="Телефон" class="form__input input" placeholder="Телефон">
+          </label>
+          <span class="form__descriptions">* обязательное поле для заполнения</span>
+          <label class="form__label label label--text">
+            <textarea name="Сообщение" class="form__input input" placeholder="Сообщение"></textarea>
+          </label>
+        </div>
+        <p class="form__descriptions">
+          Нажимая на кнопку «отправить» вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a>
+        </p>
+        <button type="submit" class="form__button button button--big button--outline">
+          <span class="button__text">Отправить</span>
+          <svg class="button__icon" width="14" height="14">
+            <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
   <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="product-remove">
     <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
     <div class="graph-modal__content">
@@ -1052,19 +1084,35 @@
                   <li class="footer__item">
                      <a href="#" class="footer__link">Контакты</a>
                   </li>
+                  <li class="footer__item">
+                     <a href="javascript:void(0)" class="footer__link" data-graph-path="message">Написать письмо директору</a>
+                  </li>
                </ul>
             </div>
          </nav>
          <div class="footer__contact">
-            <h2 class="footer__title">Контакты</h2>
-            <ul class="footer__list list-reset">
-               <li class="footer__item">
-                  <a href="tel:+79100004539" class="footer__link footer__link--tel" target="_blank">+7 910 000-45-39</a>
-               </li>
-               <li class="footer__item">
-                  <a href="mailto:order@antekovac.ru" class="footer__link footer__link--mail" target="_blank">order@antekovac.ru</a>
-               </li>
-            </ul>
+            <div class="footer__enum">
+               <h2 class="footer__title">Контакты</h2>
+               <ul class="footer__list list-reset">
+                  <li class="footer__item">
+                     <a href="tel:+79100004539" class="footer__link footer__link--tel" target="_blank">+7 910 000-45-39</a>
+                  </li>
+                  <li class="footer__item">
+                     <a href="mailto:order@antekovac.ru" class="footer__link footer__link--mail" target="_blank">order@antekovac.ru</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer__enum">
+               <h2 class="footer__title">Маркетинг и PR</h2>
+               <ul class="footer__list list-reset">
+                  <li class="footer__item">
+                     <a href="tel:+79160670328" class="footer__link footer__link--tel" target="_blank">+7 916 067-03-28</a>
+                  </li>
+                  <li class="footer__item">
+                     <a href="mailto:gjzhelezoglo@antekovac.ru" class="footer__link footer__link--mail" target="_blank">gjzhelezoglo@antekovac.ru</a>
+                  </li>
+               </ul>
+            </div>
          </div>
       </div>
    </div>
