@@ -556,6 +556,12 @@ footer {
 .content button:focus a {
   color: var(--light-color);
 }
+.content--center {
+  text-align: center;
+}
+.content--center .button, .content--center .theses__text--short {
+  margin: 0 auto;
+}
 
 .main__new h2, .main__v2 h2 {
   font-size: 4rem;
@@ -2950,6 +2956,45 @@ footer {
   }
 }
 
+.blockquote__text {
+  margin: 0;
+  font-weight: 200;
+  font-size: 3rem;
+  line-height: 158%;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 48rem) {
+  .blockquote__text {
+    font-size: 2.25rem;
+    margin-bottom: 0.9375rem;
+  }
+}
+@media (max-width: 38.75rem) {
+  .blockquote__text {
+    font-size: 2rem;
+  }
+}
+.blockquote__author {
+  margin: 0;
+  display: block;
+  font-size: 1.25rem;
+  line-height: 167%;
+  text-align: right;
+  color: var(--main-color);
+  width: 100%;
+  font-style: italic;
+}
+.blockquote__author:not(:last-child) {
+  margin-bottom: 3.125rem;
+}
+@media (max-width: 38.75rem) {
+  .blockquote__author {
+    font-size: 1rem;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -4072,6 +4117,44 @@ footer {
 @media (max-width: 48rem) {
   .hero .swiper__title {
     max-width: 12.5rem;
+  }
+}
+.hero--section {
+  position: relative;
+}
+.hero--section {
+  height: 920px;
+}
+@media (max-width: 1920px) {
+  .hero--section {
+    height: calc(460px + 460 * (100vw - 375px) / 1545);
+  }
+}
+.hero--section .container {
+  height: 100%;
+}
+.hero--section .breadcrumbs {
+  position: absolute;
+  z-index: 5;
+}
+.hero--section .hero__picture {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero--section .hero__picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+@media (max-width: 48rem) {
+  .hero--great-russia .hero__picture img {
+    -o-object-position: 66% 50%;
+    object-position: 66% 50%;
   }
 }
 
@@ -8213,6 +8296,7 @@ footer {
   text-align: right;
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 3.125rem;
+  width: 100%;
 }
 @media (max-width: 38.75rem) {
   .theses__author {
@@ -8232,6 +8316,11 @@ footer {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     gap: 1.875rem;
+  }
+  .theses__grid .grid-tablet-top {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
   }
 }
 .theses__picture picture, .theses__picture img {
@@ -8330,6 +8419,9 @@ footer {
     text-align: center;
   }
 }
+.theses__content .theses__text--short {
+  max-width: 48rem;
+}
 .theses__caption {
   margin: 0;
   font-family: Didona, sans-serif;
@@ -8350,6 +8442,252 @@ footer {
 }
 .theses__text {
   opacity: 0.6;
+}
+.theses__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  gap: 3.75rem;
+}
+@media (max-width: 60rem) {
+  .theses__column {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+@media (max-width: 38.75rem) {
+  .theses__column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+.theses__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+.theses__row {
+  gap: 120px;
+}
+@media (max-width: 1920px) {
+  .theses__row {
+    gap: calc(60px + 60 * (100vw - 375px) / 1545);
+  }
+}
+.theses__row:not(:last-child) {
+  margin-bottom: 200px;
+}
+@media (max-width: 1920px) {
+  .theses__row:not(:last-child) {
+    margin-bottom: calc(80px + 120 * (100vw - 375px) / 1545);
+  }
+}
+@media (max-width: 38.75rem) {
+  .theses__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+.theses--great-russia .blockquote {
+  padding-top: 240px;
+}
+@media (max-width: 1920px) {
+  .theses--great-russia .blockquote {
+    padding-top: calc(40px + 200 * (100vw - 375px) / 1545);
+  }
+}
+.theses--great-russia .blockquote {
+  padding-bottom: 240px;
+}
+@media (max-width: 1920px) {
+  .theses--great-russia .blockquote {
+    padding-bottom: calc(80px + 160 * (100vw - 375px) / 1545);
+  }
+}
+.theses--great-russia .theses__picture--main {
+  padding-top: 170px;
+}
+@media (max-width: 1920px) {
+  .theses--great-russia .theses__picture--main {
+    padding-top: calc(80px + 90 * (100vw - 375px) / 1545);
+  }
+}
+.theses--great-russia .theses__picture--main {
+  padding-bottom: 170px;
+}
+@media (max-width: 1920px) {
+  .theses--great-russia .theses__picture--main {
+    padding-bottom: calc(80px + 90 * (100vw - 375px) / 1545);
+  }
+}
+.theses--great-russia .content {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@media (max-width: 60rem) {
+  .theses--great-russia .content .button {
+    margin: 0 auto;
+  }
+}
+.theses--great-russia .theses__title {
+  max-width: 100%;
+}
+.theses--great-russia .theses__text {
+  font-size: 1.25rem;
+}
+.theses--great-russia .theses__grid {
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 60rem) {
+  .theses--great-russia .theses__grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.theses--great-russia .theses__grid > *[class$="--clip"] {
+  width: calc(100% + var(--container-offset));
+}
+@media (max-width: 60rem) {
+  .theses--great-russia .theses__grid > *[class$="--clip"] {
+    width: 100%;
+  }
+}
+.theses--great-russia .theses__grid > *:nth-child(odd)[class$="--clip"] {
+  margin-left: calc(var(--container-offset) * -1);
+}
+@media (max-width: 60rem) {
+  .theses--great-russia .theses__grid > *:nth-child(odd)[class$="--clip"] {
+    margin-left: 0;
+  }
+}
+.theses--great-russia .theses__grid > *:nth-child(odd)[class$="--clip"] picture {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+@media (max-width: 60rem) {
+  .theses--great-russia .theses__grid > *:nth-child(odd)[class$="--clip"] picture {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+.theses--great-russia .theses__grid > *:nth-child(even)[class$="--clip"] {
+  margin-right: calc(var(--container-offset) * -1);
+}
+@media (max-width: 60rem) {
+  .theses--great-russia .theses__grid > *:nth-child(even)[class$="--clip"] {
+    margin-right: 0;
+  }
+}
+.theses--great-russia .theses__grid > *:nth-child(even)[class$="--clip"] picture {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+@media (max-width: 60rem) {
+  .theses--great-russia .theses__grid > *:nth-child(even)[class$="--clip"] picture {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+.theses--great-russia .theses__grid {
+  gap: 100px;
+}
+@media (max-width: 1920px) {
+  .theses--great-russia .theses__grid {
+    gap: calc(50px + 50 * (100vw - 375px) / 1545);
+  }
+}
+.theses--great-russia .theses__grid:not(:last-child) {
+  margin-bottom: 200px;
+}
+@media (max-width: 1920px) {
+  .theses--great-russia .theses__grid:not(:last-child) {
+    margin-bottom: calc(80px + 120 * (100vw - 375px) / 1545);
+  }
+}
+.theses--great-russia .theses__picture picture, .theses--great-russia .theses__picture img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.theses--great-russia .theses__picture picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.theses--great-russia .theses__picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@media (max-width: 60rem) {
+  .theses--great-russia .theses__picture .img {
+    max-height: 25rem;
+  }
+}
+.theses--great-russia .theses__picture--smal .img {
+  max-height: 17.5rem;
+}
+.theses--great-russia .theses__picture--medium .img {
+  max-height: 31.25rem;
+}
+.theses--great-russia .theses__picture--medium .img {
+  height: 500px;
+}
+@media (max-width: 1920px) {
+  .theses--great-russia .theses__picture--medium .img {
+    height: calc(0px + 500 * (100vw - 375px) / 1545);
+  }
+}
+@media (max-width: 60rem) {
+  .theses--great-russia .theses__picture--medium .img {
+    height: 500px;
+  }
+}
+@media (max-width: 60rem) and (max-width: 1920px) {
+  .theses--great-russia .theses__picture--medium .img {
+    height: calc(280px + 220 * (100vw - 375px) / 1545);
+  }
 }
 
 .why {
