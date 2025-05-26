@@ -8508,6 +8508,9 @@ footer {
     flex-direction: column;
   }
 }
+.theses--great-russia {
+  padding: 0;
+}
 .theses--great-russia .blockquote {
   padding-top: 240px;
 }
