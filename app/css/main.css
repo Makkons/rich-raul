@@ -8509,6 +8509,7 @@ footer {
   }
 }
 .theses--great-russia {
+  text-align: left;
   padding: 0;
 }
 .theses--great-russia .blockquote {
@@ -11785,8 +11786,8 @@ footer {
 .footer__nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 36% 1fr;
-  grid-template-columns: 36% 1fr;
+  -ms-grid-columns: 0.6fr 1fr;
+  grid-template-columns: 0.6fr 1fr;
   gap: 0.9375rem;
 }
 .footer__nav > * {
@@ -11794,16 +11795,9 @@ footer {
   -ms-grid-row-align: start;
   align-self: start;
 }
-@media (max-width: 60rem) {
-  .footer__nav {
-    -ms-grid-columns: 30% 1fr;
-    grid-template-columns: 30% 1fr;
-  }
-}
 @media (max-width: 48rem) {
   .footer__nav {
-    -ms-grid-columns: (auto)[2];
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
     gap: 1.875rem;
   }
 }
@@ -11815,18 +11809,9 @@ footer {
   margin-bottom: 0.9375rem;
 }
 .footer__list {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  max-height: 11.875rem;
-  -ms-flex-line-pack: start;
-  align-content: start;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13.75rem, 1fr));
 }
 .footer__list:not(:last-child) {
   margin-bottom: 1.25rem;
@@ -11836,20 +11821,8 @@ footer {
     -ms-flex-line-pack: stretch;
     align-content: stretch;
     gap: 0 1.875rem;
-  }
-}
-.footer__item {
-  min-width: 39%;
-}
-@media (max-width: 60rem) {
-  .footer__item {
-    min-width: 35%;
-  }
-}
-@media (max-width: 48rem) {
-  .footer__item {
-    min-width: 0;
-    max-width: 50%;
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
   }
 }
 .footer__link {
@@ -11876,6 +11849,10 @@ footer {
   .footer__contact {
     grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
   }
+}
+.footer__contact .footer__list {
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 .footer__contact .footer__item {
   max-width: 100%;
