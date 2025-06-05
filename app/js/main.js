@@ -2934,6 +2934,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_simplebar_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/simplebar.js */ "./src/js/components/simplebar.js");
 /* harmony import */ var _components_customSelect_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/customSelect.js */ "./src/js/components/customSelect.js");
 /* harmony import */ var _components_search_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/search.js */ "./src/js/components/search.js");
+/* harmony import */ var _components_citySearch_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/citySearch.js */ "./src/js/components/citySearch.js");
 
 
 
@@ -2951,6 +2952,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import './components/cancelOrder.js';
+
 
 
 
@@ -3482,6 +3484,39 @@ if (label.length) {
     }
   });
 }
+
+/***/ }),
+
+/***/ "./src/js/components/citySearch.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/citySearch.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.querySelector('#city-search');
+  const cityItems = Array.from(document.querySelectorAll('.city-item'));
+  if (!searchInput) return;
+  function filterCities(filter) {
+    const normalized = filter.trim().toLowerCase();
+    let shown = 0;
+    cityItems.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      if (text.includes(normalized) && shown < 5) {
+        item.style.display = '';
+        shown++;
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+  searchInput.addEventListener('input', e => {
+    filterCities(e.target.value);
+  });
+  filterCities('');
+});
 
 /***/ }),
 
