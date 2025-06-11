@@ -8753,6 +8753,54 @@ footer {
     height: calc(280px + 220 * (100vw - 375px) / 1545);
   }
 }
+.theses--lookbook {
+  padding: 0;
+}
+.theses--lookbook .theses__hero {
+  margin-bottom: 5rem;
+}
+.theses--lookbook .theses__picture[class$="--clip"] {
+  width: calc(100% + var(--container-offset) * 2);
+  margin-left: calc(var(--container-offset) * -1);
+}
+.theses--lookbook .hero__logo-image {
+  margin-bottom: 6.25rem;
+}
+.theses--lookbook .theses__image {
+  margin-bottom: 0;
+}
+.theses--lookbook .theses__grid {
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+.theses--lookbook .theses__grid:not(:last-child) {
+  margin-bottom: 5rem;
+}
+.theses--lookbook .theses__grid:has(+ .theses__picture) {
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 60rem) {
+  .theses--lookbook .theses__grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.theses--lookbook .theses__grid > *[class$="--clip"] {
+  width: calc(100% + var(--container-offset));
+}
+.theses--lookbook .theses__grid > *:nth-child(odd)[class$="--clip"] {
+  margin-left: calc(var(--container-offset) * -1);
+}
+.theses--lookbook .theses__grid > *:nth-child(even)[class$="--clip"] {
+  margin-right: calc(var(--container-offset) * -1);
+}
+.theses--lookbook .theses__content:not(:last-child) {
+  margin-bottom: 5rem;
+}
+.theses--lookbook .theses__picture--main:not(:last-child) {
+  margin-bottom: 5rem;
+}
 
 .why {
   padding-bottom: 6.875rem;
@@ -10501,8 +10549,8 @@ footer {
 .swiper-details__play picture {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 .swiper-details .swiper-button-close {
   display: none;
