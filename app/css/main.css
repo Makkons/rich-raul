@@ -837,6 +837,10 @@ footer {
     stroke: var(--light-color);
   }
 }
+.button--thin {
+  padding-right: 0;
+  padding-left: 0;
+}
 
 .burger {
   --burger-line-height: calc(1 / 16 * 1rem);
