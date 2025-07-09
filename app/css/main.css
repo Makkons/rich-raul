@@ -2562,6 +2562,11 @@ footer {
 .card__swiper:has(.swiper-pagination-lock) {
   pointer-events: none;
 }
+@media (min-width: 621px) and (any-hover: hover) {
+  .card__swiper:hover .swiper-slide:first-child:not(:last-child) {
+    display: none;
+  }
+}
 @media (max-width: 38.75rem) {
   .card__swiper {
     margin-bottom: 1.0625rem;
