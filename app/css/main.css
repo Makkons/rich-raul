@@ -2555,21 +2555,26 @@ footer {
     opacity: 1;
   }
 }
+@media (any-hover: hover) and (min-width: 621px) {
+  .card:hover .swiper-slide:first-child:not(:last-child) {
+    display: none;
+  }
+}
 .card__swiper {
   margin-bottom: 1.5625rem;
-  z-index: 5;
+}
+@media (min-width: 621px) {
+  .card__swiper {
+    z-index: 0;
+  }
 }
 .card__swiper:has(.swiper-pagination-lock) {
   pointer-events: none;
 }
-@media (min-width: 621px) and (any-hover: hover) {
-  .card__swiper:hover .swiper-slide:first-child:not(:last-child) {
-    display: none;
-  }
-}
 @media (max-width: 38.75rem) {
   .card__swiper {
     margin-bottom: 1.0625rem;
+    z-index: 5;
   }
 }
 .card__image {
