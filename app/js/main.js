@@ -2935,6 +2935,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_customSelect_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/customSelect.js */ "./src/js/components/customSelect.js");
 /* harmony import */ var _components_search_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/search.js */ "./src/js/components/search.js");
 /* harmony import */ var _components_citySearch_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/citySearch.js */ "./src/js/components/citySearch.js");
+/* harmony import */ var _components_tags_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/tags.js */ "./src/js/components/tags.js");
 
 
 
@@ -2952,6 +2953,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import './components/cancelOrder.js';
+
 
 
 
@@ -5124,6 +5126,59 @@ function loadVideo(slide) {
       slideVideo.play().catch(error => {
         console.error('Ошибка воспроизведения:', error);
       });
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./src/js/components/tags.js":
+/*!***********************************!*\
+  !*** ./src/js/components/tags.js ***!
+  \***********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
+
+const tagsContainer = document.querySelector('.tags');
+if (tagsContainer) {
+  const maxVisibleTags = Number(tagsContainer.dataset.items || 0);
+  const tagItems = tagsContainer.querySelectorAll('.tags__item');
+  const controlButtons = tagsContainer.querySelectorAll('.tags__button');
+  const MOBILE_BREAKPOINT = 768;
+  initTags();
+  window.addEventListener('resize', (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__.throttle)(initTags));
+  controlButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isMoreButton = btn.classList.contains('tags__button--more');
+      isMoreButton ? showAllTags() : hideOverflowTags();
+      updateActiveButtons();
+    });
+  });
+  function initTags() {
+    const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+    setDefaultActiveButton();
+    if (isMobile) {
+      showAllTags();
+      hideOverflowTags();
+    }
+  }
+  function showAllTags() {
+    tagItems.forEach(tag => tag.classList.add('tags__item--active'));
+  }
+  function hideOverflowTags() {
+    tagItems.forEach((tag, index) => {
+      tag.classList.toggle('tags__item--active', index < maxVisibleTags);
+    });
+  }
+  function updateActiveButtons() {
+    controlButtons.forEach(btn => btn.classList.toggle('tags__button--active'));
+  }
+  function setDefaultActiveButton() {
+    controlButtons.forEach((btn, index) => {
+      btn.classList.toggle('tags__button--active', index === 0);
     });
   }
 }
