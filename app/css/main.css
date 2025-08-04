@@ -6498,6 +6498,17 @@ footer {
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 0 100% 100% 100%;
+  cursor: pointer;
+}
+.map__address {
+  background: var(--main-color);
+  color: var(--light-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  z-index: 999999;
+  white-space: nowrap;
+  pointer-events: none;
 }
 .map img {
   -webkit-transform: rotate(135deg);
@@ -6506,7 +6517,10 @@ footer {
   width: 1.0625rem;
   height: 1.40625rem;
 }
-.map .circle-content {
+.map__circle {
+  cursor: pointer;
+}
+.map__circle-content {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -6526,7 +6540,7 @@ footer {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.map .circle-text {
+.map__circle-text {
   margin-top: 0.5rem;
   color: var(--light-color);
 }

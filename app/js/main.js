@@ -3947,21 +3947,39 @@ function functionMap() {
       zIndex: 1800
     }));
     const marker = feature => {
+      const coords = feature.geometry.coordinates;
       const contentPin = createMarkerElement();
-      contentPin.setAttribute('data-map', feature.geometry.coordinates.join(', '));
+      contentPin.addEventListener('click', async e => {
+        e.stopPropagation();
+        const address = await fetchAddressFromCoords(coords);
+        if (address) showAddressPopup(contentPin, address);
+      });
       return new ymaps3.YMapMarker({
-        coordinates: feature.geometry.coordinates,
+        coordinates: coords,
         source: 'my-source'
       }, contentPin);
     };
-    const cluster = (coordinates, features) => new ymaps3.YMapMarker({
-      coordinates,
-      source: 'my-source'
-    }, circle(features.length));
+    const cluster = (coordinates, features) => {
+      const domElement = circle(features.length);
+      domElement.addEventListener('click', () => {
+        const coords = features.map(feature => feature.geometry.coordinates);
+        const bounds = getBoundsFromPoints(coords);
+        const paddedBounds = expandBounds(bounds, 0.1);
+        map.setLocation({
+          bounds: paddedBounds,
+          duration: 1000,
+          checkZoomRange: true
+        });
+      });
+      return new ymaps3.YMapMarker({
+        coordinates,
+        source: 'my-source'
+      }, domElement);
+    };
     function circle(count) {
       const circle = document.createElement('div');
-      circle.classList.add('circle');
-      circle.innerHTML = `<div class="circle-content"><span class="circle-text">${count}</span></div>`;
+      circle.classList.add('map__circle');
+      circle.innerHTML = `<div class="map__circle-content"><span class="map__circle-text">${count}</span></div>`;
       return circle;
     }
     const points = coordinates.map((lnglat, i) => ({
@@ -3996,21 +4014,12 @@ function functionMap() {
           });
         } else {
           const bounds = getBoundsFromPoints(coords);
-          const centerLat = (bounds[0][0] + bounds[1][0]) / 2;
-          const centerLng = (bounds[0][1] + bounds[1][1]) / 2;
-          const center = [centerLat, centerLng];
-          const zoom = calculateZoom(bounds);
+          const paddedBounds = expandBounds(bounds, 0.1);
           map.setLocation({
-            bounds,
-            duration: 1000
+            paddedBounds,
+            duration: 1000,
+            checkZoomRange: true
           });
-          setTimeout(() => {
-            map.setLocation({
-              center,
-              zoom: zoom,
-              duration: 1000
-            });
-          }, 500);
         }
         activateMap(true);
       });
@@ -4030,14 +4039,41 @@ function functionMap() {
         }
       });
     }
-    function addMarkersToMap(coordinates) {
-      coordinates.forEach(coord => {
-        const marker = new ymaps3.YMapMarker({
-          coordinates: coord,
-          source: 'my-source'
-        }, createMarkerElement());
-        map.addChild(marker);
+    function addMarkersToMap(coordsArray) {
+      const features = coordsArray.map((coord, i) => ({
+        type: 'Feature',
+        id: `dynamic-${Date.now()}-${i}`,
+        // уникальный id
+        geometry: {
+          coordinates: coord
+        },
+        properties: {}
+      }));
+
+      // Создаём новый кластеризатор
+      const dynamicClusterer = new YMapClusterer({
+        method: clusterByGrid({
+          gridSize: 100
+        }),
+        features: features,
+        marker,
+        cluster: (coords, features) => {
+          const clusterMarker = new ymaps3.YMapMarker({
+            coordinates: coords,
+            source: 'my-source'
+          }, circle(features.length));
+          clusterMarker.content.addEventListener('click', () => {
+            const clusterCoords = features.map(f => f.geometry.coordinates);
+            const bounds = getBoundsFromPoints(clusterCoords);
+            map.setLocation({
+              bounds: bounds,
+              duration: 1000
+            });
+          });
+          return clusterMarker;
+        }
       });
+      map.addChild(dynamicClusterer);
     }
     function createMarkerElement() {
       const contentPin = document.createElement('div');
@@ -4072,6 +4108,41 @@ function functionMap() {
         disableMapInteraction();
       }, 2500);
     }
+    function showAddressPopup(markerEl, addressText) {
+      document.querySelectorAll('.map__address').forEach(el => el.remove());
+      document.querySelectorAll('.ymaps3x0--marker').forEach(marker => {
+        marker.style.zIndex = '';
+      });
+      const popup = document.createElement('div');
+      popup.classList.add('map__address');
+      popup.innerText = addressText;
+      popup.style.position = 'absolute';
+      popup.style.left = markerEl.offsetLeft + 'px';
+      popup.style.top = markerEl.offsetTop - 80 + 'px';
+      markerEl.parentElement.appendChild(popup);
+      let ymMarker = markerEl.closest('.ymaps3x0--marker');
+      if (ymMarker) {
+        ymMarker.style.zIndex = '1000';
+      }
+      setTimeout(() => {
+        popup.remove();
+        if (ymMarker) {
+          ymMarker.style.zIndex = '';
+        }
+      }, 5000);
+    }
+    function expandBounds(bounds) {
+      let paddingPercent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.1;
+      let minPad = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.005;
+      const [min, max] = bounds;
+      const latSpan = max[0] - min[0];
+      const lngSpan = max[1] - min[1];
+      const expandLat = Math.max(latSpan * paddingPercent, minPad);
+      const expandLng = Math.max(lngSpan * paddingPercent, minPad);
+      const newMin = [min[0] - expandLat, min[1] - expandLng];
+      const newMax = [max[0] + expandLat, max[1] + expandLng];
+      return [newMin, newMax];
+    }
     mapContainer.addEventListener("mousemove", resetInactivityTimer);
     mapContainer.addEventListener("keydown", resetInactivityTimer);
     mapContainer.addEventListener("touchstart", resetInactivityTimer);
@@ -4088,6 +4159,20 @@ function functionMap() {
         isScrolling = false;
       }
     });
+  }
+  async function fetchAddressFromCoords(coords) {
+    const [lat, lon] = coords;
+    const apiKey = '28d65e9d-ebf0-48ce-bddf-f05211c9cbff';
+    const url = `https://geocode-maps.yandex.ru/1.x/?format=json&apikey=${apiKey}&geocode=${lat},${lon}`;
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const address = data.response.GeoObjectCollection.featureMember[0]?.GeoObject?.metaDataProperty?.GeocoderMetaData?.text;
+      return address || null;
+    } catch (e) {
+      console.error('Ошибка при получении адреса:', e);
+      return null;
+    }
   }
 }
 
