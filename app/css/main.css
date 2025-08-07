@@ -1795,6 +1795,14 @@ footer {
 .form__address .label {
   margin-bottom: 0;
 }
+.form__error {
+  position: absolute;
+  color: var(--accent-color);
+  font-size: 0.875rem;
+  left: 0;
+  top: calc(100% + 0.3125rem);
+}
+
 .swiper--main .swiper-slide {
   position: relative;
   display: -webkit-box;

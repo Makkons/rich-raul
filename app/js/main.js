@@ -2936,6 +2936,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_search_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/search.js */ "./src/js/components/search.js");
 /* harmony import */ var _components_citySearch_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/citySearch.js */ "./src/js/components/citySearch.js");
 /* harmony import */ var _components_tags_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/tags.js */ "./src/js/components/tags.js");
+/* harmony import */ var _components_inputValidator_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/inputValidator.js */ "./src/js/components/inputValidator.js");
 
 
 
@@ -2953,6 +2954,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import './components/cancelOrder.js';
+
 
 
 
@@ -3882,6 +3884,63 @@ function toggleActiveClass(item) {
 
 /***/ }),
 
+/***/ "./src/js/components/inputValidator.js":
+/*!*********************************************!*\
+  !*** ./src/js/components/inputValidator.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+document.addEventListener("DOMContentLoaded", () => {
+  const inputs = document.querySelectorAll('input[type="email"], input[type="tel"]');
+  inputs.forEach(input => {
+    input.addEventListener('change', () => validateInput(input));
+  });
+  function validateInput(input) {
+    const label = input.closest('label');
+    if (!label) return;
+    const value = input.value.trim();
+    const type = input.type;
+    let isValid = true;
+    let errorText = '';
+    if (value === '') {
+      isValid = false;
+      errorText = type === 'email' ? 'Введите корректный email' : 'Введите корректный номер';
+    } else if (type === 'email') {
+      if (!value.includes('@')) {
+        isValid = false;
+        errorText = 'Введите корректный email';
+      }
+    } else if (type === 'tel') {
+      const digits = value.replace(/\D/g, '');
+      if (digits.length !== 11) {
+        isValid = false;
+        errorText = 'Введите корректный номер';
+      }
+    }
+    const existingError = label.querySelector('.form__error');
+    if (!isValid) {
+      label.classList.add('label--error');
+      if (!existingError) {
+        const errorEl = document.createElement('span');
+        errorEl.className = 'form__error';
+        errorEl.textContent = errorText;
+        label.appendChild(errorEl);
+      } else {
+        existingError.textContent = errorText;
+      }
+    } else {
+      label.classList.remove('label--error');
+      if (existingError) {
+        existingError.remove();
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./src/js/components/map.js":
 /*!**********************************!*\
   !*** ./src/js/components/map.js ***!
@@ -4043,14 +4102,11 @@ function functionMap() {
       const features = coordsArray.map((coord, i) => ({
         type: 'Feature',
         id: `dynamic-${Date.now()}-${i}`,
-        // уникальный id
         geometry: {
           coordinates: coord
         },
         properties: {}
       }));
-
-      // Создаём новый кластеризатор
       const dynamicClusterer = new YMapClusterer({
         method: clusterByGrid({
           gridSize: 100
