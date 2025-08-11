@@ -3,6 +3,10 @@
 /* stylelint-disable */
 :root {
   --font-family: "Roboto", sans-serif;
+  --font-title: "Felidae", serif;
+  --font-elements: "Bebas Neue Cyrillic", sans-serif;
+  --font-header: "Manrope", sans-serif;
+  --font-footer: "Manrope", sans-serif;
   --content-width: calc(1265 / 16 * 1rem);
   --container-offset: calc(60 / 16 * 1rem);
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
@@ -62,29 +66,64 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Didona";
-  src: url("../fonts/Didona.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Cormorant Garamond";
-  src: url("../fonts/CormorantGaramond-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Cormorant Infant";
-  src: url("../fonts/CormorantInfant-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
   font-family: "Bebas Neue Cyrillic";
   src: url("../fonts/Bebas-Neue.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Felidae";
+  src: url("../fonts/Felidae.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -98,7 +137,7 @@
 
 .page {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
+  font-family: var(--font-family);
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -167,7 +206,7 @@ a {
   margin-top: calc(var(--header-height));
 }
 .main__new .title, .main__v2 .title {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-title);
   text-transform: uppercase;
 }
 
@@ -300,7 +339,7 @@ footer {
 .content h2,
 .content h3,
 .content h4 {
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-size: 3.75rem;
   line-height: 113%;
   font-weight: 400;
@@ -488,7 +527,7 @@ footer {
   display: inline-block;
   width: auto;
   height: auto;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-size: 1.375rem;
   top: 0;
   color: var(--main-color);
@@ -497,7 +536,7 @@ footer {
 }
 .content button {
   position: relative;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -639,7 +678,7 @@ footer {
 }
 
 .button {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -759,7 +798,7 @@ footer {
 }
 .button--blur {
   min-width: 19.375rem;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-size: 2.375rem;
   line-height: 126%;
   color: var(--main-color);
@@ -863,7 +902,7 @@ footer {
 .burger__text {
   font-size: 1.125rem;
   padding-left: 2.5rem;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
 }
 @media (max-width: 38.75rem) {
   .burger__text {
@@ -939,7 +978,7 @@ footer {
   }
 }
 .control .title {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-title);
   text-transform: uppercase;
   margin-bottom: 0;
   max-width: calc(100% - 20.625rem * 2);
@@ -957,7 +996,7 @@ footer {
 }
 
 .title {
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-size: 3.75rem;
   line-height: 113%;
   font-weight: 400;
@@ -982,7 +1021,7 @@ footer {
   color: inherit;
 }
 .title--new {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-title);
   text-transform: uppercase;
 }
 .title--h2 {
@@ -1345,7 +1384,7 @@ footer {
 }
 
 .select {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-size: 1.125rem;
 }
 .select::before {
@@ -1757,7 +1796,7 @@ footer {
 }
 .form__caption {
   margin: 0;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 111%;
@@ -1798,9 +1837,15 @@ footer {
 .form__error {
   position: absolute;
   color: var(--accent-color);
-  font-size: 0.875rem;
   left: 0;
+  font-size: 0.875rem;
   top: calc(100% + 0.3125rem);
+}
+@media (max-width: 60rem) {
+  .form__error {
+    font-size: 0.8125rem;
+    top: calc(100% + 0.125rem);
+  }
 }
 
 .swiper--main .swiper-slide {
@@ -1883,7 +1928,7 @@ footer {
 }
 .swiper--main .swiper__title {
   margin: 0;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-size: 3.125rem;
   line-height: 120%;
   text-align: center;
@@ -2351,7 +2396,7 @@ footer {
   position: relative;
 }
 .pages__item:not(.pages__item--arrow) .pages__link {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   position: relative;
   top: 0.3125rem;
   width: 1.875rem;
@@ -2502,7 +2547,7 @@ footer {
 }
 
 .price {
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-family);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2582,7 +2627,7 @@ footer {
   margin: 0 auto;
 }
 .card__title {
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-family);
   margin: 0;
   font-weight: 400;
   font-size: 1.25rem;
@@ -3087,6 +3132,7 @@ footer {
   }
 }
 .header {
+  font-family: var(--font-header);
   position: fixed;
   top: 0;
   width: 100%;
@@ -3387,7 +3433,7 @@ footer {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-header);
   font-size: 1.125rem;
   color: var(--main-color);
   -ms-flex-item-align: end;
@@ -3483,8 +3529,7 @@ footer {
 .header__text {
   font-size: 1.125rem;
   padding-left: 0.625rem;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
-  margin-top: 0.3125rem;
+  font-family: var(--font-header);
 }
 @media (max-width: 38.75rem) {
   .header__text {
@@ -4113,7 +4158,7 @@ footer {
   vertical-align: middle;
 }
 .marquee__time {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-size: 1rem;
   line-height: 125%;
 }
@@ -4359,7 +4404,7 @@ footer {
 }
 
 .article-news {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   position: relative;
   height: 100%;
 }
@@ -4425,7 +4470,7 @@ footer {
 }
 .article-news__title {
   margin: 0;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   line-height: 127%;
   font-weight: 400;
   padding: 0;
@@ -4566,7 +4611,7 @@ footer {
   }
 }
 .news-details__time {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-size: 1.5rem;
   line-height: 117%;
   text-align: center;
@@ -5250,7 +5295,7 @@ footer {
   }
 }
 .steps__caption {
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   margin: 0;
   font-weight: 400;
   font-size: 1.875rem;
@@ -5271,7 +5316,7 @@ footer {
 }
 
 .main__new .steps__caption {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-title);
   text-transform: uppercase;
 }
 
@@ -5591,7 +5636,7 @@ footer {
 }
 
 .catalog .title {
-  font-family: "Cormorant Garamond", sans-serif;
+  font-family: var(--font-title);
   text-transform: uppercase;
 }
 .catalog__swiper.swiper--main {
@@ -5866,7 +5911,7 @@ footer {
   }
 }
 .catalog__content h1, .catalog__content h2, .catalog__content h3, .catalog__content h4 {
-  font-family: "Cormorant Garamond", sans-serif;
+  font-family: var(--font-title);
 }
 
 .control {
@@ -5909,7 +5954,7 @@ footer {
   transition: opacity 0.3s ease 0s;
   font-size: 1.125rem;
   text-transform: uppercase;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   color: inherit;
 }
@@ -6080,7 +6125,7 @@ footer {
   }
 }
 .form-control__legend {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 111%;
@@ -7004,7 +7049,7 @@ footer {
 }
 .product-modal__heading {
   margin: 0;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-weight: 400;
   font-size: 1.875rem;
   line-height: 127%;
@@ -7029,7 +7074,7 @@ footer {
 }
 .product-modal__caption {
   margin: 0;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 111%;
@@ -7515,7 +7560,7 @@ footer {
   margin-bottom: 0.625rem;
 }
 .cart__caption {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 111%;
@@ -7737,7 +7782,7 @@ footer {
 }
 .item-cart__heading {
   margin: 0;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 1.5rem;
   color: var(--main-color);
@@ -7758,7 +7803,7 @@ footer {
 }
 .item-cart__title {
   margin: 0;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-family);
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 127%;
@@ -7817,7 +7862,7 @@ footer {
   }
 }
 .item-cart__caption {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 111%;
@@ -8099,7 +8144,7 @@ footer {
 }
 .order-form__title {
   margin: 0;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 111%;
@@ -8225,14 +8270,14 @@ footer {
   font-size: 1.25rem;
 }
 .order-form__value .value__price {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-size: 1.125rem;
   line-height: 2.5rem;
   text-align: right;
   width: 100%;
 }
 .order-form__value .value__price span {
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-family);
   font-size: 2.5rem;
   margin-left: 1.25rem;
 }
@@ -8554,6 +8599,9 @@ footer {
     text-align: center;
   }
 }
+.theses__content.content--center .theses__title {
+  text-align: center;
+}
 .theses__content .theses__list {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
@@ -8597,7 +8645,7 @@ footer {
 }
 .theses__caption {
   margin: 0;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-weight: 400;
   font-size: 30px;
   line-height: 127%;
@@ -8914,6 +8962,77 @@ footer {
 .theses--lookbook .theses__picture--main:not(:last-child) {
   margin-bottom: 5rem;
 }
+.theses--resort {
+  padding: 0;
+}
+.theses--resort .title {
+  text-transform: uppercase;
+}
+.theses--resort .theses__hero {
+  margin-bottom: 5rem;
+}
+.theses--resort .theses__image {
+  margin-bottom: 0;
+}
+.theses--resort .theses__grid {
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+.theses--resort .theses__grid:not(:last-child) {
+  margin-bottom: 5rem;
+}
+.theses--resort .theses__grid:has(+ .theses__picture) {
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 60rem) {
+  .theses--resort .theses__grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.theses--resort .theses__grid--three {
+  -ms-grid-columns: 3fr 3fr 2fr;
+  grid-template-columns: 3fr 3fr 2fr;
+}
+@media (max-width: 48rem) {
+  .theses--resort .theses__grid--three {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.theses--resort .theses__grid .theses__column {
+  gap: 0.75rem;
+}
+@media (max-width: 60rem) {
+  .theses--resort .theses__grid .theses__column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+@media (max-width: 48rem) {
+  .theses--resort .theses__grid .theses__column {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+.theses--resort .theses__content .theses__text--short {
+  max-width: 51.875rem;
+}
+.theses--resort .theses__content:not(:last-child) {
+  margin-bottom: 5rem;
+}
+.theses--resort .theses__content:nth-child(3) {
+  padding-left: 0;
+  max-width: 100%;
+}
+.theses--resort .theses__picture--main:not(:last-child) {
+  margin-bottom: 5rem;
+}
 
 .why {
   padding-bottom: 6.875rem;
@@ -9039,7 +9158,7 @@ footer {
 }
 .why__subtitle {
   margin: 0;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-weight: 400;
   font-size: 1.375rem;
   line-height: 127%;
@@ -9299,7 +9418,7 @@ footer {
 }
 .brand__content .brand__title.title span {
   font-size: inherit;
-  font-family: "Cormorant Infant", serif;
+  font-family: var(--font-title);
 }
 .brand__content .brand__title.title:not(:first-child) {
   margin-bottom: 1.25rem;
@@ -9353,7 +9472,7 @@ footer {
   padding: 0 var(--container-offset);
 }
 .hero-partners ~ .collections .swiper__title {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-title);
   font-size: 2rem;
 }
 
@@ -9458,7 +9577,7 @@ footer {
 }
 .conditions__title {
   margin: 0;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-weight: 400;
   font-size: 2.375rem;
   line-height: 126%;
@@ -9600,7 +9719,7 @@ footer {
   margin-bottom: 1.25rem;
 }
 .main__new .conditions__subtitle {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-title);
   font-size: 1.375rem;
   color: rgba(0, 0, 0, 0.6);
 }
@@ -9926,7 +10045,7 @@ footer {
 }
 .main__v2 .theses__author .title {
   text-align: left;
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-family);
   font-weight: 100;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
@@ -10159,7 +10278,7 @@ footer {
 }
 .confirmation__title {
   margin: 0;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-weight: 400;
   font-size: 50px;
   line-height: 120%;
@@ -10376,7 +10495,7 @@ footer {
   }
 }
 .product__brand {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-size: 1.125rem;
   line-height: 111%;
   display: -webkit-box;
@@ -10625,7 +10744,7 @@ footer {
     top: 13.75rem;
     left: var(--container-offset);
     z-index: 1;
-    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-family: var(--font-elements);
     font-size: 1.375rem;
   }
   .swiper-details.swiper--zoom .swiper-button-close svg {
@@ -10707,7 +10826,7 @@ footer {
 }
 .parameter-product__caption {
   margin: 0;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-size: 1.125rem;
   line-height: 111%;
   margin-bottom: 0.9375rem;
@@ -10797,7 +10916,7 @@ footer {
   }
 }
 .parameter-product__list--size {
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   margin-bottom: 0.625rem;
   margin-right: -0.625rem;
 }
@@ -10857,7 +10976,7 @@ footer {
   justify-content: center;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-size: 0.875rem;
   line-height: 143%;
   background: var(--second-color);
@@ -10913,7 +11032,7 @@ footer {
   margin: 0;
   font-size: 0.875rem;
   line-height: 143%;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
 }
 
 .description-product {
@@ -10932,7 +11051,7 @@ footer {
 }
 .description-product__caption {
   margin: 0;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-size: 1.125rem;
   line-height: 111%;
   margin-bottom: 0.9375rem;
@@ -11013,7 +11132,7 @@ footer {
   }
 }
 .interest__title, .interest .news__title {
-  font-family: "Cormorant Garamond", sans-serif;
+  font-family: var(--font-title);
   text-transform: uppercase;
 }
 .interest .swiper-button-next:after,
@@ -11166,7 +11285,7 @@ footer {
   }
 }
 .account__tab {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 1.5rem;
   display: inline-block;
@@ -11449,7 +11568,7 @@ footer {
 }
 .order__title {
   margin: 0;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-weight: 400;
   font-size: 2.375rem;
   line-height: 126%;
@@ -11463,7 +11582,7 @@ footer {
   }
 }
 .order__time {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 133%;
@@ -11529,7 +11648,7 @@ footer {
   }
 }
 .order__link {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 143%;
@@ -11588,7 +11707,7 @@ footer {
   height: 0.75rem;
 }
 .order__status {
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-family);
   pointer-events: none;
   text-transform: none;
 }
@@ -11626,7 +11745,7 @@ footer {
 }
 .order-modal__title {
   margin: 0;
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   font-weight: 400;
   font-size: 2.375rem;
   line-height: 126%;
@@ -11652,7 +11771,7 @@ footer {
   }
 }
 .order-modal__status.button {
-  font-family: Roboto, sans-serif;
+  font-family: var(--font-family);
   pointer-events: none;
   text-transform: none;
 }
@@ -11667,7 +11786,7 @@ footer {
   }
 }
 .order-modal__time {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-family: var(--font-elements);
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 133%;
@@ -11937,7 +12056,7 @@ footer {
   }
 }
 .services__caption {
-  font-family: Didona, sans-serif;
+  font-family: var(--font-title);
   margin: 0;
   font-weight: 400;
   font-size: 1.875rem;
@@ -11958,11 +12077,12 @@ footer {
 }
 
 .main__new .services__caption {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-title);
   text-transform: uppercase;
 }
 
 .footer {
+  font-family: var(--font-footer);
   background: var(--bg-color);
 }
 .footer__top {
@@ -12084,8 +12204,8 @@ footer {
 .footer__bottom .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 14% 15% 1fr 32% 12.0625rem;
-  grid-template-columns: 14% 15% 1fr 32% 12.0625rem;
+  -ms-grid-columns: 14% 15% 1fr 32% 13.125rem;
+  grid-template-columns: 14% 15% 1fr 32% 13.125rem;
   gap: 0.9375rem;
 }
 .footer__bottom .container > * {
