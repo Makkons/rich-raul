@@ -3831,19 +3831,16 @@ function setMainTop() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 const menuItems = document?.querySelectorAll('.nav__item--more');
-let isTouchDevice = false;
-window.addEventListener('touchstart', () => {
-  isTouchDevice = true;
-}, {
-  once: true
-});
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 menuItems.forEach(item => {
   item.addEventListener('click', function (event) {
     event.stopPropagation();
     if (isTouchDevice) {
       const isActive = item.classList.contains('nav__item--active');
+      const isDirectLink = !!item.querySelector(':scope > a');
       const isButton = event.target.closest('.nav__button');
-      if (isActive && item.querySelector('& > a')?.tagName === 'A' || isButton) {
+      const isLink = event.target.closest('.nav__item:not(.nav__item--more) > a');
+      if (isActive && isDirectLink || isButton || isLink) {
         return;
       }
       event.preventDefault();
