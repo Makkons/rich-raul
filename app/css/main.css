@@ -2599,7 +2599,9 @@ footer {
 }
 @media (any-hover: hover) and (min-width: 621px) {
   .card:hover .swiper-slide:first-child:not(:last-child) {
-    display: none;
+    -webkit-box-flex: 0;
+    -ms-flex: 0;
+    flex: 0;
   }
 }
 .card__swiper {
@@ -2649,7 +2651,7 @@ footer {
 .card__remove, .card__heart {
   position: absolute;
   top: 0.625rem;
-  right: 0.625rem;
+  left: 0.625rem;
   stroke-width: 0.125rem;
   stroke: var(--main-color);
   z-index: 10;
@@ -2666,8 +2668,8 @@ footer {
 }
 .card__heart {
   top: 1.25rem;
-  left: 1.25rem;
-  right: auto;
+  left: auto;
+  right: 1.25rem;
   opacity: 0.2;
 }
 .card__heart--active {
@@ -2693,7 +2695,7 @@ footer {
 .status {
   position: absolute;
   top: 0.9375rem;
-  right: 0;
+  left: 0;
   font-weight: 500;
   font-size: 1rem;
   line-height: 187%;
