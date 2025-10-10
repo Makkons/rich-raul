@@ -5054,9 +5054,13 @@ const productDetailsSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](
     init: function () {
       const container = this.el;
       if (window.innerWidth >= 961) {
+        let over = false;
         container.addEventListener('mouseover', function (event) {
-          const images = this.querySelectorAll('.swiper-slide img');
-          preloadOriginalImg(images);
+          if (!over) {
+            const images = this.querySelectorAll('.swiper-slide img');
+            preloadOriginalImg(images);
+            over = true;
+          }
         });
       }
     },
