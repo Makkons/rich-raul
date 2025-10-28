@@ -12177,8 +12177,8 @@ footer {
 .footer__col {
   overflow: hidden;
 }
-.footer__col:last-child .footer__title {
-  margin-bottom: 0;
+.footer__col:last-child {
+  margin-bottom: -0.625rem;
 }
 .footer__title {
   margin: 0;
