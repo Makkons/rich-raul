@@ -2937,6 +2937,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_citySearch_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/citySearch.js */ "./src/js/components/citySearch.js");
 /* harmony import */ var _components_tags_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/tags.js */ "./src/js/components/tags.js");
 /* harmony import */ var _components_inputValidator_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/inputValidator.js */ "./src/js/components/inputValidator.js");
+/* harmony import */ var _components_footer_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/footer.js */ "./src/js/components/footer.js");
 
 
 
@@ -2954,6 +2955,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import './components/cancelOrder.js';
+
 
 
 
@@ -3687,6 +3689,59 @@ __webpack_require__.r(__webpack_exports__);
 _fancyapps_ui__WEBPACK_IMPORTED_MODULE_0__.Fancybox.bind("[data-fancybox]", {
   Images: {
     zoom: false
+  }
+});
+
+/***/ }),
+
+/***/ "./src/js/components/footer.js":
+/*!*************************************!*\
+  !*** ./src/js/components/footer.js ***!
+  \*************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.footer__nav');
+  const contact = document.querySelector('.footer__contact');
+  const footerTop = document.querySelector('.footer__top .footer__container');
+  const footerBottom = document.querySelector('.footer__bottom .footer__container');
+  if (!nav || !contact) return;
+  const mobileWidthMediaQuery = window.matchMedia('(max-width: 768px)');
+  if (mobileWidthMediaQuery.matches) {
+    moveElements(mobileWidthMediaQuery.matches);
+  }
+  mobileWidthMediaQuery.addEventListener('change', event => {
+    moveElements(event.matches);
+  });
+  function moveElements(isMobile) {
+    if (isMobile) {
+      footerBottom.appendChild(nav);
+      footerBottom.appendChild(contact);
+      enableAccordion(nav);
+    } else {
+      footerTop.appendChild(nav);
+      footerTop.appendChild(contact);
+      disableAccordion(nav);
+    }
+  }
+  function enableAccordion(nav) {
+    const titles = nav.querySelectorAll('.footer__title');
+    titles.forEach(title => {
+      title.addEventListener('click', toggleAccordion);
+    });
+  }
+  function disableAccordion(nav) {
+    const titles = nav.querySelectorAll('.footer__title');
+    titles.forEach(title => {
+      title.removeEventListener('click', toggleAccordion);
+      title.classList.remove('active');
+    });
+  }
+  function toggleAccordion(event) {
+    const title = event.currentTarget;
+    title.classList.toggle('active');
   }
 });
 
