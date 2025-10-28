@@ -12556,55 +12556,112 @@ footer {
   }
 }
 
-.chat__item:hover {
+.chat.active .chat__button--main .chat__item {
   background: var(--main-color);
 }
 
-.chat__item:hover svg {
+@media (any-hover: hover) {
+  .chat__item:hover {
+    background: var(--main-color);
+  }
+}
+
+.chat.active .chat__button--main svg {
   fill: var(--light-color);
 }
 
-.chat:hover .chat__button:nth-child(1) {
+@media (any-hover: hover) {
+  .chat__item:hover svg {
+    fill: var(--light-color);
+  }
+}
+
+.chat.active .chat__button:nth-child(1) {
   -webkit-transform: translateY(calc((100% + 1.875rem) * -3));
   -ms-transform: translateY(calc((100% + 1.875rem) * -3));
   transform: translateY(calc((100% + 1.875rem) * -3));
 }
 @media (max-width: 38.75rem) {
+  .chat.active .chat__button:nth-child(1) {
+    -webkit-transform: translateY(calc((100% + 0.75rem) * -3));
+    -ms-transform: translateY(calc((100% + 0.75rem) * -3));
+    transform: translateY(calc((100% + 0.75rem) * -3));
+  }
+}
+.chat.active .chat__button:nth-child(2) {
+  -webkit-transform: translateY(calc((100% + 1.875rem) * -2));
+  -ms-transform: translateY(calc((100% + 1.875rem) * -2));
+  transform: translateY(calc((100% + 1.875rem) * -2));
+}
+@media (max-width: 38.75rem) {
+  .chat.active .chat__button:nth-child(2) {
+    -webkit-transform: translateY(calc((100% + 0.75rem) * -2));
+    -ms-transform: translateY(calc((100% + 0.75rem) * -2));
+    transform: translateY(calc((100% + 0.75rem) * -2));
+  }
+}
+.chat.active .chat__button:nth-child(3) {
+  -webkit-transform: translateY(calc(-100% - 1.875rem));
+  -ms-transform: translateY(calc(-100% - 1.875rem));
+  transform: translateY(calc(-100% - 1.875rem));
+}
+@media (max-width: 38.75rem) {
+  .chat.active .chat__button:nth-child(3) {
+    -webkit-transform: translateY(calc(-100% - 0.75rem));
+    -ms-transform: translateY(calc(-100% - 0.75rem));
+    transform: translateY(calc(-100% - 0.75rem));
+  }
+}
+.chat.active::before {
+  height: 100vh;
+}
+
+@media (any-hover: hover) {
+  .chat:hover .chat__button:nth-child(1) {
+    -webkit-transform: translateY(calc((100% + 1.875rem) * -3));
+    -ms-transform: translateY(calc((100% + 1.875rem) * -3));
+    transform: translateY(calc((100% + 1.875rem) * -3));
+  }
+}
+@media (any-hover: hover) and (max-width: 38.75rem) {
   .chat:hover .chat__button:nth-child(1) {
     -webkit-transform: translateY(calc((100% + 0.75rem) * -3));
     -ms-transform: translateY(calc((100% + 0.75rem) * -3));
     transform: translateY(calc((100% + 0.75rem) * -3));
   }
 }
-
-.chat:hover .chat__button:nth-child(2) {
-  -webkit-transform: translateY(calc((100% + 1.875rem) * -2));
-  -ms-transform: translateY(calc((100% + 1.875rem) * -2));
-  transform: translateY(calc((100% + 1.875rem) * -2));
+@media (any-hover: hover) {
+  .chat:hover .chat__button:nth-child(2) {
+    -webkit-transform: translateY(calc((100% + 1.875rem) * -2));
+    -ms-transform: translateY(calc((100% + 1.875rem) * -2));
+    transform: translateY(calc((100% + 1.875rem) * -2));
+  }
 }
-@media (max-width: 38.75rem) {
+@media (any-hover: hover) and (max-width: 38.75rem) {
   .chat:hover .chat__button:nth-child(2) {
     -webkit-transform: translateY(calc((100% + 0.75rem) * -2));
     -ms-transform: translateY(calc((100% + 0.75rem) * -2));
     transform: translateY(calc((100% + 0.75rem) * -2));
   }
 }
-
-.chat:hover .chat__button:nth-child(3) {
-  -webkit-transform: translateY(calc(-100% - 1.875rem));
-  -ms-transform: translateY(calc(-100% - 1.875rem));
-  transform: translateY(calc(-100% - 1.875rem));
+@media (any-hover: hover) {
+  .chat:hover .chat__button:nth-child(3) {
+    -webkit-transform: translateY(calc(-100% - 1.875rem));
+    -ms-transform: translateY(calc(-100% - 1.875rem));
+    transform: translateY(calc(-100% - 1.875rem));
+  }
 }
-@media (max-width: 38.75rem) {
+@media (any-hover: hover) and (max-width: 38.75rem) {
   .chat:hover .chat__button:nth-child(3) {
     -webkit-transform: translateY(calc(-100% - 0.75rem));
     -ms-transform: translateY(calc(-100% - 0.75rem));
     transform: translateY(calc(-100% - 0.75rem));
   }
 }
-
-.chat:hover::before {
-  height: 100vh;
+@media (any-hover: hover) {
+  .chat:hover::before {
+    height: 100vh;
+  }
 }
 
 .header--light:not(.header--slim) .logo__picture, .header--light:not(.header--slim) .logo__image {

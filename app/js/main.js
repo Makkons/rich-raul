@@ -2938,6 +2938,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_tags_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/tags.js */ "./src/js/components/tags.js");
 /* harmony import */ var _components_inputValidator_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/inputValidator.js */ "./src/js/components/inputValidator.js");
 /* harmony import */ var _components_footer_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/footer.js */ "./src/js/components/footer.js");
+/* harmony import */ var _components_widgetChat_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/widgetChat.js */ "./src/js/components/widgetChat.js");
 
 
 
@@ -2955,6 +2956,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import './components/cancelOrder.js';
+
 
 
 
@@ -5500,6 +5502,31 @@ if (play.length > 0) {
   //    }
   // }
 }
+
+/***/ }),
+
+/***/ "./src/js/components/widgetChat.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/widgetChat.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+document.addEventListener('DOMContentLoaded', () => {
+  const chat = document.querySelector('.chat');
+  if (!chat) return;
+  document.addEventListener('click', e => {
+    if (e.target.closest('.chat__button')) {
+      toggleActive();
+    } else {
+      chat.classList.remove('active');
+    }
+  });
+  function toggleActive() {
+    chat.classList.toggle('active');
+  }
+});
 
 /***/ }),
 
