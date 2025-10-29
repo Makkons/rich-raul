@@ -617,6 +617,23 @@ footer {
   }
 }
 
+@media (max-width: 38.75rem) {
+  .hero,
+  .hero-about,
+  .atelier,
+  .hero-partners,
+  .page__body .main .hero-about {
+    height: 47rem;
+  }
+  .hero .swiper,
+  .hero-about .swiper,
+  .atelier .swiper,
+  .hero-partners .swiper,
+  .page__body .main .hero-about .swiper {
+    height: 47rem;
+  }
+}
+
 .swiper-slide[data-theme=light] {
   color: var(--light-color);
 }
