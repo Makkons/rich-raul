@@ -5041,8 +5041,8 @@ const feedbackSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.feed
   }
 });
 const interestSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.interest__swiper', {
-  slidesPerView: 1,
-  spaceBetween: 20,
+  slidesPerView: 2,
+  spaceBetween: 10,
   loop: true,
   autoplay: {
     delay: 5000,
