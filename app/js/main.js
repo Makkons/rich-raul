@@ -4940,6 +4940,8 @@ const collectionsPartnersNewSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["de
 });
 let cardSwiper = null;
 function initOrDestroyCardSwiper() {
+  const cardSwiperEl = document.querySelector('.card__swiper');
+  if (!cardSwiperEl) return;
   if (window.innerWidth <= 620 && !cardSwiper) {
     cardSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.card__swiper', {
       slidesPerView: 1,
