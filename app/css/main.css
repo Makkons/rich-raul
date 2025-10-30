@@ -11143,6 +11143,33 @@ footer {
   height: 100%;
 }
 
+.products_new {
+  margin-top: 3.125rem;
+}
+@media (max-width: 38.75rem) {
+  .products_new .card {
+    padding: 0 0.625rem;
+  }
+}
+.products_new .interest__thumbs {
+  display: none;
+}
+@media (max-width: 620px) {
+  .products_new .interest__swiper {
+    margin-bottom: 1.75rem;
+  }
+  .products_new .interest__thumbs {
+    display: block;
+  }
+  .products_new .interest__thumbs .swiper-slide {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .products_new .interest__thumbs .swiper-slide[style*="display: none"] {
+    opacity: 0;
+  }
+}
+
 .auth {
   margin-bottom: 5.625rem;
 }

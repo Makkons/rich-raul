@@ -5040,7 +5040,7 @@ const feedbackSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.feed
     }
   }
 });
-const interestSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.interest__swiper', {
+const interestSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.interest:not(.products_new) .interest__swiper', {
   slidesPerView: 2,
   spaceBetween: 10,
   loop: true,
@@ -5066,6 +5066,69 @@ const interestSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.inte
       spaceBetween: 40
     }
   }
+});
+let interestThumbsSwiper;
+let interestSwiperMain;
+function initInterestSwiper() {
+  const isMobile = window.innerWidth < 621;
+  if (isMobile && !interestThumbsSwiper) {
+    interestThumbsSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.interest__thumbs', {
+      slidesPerView: 3,
+      spaceBetween: 4,
+      watchSlidesProgress: true
+    });
+  }
+  interestSwiperMain = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.products_new .interest__swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    breakpoints: {
+      621: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      961: {
+        slidesPerView: 3,
+        spaceBetween: 40
+      },
+      1441: {
+        slidesPerView: 4,
+        spaceBetween: 40
+      }
+    },
+    thumbs: isMobile && interestThumbsSwiper ? {
+      swiper: interestThumbsSwiper
+    } : {}
+  });
+  if (isMobile && interestThumbsSwiper) {
+    const updateThumbsVisibility = () => {
+      const mainRealIndex = interestSwiperMain.realIndex;
+      const thumbSlides = interestThumbsSwiper.slides;
+      thumbSlides.forEach((slide, index) => {
+        slide.style.display = index === mainRealIndex ? 'none' : '';
+      });
+      interestThumbsSwiper.update();
+    };
+    interestSwiperMain.on('slideChange', updateThumbsVisibility);
+    updateThumbsVisibility();
+  }
+}
+initInterestSwiper();
+window.addEventListener('resize', () => {
+  if (interestSwiperMain) interestSwiperMain.destroy(true, true);
+  if (interestThumbsSwiper) {
+    interestThumbsSwiper.destroy(true, true);
+    interestThumbsSwiper = null;
+  }
+  initInterestSwiper();
 });
 const heroPartnersSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.hero-partners__swiper', {
   slidesPerView: 1,
