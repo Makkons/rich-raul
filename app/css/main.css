@@ -12556,10 +12556,13 @@ footer {
 .chat__button--main {
   z-index: 1;
 }
+.chat__button--main .chat__item {
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
 .chat__item {
   width: 5.25rem;
   height: 5.25rem;
-  border: 1px solid var(--main-color);
   border-radius: 50%;
   background: var(--light-color);
   display: -webkit-box;
