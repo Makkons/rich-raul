@@ -5075,7 +5075,9 @@ function initInterestSwiper() {
     interestThumbsSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.interest__thumbs', {
       slidesPerView: 3,
       spaceBetween: 4,
-      watchSlidesProgress: true
+      watchSlidesProgress: true,
+      loop: true,
+      slideToClickedSlide: true
     });
   }
   interestSwiperMain = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.products_new .interest__swiper', {
@@ -5094,14 +5096,6 @@ function initInterestSwiper() {
       621: {
         slidesPerView: 2,
         spaceBetween: 20
-      },
-      961: {
-        slidesPerView: 3,
-        spaceBetween: 40
-      },
-      1441: {
-        slidesPerView: 4,
-        spaceBetween: 40
       }
     },
     thumbs: isMobile && interestThumbsSwiper ? {
@@ -5109,16 +5103,13 @@ function initInterestSwiper() {
     } : {}
   });
   if (isMobile && interestThumbsSwiper) {
-    const updateThumbsVisibility = () => {
+    const updateThumbsByHidingActive = () => {
       const mainRealIndex = interestSwiperMain.realIndex;
-      const thumbSlides = interestThumbsSwiper.slides;
-      thumbSlides.forEach((slide, index) => {
-        slide.style.display = index === mainRealIndex ? 'none' : '';
-      });
-      interestThumbsSwiper.update();
+      const target = (mainRealIndex + 1) % interestThumbsSwiper.slides.length;
+      interestThumbsSwiper.slideToLoop(target);
     };
-    interestSwiperMain.on('slideChange', updateThumbsVisibility);
-    updateThumbsVisibility();
+    interestSwiperMain.on('slideChange', updateThumbsByHidingActive);
+    updateThumbsByHidingActive();
   }
 }
 initInterestSwiper();
