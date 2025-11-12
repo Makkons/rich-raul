@@ -217,7 +217,7 @@ a {
   z-index: 100;
 }
 
-.marquee--active ~ .header {
+.marquee--active ~ .header:not(:has(.burger--active)) {
   top: var(--marquee-height);
 }
 .marquee--active ~ .main {
@@ -3518,7 +3518,7 @@ footer {
   width: calc(100% - var(--container-offset) * 2);
   max-width: 79.125rem;
   height: auto;
-  top: var(--header-height);
+  top: calc(var(--header-height) + 5rem);
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -3527,6 +3527,11 @@ footer {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+@media (max-width: 60rem) {
+  .search {
+    top: var(--header-height);
+  }
 }
 .search--active {
   display: -webkit-box;
@@ -3720,12 +3725,12 @@ footer {
 }
 
 .nav {
-  margin-top: var(--header-height);
+  margin-top: calc(var(--header-height) + var(--marquee-height));
   padding: 0.9375rem calc(var(--container-offset) + 2.8125rem) 1.875rem;
   pointer-events: auto;
   background: var(--light-color);
 }
-@media (max-width: 68.75rem) {
+@media (max-width: 64rem) {
   .nav {
     padding: 0.9375rem calc(var(--container-offset)) 1.875rem;
   }
@@ -3796,6 +3801,7 @@ footer {
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
+    overflow: visible;
   }
   .nav__item--full > .nav__list--second {
     gap: 70px;
@@ -3807,15 +3813,66 @@ footer {
   }
 }
 @media (min-width: 60.0625rem) {
-  .nav__item--full > .nav__list--second > .nav__item--active .nav__link {
+  .nav__item--full > .nav__list--second > .nav__item--more {
+    position: relative;
+  }
+  .nav__item--full > .nav__list--second > .nav__item--active > .nav__list--third {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    left: -2.5rem;
+    gap: 1.125rem;
+    padding: 1.25rem 0.625rem 2.5rem 2.5rem;
+    background: var(--light-color);
+    -webkit-transform: translateY(1.875rem);
+    -ms-transform: translateY(1.875rem);
+    transform: translateY(1.875rem);
+    min-width: 22.5rem;
+    height: calc(100vh - var(--header-height) - var(--marquee-height) - var(--nav-height));
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-height: initial;
+  }
+  .nav__item--full > .nav__list--second > .nav__item--active > .nav__list--third::-webkit-scrollbar {
+    display: none;
+  }
+  .nav__item--full > .nav__list--second > .nav__item--active > .nav__link {
+    text-decoration: underline;
+    opacity: 0.5;
     padding-left: 0;
   }
-  .nav__item--full > .nav__list--second > .nav__item--active .nav__link::before {
+  .nav__item--full > .nav__list--second > .nav__item--active > .nav__link::before {
     display: none;
+  }
+  .nav__item--full .nav__list--third .nav__item:first-child {
+    margin-top: 0;
+  }
+  .nav__item--full .nav__list--third .nav__item:last-child {
+    margin-bottom: 0;
+  }
+  .nav__item--full .nav__link {
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
   }
   .nav__item--full .nav__list--third,
   .nav__item--full .nav__icon {
     display: none;
+  }
+}
+@media (max-width: 64rem) {
+  .nav__item--full .nav__link {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 60rem) {
+  .nav__item--full .nav__link {
+    font-size: 1.25rem;
   }
 }
 .nav__item--more > .nav__link::before {
@@ -3871,6 +3928,11 @@ footer {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
+@media (max-width: 64rem) {
+  .nav__category {
+    font-size: 1.125rem;
+  }
+}
 @media (max-width: 60rem) {
   .nav__category {
     font-size: 1rem;
@@ -3891,7 +3953,7 @@ footer {
   -ms-transform: translateY(1.875rem);
   transform: translateY(1.875rem);
   min-width: 22.5rem;
-  height: calc(100vh - var(--header-height) - 4.25rem);
+  height: calc(100vh - var(--header-height) - var(--marquee-height) - var(--nav-height));
   overflow: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;

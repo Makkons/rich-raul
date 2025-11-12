@@ -2913,23 +2913,23 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(root
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_getScrollBarWidth_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/getScrollBarWidth.js */ "./src/js/components/getScrollBarWidth.js");
-/* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/header.js */ "./src/js/components/header.js");
-/* harmony import */ var _components_headerNav_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/headerNav.js */ "./src/js/components/headerNav.js");
-/* harmony import */ var _components_burger_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/burger.js */ "./src/js/components/burger.js");
-/* harmony import */ var _components_inputNested_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/inputNested.js */ "./src/js/components/inputNested.js");
-/* harmony import */ var _components_swiper_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/swiper.js */ "./src/js/components/swiper.js");
-/* harmony import */ var _components_videoPlay_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/videoPlay.js */ "./src/js/components/videoPlay.js");
-/* harmony import */ var _components_fancybox_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/fancybox.js */ "./src/js/components/fancybox.js");
-/* harmony import */ var _components_map_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/map.js */ "./src/js/components/map.js");
-/* harmony import */ var _components_smoothScroll_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/smoothScroll.js */ "./src/js/components/smoothScroll.js");
-/* harmony import */ var _components_control_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/control.js */ "./src/js/components/control.js");
-/* harmony import */ var _components_cart_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/cart.js */ "./src/js/components/cart.js");
-/* harmony import */ var _components_masker_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/masker.js */ "./src/js/components/masker.js");
-/* harmony import */ var _components_getCode_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/getCode.js */ "./src/js/components/getCode.js");
-/* harmony import */ var _components_datePicker_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/datePicker.js */ "./src/js/components/datePicker.js");
-/* harmony import */ var _components_confirmPassword_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/confirmPassword.js */ "./src/js/components/confirmPassword.js");
-/* harmony import */ var _components_checkInput_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/checkInput.js */ "./src/js/components/checkInput.js");
-/* harmony import */ var _components_marquee_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/marquee.js */ "./src/js/components/marquee.js");
+/* harmony import */ var _components_marquee_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/marquee.js */ "./src/js/components/marquee.js");
+/* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/header.js */ "./src/js/components/header.js");
+/* harmony import */ var _components_headerNav_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/headerNav.js */ "./src/js/components/headerNav.js");
+/* harmony import */ var _components_burger_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/burger.js */ "./src/js/components/burger.js");
+/* harmony import */ var _components_inputNested_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/inputNested.js */ "./src/js/components/inputNested.js");
+/* harmony import */ var _components_swiper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/swiper.js */ "./src/js/components/swiper.js");
+/* harmony import */ var _components_videoPlay_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/videoPlay.js */ "./src/js/components/videoPlay.js");
+/* harmony import */ var _components_fancybox_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/fancybox.js */ "./src/js/components/fancybox.js");
+/* harmony import */ var _components_map_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/map.js */ "./src/js/components/map.js");
+/* harmony import */ var _components_smoothScroll_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/smoothScroll.js */ "./src/js/components/smoothScroll.js");
+/* harmony import */ var _components_control_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/control.js */ "./src/js/components/control.js");
+/* harmony import */ var _components_cart_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/cart.js */ "./src/js/components/cart.js");
+/* harmony import */ var _components_masker_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/masker.js */ "./src/js/components/masker.js");
+/* harmony import */ var _components_getCode_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/getCode.js */ "./src/js/components/getCode.js");
+/* harmony import */ var _components_datePicker_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/datePicker.js */ "./src/js/components/datePicker.js");
+/* harmony import */ var _components_confirmPassword_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/confirmPassword.js */ "./src/js/components/confirmPassword.js");
+/* harmony import */ var _components_checkInput_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/checkInput.js */ "./src/js/components/checkInput.js");
 /* harmony import */ var _components_modal_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/modal.js */ "./src/js/components/modal.js");
 /* harmony import */ var _components_product_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/product.js */ "./src/js/components/product.js");
 /* harmony import */ var _components_simplebar_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/simplebar.js */ "./src/js/components/simplebar.js");
@@ -2957,8 +2957,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import './components/cancelOrder.js';
 
+// import './components/cancelOrder.js';
 
 
 
@@ -3844,12 +3844,10 @@ const getScrollBarWidth = () => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_header_height_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/header-height.js */ "./src/js/functions/header-height.js");
-/* harmony import */ var _functions_marquee_height_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/marquee-height.js */ "./src/js/functions/marquee-height.js");
-/* harmony import */ var _functions_breadcrumbs_height_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../functions/breadcrumbs-height.js */ "./src/js/functions/breadcrumbs-height.js");
-/* harmony import */ var _functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../functions/scrollBar-width.js */ "./src/js/functions/scrollBar-width.js");
-/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
-
+/* harmony import */ var _functions_breadcrumbs_height_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/breadcrumbs-height.js */ "./src/js/functions/breadcrumbs-height.js");
+/* harmony import */ var _functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/scrollBar-width.js */ "./src/js/functions/scrollBar-width.js");
+/* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
+/* harmony import */ var _functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../functions/set-el-height.js */ "./src/js/functions/set-el-height.js");
 
 
 
@@ -3860,18 +3858,20 @@ const main = document.querySelector('#main');
 const headerSlim = header.classList.contains('header--slim');
 const headerLight = header.classList.contains('header--light');
 setMainTop();
-(0,_functions_header_height_js__WEBPACK_IMPORTED_MODULE_0__.getHeaderHeight)();
-(0,_functions_marquee_height_js__WEBPACK_IMPORTED_MODULE_1__.getMarqueeHeight)();
-(0,_functions_breadcrumbs_height_js__WEBPACK_IMPORTED_MODULE_2__.getBreadcrumbsHeight)();
-(0,_functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_3__.getScrollBarWidth)();
+(0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__.setElHeight)('header');
+(0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__.setElHeight)('marquee');
+(0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__.setElHeight)('nav');
+(0,_functions_breadcrumbs_height_js__WEBPACK_IMPORTED_MODULE_0__.getBreadcrumbsHeight)();
+(0,_functions_scrollBar_width_js__WEBPACK_IMPORTED_MODULE_1__.getScrollBarWidth)();
 // setClassOnScroll(header, headerSlim, 'header--slim', true, 20);
 removeClassOnScroll(header, headerLight, 'header--light', 20);
-let throttleGetHeight = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_4__.throttle)(() => {
-  (0,_functions_header_height_js__WEBPACK_IMPORTED_MODULE_0__.getHeaderHeight)();
-  (0,_functions_marquee_height_js__WEBPACK_IMPORTED_MODULE_1__.getMarqueeHeight)();
-  (0,_functions_breadcrumbs_height_js__WEBPACK_IMPORTED_MODULE_2__.getBreadcrumbsHeight)();
+let throttleGetHeight = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_2__.throttle)(() => {
+  (0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__.setElHeight)('header');
+  (0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__.setElHeight)('marquee');
+  (0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__.setElHeight)('nav');
+  (0,_functions_breadcrumbs_height_js__WEBPACK_IMPORTED_MODULE_0__.getBreadcrumbsHeight)();
 });
-let throttleSetClassOnScroll = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_4__.throttle)(() => {
+let throttleSetClassOnScroll = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_2__.throttle)(() => {
   // setClassOnScroll(header, headerSlim, 'header--slim', 20);
   removeClassOnScroll(header, headerLight, 'header--light', 20);
 });
@@ -3922,15 +3922,30 @@ menuItems.forEach(item => {
     if (isActive && isDirectLink || isButton || isLink) {
       return;
     }
+    if (!isTouchDevice) {
+      const offsetleft = item.getBoundingClientRect().left;
+      const listWidth = offsetleft + 360 + 40;
+      if (listWidth > window.innerWidth) {
+        item.querySelector('& > .nav__list').style.left = (listWidth - window.innerWidth) * -1 + 'px';
+      }
+    }
     event.preventDefault();
     if (isActive & !isTouchDevice) {
       item.classList.remove('nav__item--active');
       return;
     }
+    if (!item.closest('.nav__item--active')) {
+      menuItems.forEach(activeItem => activeItem.classList.remove('nav__item--active'));
+    }
     item.closest('.nav__list').querySelectorAll('.nav__item--active').forEach(activeItem => activeItem.classList.remove('nav__item--active'));
     item.classList.toggle('nav__item--active');
   });
 });
+function isOutOfRightViewport(el) {
+  if (!el) return false;
+  const rect = el.getBoundingClientRect();
+  return rect.right > window.innerWidth;
+}
 
 /***/ }),
 
@@ -4319,6 +4334,8 @@ function functionMap() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var marquee3000__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! marquee3000 */ "./node_modules/marquee3000/marquee3k.js");
 /* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
+/* harmony import */ var _functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../functions/set-el-height.js */ "./src/js/functions/set-el-height.js");
+
 
 
 const marque = document.querySelector('.marquee');
@@ -4382,6 +4399,7 @@ if (marque) {
   btnCloseMarque.addEventListener('click', function () {
     marque.remove();
     setItemWithExpiration('isHiddenMarque', 'true', 7 * 24 * 60 * 60 * 1000);
+    (0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_2__.setElHeight)('marquee');
   });
   initMarquee();
 }
@@ -5820,24 +5838,6 @@ const enableScroll = () => {
 
 /***/ }),
 
-/***/ "./src/js/functions/header-height.js":
-/*!*******************************************!*\
-  !*** ./src/js/functions/header-height.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getHeaderHeight: () => (/* binding */ getHeaderHeight)
-/* harmony export */ });
-const getHeaderHeight = () => {
-  const headerHeight = document?.querySelector('.header').offsetHeight;
-  document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
-};
-
-/***/ }),
-
 /***/ "./src/js/functions/isElementInViewport.js":
 /*!*************************************************!*\
   !*** ./src/js/functions/isElementInViewport.js ***!
@@ -5858,24 +5858,6 @@ const isElementInViewport = el => {
 
 /***/ }),
 
-/***/ "./src/js/functions/marquee-height.js":
-/*!********************************************!*\
-  !*** ./src/js/functions/marquee-height.js ***!
-  \********************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getMarqueeHeight: () => (/* binding */ getMarqueeHeight)
-/* harmony export */ });
-const getMarqueeHeight = () => {
-  const marqueeHeight = document.querySelector('.marquee')?.offsetHeight;
-  document.querySelector(':root').style.setProperty('--marquee-height', `${marqueeHeight}px`);
-};
-
-/***/ }),
-
 /***/ "./src/js/functions/scrollBar-width.js":
 /*!*********************************************!*\
   !*** ./src/js/functions/scrollBar-width.js ***!
@@ -5891,6 +5873,25 @@ const getScrollBarWidth = () => {
   const body = document?.querySelector('body');
   const scrollBarWidth = window.innerWidth - body.offsetWidth;
   document.querySelector(':root').style.setProperty('--scroll-bar-width', `${scrollBarWidth}px`);
+};
+
+/***/ }),
+
+/***/ "./src/js/functions/set-el-height.js":
+/*!*******************************************!*\
+  !*** ./src/js/functions/set-el-height.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setElHeight: () => (/* binding */ setElHeight)
+/* harmony export */ });
+const setElHeight = className => {
+  const height = document.querySelector(`.${className}`)?.offsetHeight || 0;
+  console.log(height);
+  document.querySelector(':root').style.setProperty(`--${className}-height`, `${height}px`);
 };
 
 /***/ }),
