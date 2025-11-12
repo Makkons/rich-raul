@@ -32,19 +32,19 @@
         <div class="header__bar">
             <button class="header__burger burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
                 <span class="burger__line"></span>
-                <span class="burger__text">Меню</span>
+<!--                <span class="burger__text">Меню</span>-->
             </button>
             <button class="header__icon btn-reset" aria-label="Открыть поиск" aria-expanded="false" data-search>
                 <svg width="24" height="24">
                     <use xlink:href="./img/sprite.svg#icon-search"></use>
                 </svg>
             </button>
-            <button class="header__icon header__icon--location btn-reset" data-graph-path="location">
-                <svg width="24" height="24">
-                    <use xlink:href="/upload/demo/img/sprite.svg#location"></use>
-                </svg>
-                <span class="header__text">Санкт-Петербург</span>
-            </button>
+<!--            <button class="header__icon header__icon&#45;&#45;location btn-reset" data-graph-path="location">-->
+<!--                <svg width="24" height="24">-->
+<!--                    <use xlink:href="/upload/demo/img/sprite.svg#location"></use>-->
+<!--                </svg>-->
+<!--                <span class="header__text">Санкт-Петербург</span>-->
+<!--            </button>-->
         </div>
         <a class="header__logo logo" href="/" aria-label="Логотип ANTE KOVAC">
             <svg class="logo__svg" width="255" height="38">
@@ -80,463 +80,420 @@
         </div>
         <aside class="header__aside" data-menu-overlay>
             <nav class="header__nav nav" data-hold>
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#" class="nav__link">Новинки</a>
-                    </li>
+                <ul class="nav__list nav__list--first">
                     <li class="nav__item nav__item--more">
-                        <span class="nav__link">Woman</span>
-                        <ul class="nav__list">
+                        <span class="nav__category">Женщинам</span>
+                        <ul class="nav__list nav__list--second">
                             <li class="nav__item">
-                                <span class="nav__brand-title">Все товары</span>
-                            </li>
-                            <li class="nav__item">
-                                <span class="nav__brand-title">ANTE KOVAC</span>
+                                <span class="nav__title">Все товары</span>
                             </li>
                             <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Сумки</a>
-                                <ul class="nav__list">
+                                <a href="#" class="nav__link">Сумки
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 1</a>
+                                        <span class="nav__title">Все товары</span>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 2</a>
+                                        <a href="#" class="nav__link">Лимитированная коллекция</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 3</a>
+                                        <a href="#" class="nav__link">Сумки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сумки-мини</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Клатчи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Портфели</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Рюкзаки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Саквояжи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Суммки-трансформеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Пляжные сумки</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Клатчи</a>
-                                <ul class="nav__list">
+                                <a href="#" class="nav__link">Обувь
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 1</a>
+                                        <span class="nav__title">Все товары</span>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 2</a>
+                                        <a href="#" class="nav__link">Балетки</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Рюкзаки</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 1</a>
+                                        <a href="#" class="nav__link">Лоферы</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 2</a>
+                                        <a href="#" class="nav__link">Сапоги</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Соквояжи</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 1</a>
+                                        <a href="#" class="nav__link">Чукки</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 2</a>
+                                        <a href="#" class="nav__link">Мюли</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 3</a>
+                                        <a href="#" class="nav__link">Туфли</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Портфели</a>
-                                <ul class="nav__list">
+                                <a href="#" class="nav__link">Аксессуары
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 1</a>
+                                        <span class="nav__title">Все товары</span>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 2</a>
+                                        <a href="#" class="nav__link">Картхолдеры</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item">
-                                <span class="nav__brand-title">ANTE KOVAC COSMETICS</span>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Сумки трансформеры</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумки трансформеры № 1</a>
+                                        <a href="#" class="nav__link">Ремни</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумки трансформеры № 2</a>
+                                        <a href="#" class="nav__link">Органайзеры</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумки трансформеры № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Длинное название товара в две строчки</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Длинное название товара в две строчки № 1</a>
+                                        <a href="#" class="nav__link">Несессеры</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Длинное название товара в две строчки № 2</a>
+                                        <a href="#" class="nav__link">Головные уборы</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Длинное название товара в две строчки № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Кожаные куртки</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Кожаные куртки № 1</a>
+                                        <a href="#" class="nav__link">Портмоне</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Кожаные куртки № 2</a>
+                                        <a href="#" class="nav__link">Помоламеры</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Кожаные куртки № 3</a>
+                                        <a href="#" class="nav__link">Обложки для документов</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Ключницы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Браслеты</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Бабочки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Галстуки</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Меховые изделия</a>
-                                <ul class="nav__list">
+                                <a href="#" class="nav__link">Одежда
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Меховые изделия № 1</a>
+                                        <span class="nav__title">Все товары</span>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Меховые изделия № 2</a>
+                                        <a href="#" class="nav__link">Меховые изделия</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Меховые изделия № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Верхняя одежда</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Верхняя одежда № 1</a>
+                                        <a href="#" class="nav__link">Изделия из кожи</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Верхняя одежда № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Верхняя одежда № 3</a>
+                                        <a href="#" class="nav__link">Одежда</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav__item">
-                                <span class="nav__brand-title">ТАЮ</span>
+                                <a href="#" class="nav__link">Спортивная одежда</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Ante KovaĆ cosmetics</a>
                             </li>
                             <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Комбенизоны</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Комбенизоны № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Комбенизоны № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Комбенизоны № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Обувь</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Обувь № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Обувь № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Обувь № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--button">
-                                <a href="#" class="nav__button button">
-                                    <span class="button__text">Все товары</span>
-                                    <svg class="button__icon" width="14" height="14">
-                                        <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                                <a href="#" class="nav__link">Коллекции
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
                                     </svg>
                                 </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Империя искусств</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Prodragonist</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сказки Рича и Рауля</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Love из</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Великая Россия</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Эксклюзивно на сайте</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav__item nav__item--more">
-                        <span class="nav__link">Man</span>
-                        <ul class="nav__list">
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Man Сумки</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 3</a>
-                                    </li>
-                                </ul>
+                        <span class="nav__category">Мужчинам</span>
+                        <ul class="nav__list nav__list--second">
+                            <li class="nav__item">
+                                <span class="nav__title">Все товары 2</span>
                             </li>
                             <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Man Клатчи</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Man Рюкзаки</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Man Соквояжи</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Man Портфели</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--button">
-                                <a href="#" class="nav__button button">
-                                    <span class="button__text">Все товары</span>
-                                    <svg class="button__icon" width="14" height="14">
-                                        <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                                <a href="#" class="nav__link">Сумки 2
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
                                     </svg>
                                 </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <span class="nav__title">Все товары</span>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Лимитированная коллекция</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сумки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сумки-мини</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Клатчи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Портфели</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Рюкзаки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Саквояжи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Суммки-трансформеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Пляжные сумки</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Обувь 2
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <span class="nav__title">Все товары</span>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Балетки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Лоферы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сапоги</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Чукки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Мюли</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Туфли</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Аксессуары 2
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <span class="nav__title">Все товары</span>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Картхолдеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Ремни</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Органайзеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Несессеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Головные уборы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Портмоне</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Помоламеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Обложки для документов</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Ключницы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Браслеты</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Бабочки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Галстуки</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Одежда 2
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <span class="nav__title">Все товары</span>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Меховые изделия</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Изделия из кожи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Одежда</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Спортивная одежда 2</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Ante KovaĆ cosmetics 2</a>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Коллекции 2
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Империя искусств</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Prodragonist</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сказки Рича и Рауля</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Love из</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Великая Россия</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Эксклюзивно на сайте 2</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav__item nav__item--more">
-                        <span class="nav__link">Ателье</span>
-                        <ul class="nav__list">
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Ателье Сумки</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 3</a>
-                                    </li>
-                                </ul>
+                    <li class="nav__item nav__item--more nav__item--full">
+                        <span class="nav__category">Мир ANTE KOVAĆ</span>
+                        <ul class="nav__list nav__list--second">
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Ателье</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Партнерам</a>
                             </li>
                             <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Ателье Клатчи</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Ателье Рюкзаки</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Ателье Соквояжи</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Ателье Портфели</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--button">
-                                <a href="#" class="nav__button button">
-                                    <span class="button__text">Все товары</span>
-                                    <svg class="button__icon" width="14" height="14">
-                                        <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                                <a href="#" class="nav__link">Новости
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
                                     </svg>
                                 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav__item nav__item--more">
-                        <span class="nav__link">Косметика</span>
-                        <ul class="nav__list">
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Косметика Сумки</a>
-                                <ul class="nav__list">
+                                <ul class="nav__list nav__list--third">
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 1</a>
+                                        <a href="#" class="nav__link">Новости и события</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 2</a>
+                                        <a href="#" class="nav__link">Fashion-показы</a>
                                     </li>
                                     <li class="nav__item">
-                                        <a href="#" class="nav__link">Сумка № 3</a>
+                                        <a href="#" class="nav__link">Лукбук</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Блог</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Косметика Клатчи</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Клатчи № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Косметика Рюкзаки</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Рюкзаки № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Косметика Соквояжи</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Соквояжи № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--more">
-                                <a href="#" class="nav__link">Косметика Портфели</a>
-                                <ul class="nav__list">
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 1</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 2</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#" class="nav__link">Портфели № 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item nav__item--button">
-                                <a href="#" class="nav__button button">
-                                    <span class="button__text">Все товары</span>
-                                    <svg class="button__icon" width="14" height="14">
-                                        <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                                <a href="#" class="nav__link">О нас
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
                                     </svg>
                                 </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">О модном доме Richard & Raul</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Производство</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Наследие</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Команда</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Контакты</a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#" class="nav__link">Партнерам</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#" class="nav__link">Бутики</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#" class="nav__link">Бренды</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#" class="nav__link">Rich&Raul</a>
                     </li>
                 </ul>
             </nav>
