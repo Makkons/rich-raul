@@ -3911,7 +3911,11 @@ function setMainTop() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 const menuItems = document?.querySelectorAll('.nav__item--more');
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+const menuItemsArrow = document?.querySelectorAll('.nav__item--more > .nav__link svg');
+let isTouchDevice = window.innerWidth <= 960;
+window.addEventListener('resize', function () {
+  isTouchDevice = window.innerWidth <= 960;
+});
 menuItems.forEach(item => {
   item.addEventListener('click', function (event) {
     event.stopPropagation();
@@ -3930,7 +3934,7 @@ menuItems.forEach(item => {
       }
     }
     event.preventDefault();
-    if (isActive & !isTouchDevice) {
+    if (isActive && !isTouchDevice || !item.closest('nav > ul')) {
       item.classList.remove('nav__item--active');
       return;
     }
@@ -3940,6 +3944,20 @@ menuItems.forEach(item => {
     item.closest('.nav__list').querySelectorAll('.nav__item--active').forEach(activeItem => activeItem.classList.remove('nav__item--active'));
     item.classList.toggle('nav__item--active');
   });
+});
+menuItemsArrow.forEach(icon => {
+  icon.addEventListener('click', function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+    this.closest('.nav__item').classList.toggle('nav__item--active');
+  });
+});
+document.addEventListener('click', function (event) {
+  const target = event.target;
+  if (!target.closest('nav > ul') && !isTouchDevice) {
+    console.log('here');
+    document.querySelector('.nav__item--active')?.classList.remove('nav__item--active');
+  }
 });
 function isOutOfRightViewport(el) {
   if (!el) return false;
