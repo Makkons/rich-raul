@@ -3923,6 +3923,9 @@ menuItems.forEach(item => {
     const isDirectLink = !!item.querySelector(':scope > a');
     const isButton = event.target.closest('.nav__button');
     const isLink = event.target.closest('.nav__item:not(.nav__item--more) > a');
+    const searchActive = document?.querySelector('.search--active');
+    const btnSearch = document?.querySelector('[data-search]');
+    if (searchActive) btnSearch.click();
     if (isActive && isDirectLink || isButton || isLink) {
       return;
     }
@@ -3955,7 +3958,6 @@ menuItemsArrow.forEach(icon => {
 document.addEventListener('click', function (event) {
   const target = event.target;
   if (!target.closest('nav > ul') && !isTouchDevice) {
-    console.log('here');
     document.querySelector('.nav__item--active')?.classList.remove('nav__item--active');
   }
 });
@@ -5700,6 +5702,7 @@ __webpack_require__.r(__webpack_exports__);
     menu?.classList.toggle('menu--active');
     nav?.classList.toggle('header__nav--active');
     cancelMenuActive();
+    if (search?.classList.contains('search--active')) search.click();
     if (menu?.classList.contains('menu--active')) {
       setAttribute(burger, 'true', 'Закрыть меню');
       (0,_functions_disable_scroll_js__WEBPACK_IMPORTED_MODULE_0__.disableScroll)();
