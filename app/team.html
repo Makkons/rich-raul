@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+   <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+   <link rel="shortcut icon" href="/favicon.ico" />
+   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+   <meta name="apple-mobile-web-app-title" content="Ante Kovac" />
+   <link rel="manifest" href="/site.webmanifest" />
+   <title>Rich&Raul</title>
+   <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin />
+   <link rel="preload" href="fonts/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin />
+   <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin />
+   <link rel="preload" href="fonts/Roboto-Black.woff2" as="font" type="font/woff2" crossorigin />
+   <link rel="preload" href="fonts/Didona.woff2" as="font" type="font/woff2" crossorigin />
+   <link rel="preload" href="fonts/BebasNeueCyrillic.woff2" as="font" type="font/woff2" crossorigin />
+   <link rel="stylesheet" href="css/vendor.css" />
+   <link rel="stylesheet" href="css/main.css" />
+   <script defer src=""></script>
+   <script defer src="js/main.js"></script>
+</head>
+
+   <body class="page__body">
+      <div class="site-container">
+         <!-- ШАПКА в двух версиях, прозрачная просто - класс "header" и более узкая по высоте с серым фоном - класс "header--slim" -->
+<div class="marquee marquee--active fixed-block">
+    <div class="marquee__container container">
+        <div class="marquee__body">
+            <div class="marquee__date">
+                <svg class="marquee__icon" width="24" height="24">
+                    <use xlink:href="./img/sprite.svg#calendar"></use>
+                </svg>
+                <time class="marquee__time" datetime="2024-09-30">30 августа 2024</time>
+            </div>
+            <div class="marquee__marquee3k marquee3k" data-speed="0.25" data-pausable="true">
+                <div class="marquee__content">
+                    <p class="marquee__text">Показ недели Моды в Санкт-Петербурге 2024 sadkasjkk</p>
+                </div>
+            </div>
+            <a href="#" class="marquee__button button button--accent">
+                <span class="button__text">Подробнее</span>
+                <svg class="button__icon" width="12" height="12">
+                    <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                </svg>
+            </a>
+        </div>
+        <button class="marquee__close btn-reset" aria-label="Закрыть шторку">
+            <svg width="24" height="24" stroke-width="2">
+                <use xlink:href="./img/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+<header id="header" class="header @headerClassName fixed-block" data-menu>
+    <div class="header__container container">
+        <div class="header__bar">
+            <button class="header__burger burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+                <span class="burger__line"></span>
+<!--                <span class="burger__text">Меню</span>-->
+            </button>
+            <button class="header__icon btn-reset" aria-label="Открыть поиск" aria-expanded="false" data-search>
+                <svg width="24" height="24">
+                    <use xlink:href="./img/sprite.svg#icon-search"></use>
+                </svg>
+            </button>
+<!--            <button class="header__icon header__icon&#45;&#45;location btn-reset" data-graph-path="location">-->
+<!--                <svg width="24" height="24">-->
+<!--                    <use xlink:href="/upload/demo/img/sprite.svg#location"></use>-->
+<!--                </svg>-->
+<!--                <span class="header__text">Санкт-Петербург</span>-->
+<!--            </button>-->
+        </div>
+        <a class="header__logo logo" href="/" aria-label="Логотип ANTE KOVAC">
+            <svg class="logo__svg" width="255" height="38">
+                <use xlink:href="/upload/demo/img/sprite.svg#logo"></use>
+            </svg>
+        </a>
+        <div class="header__bar">
+            <a class="header__link" href="#" aria-label="Сменить язык" style="display:none">EN</a>
+            <button class="header__icon btn-reset" aria-label="Обратный звонок" data-graph-path="callback" style="display:none">
+                <svg width="24" height="24">
+                    <use xlink:href="./img/sprite.svg#icon-phone"></use>
+                </svg>
+            </button>
+            <a class="header__icon" href="#" aria-label="Личный кабинет">
+                <svg width="24" height="24">
+                    <use xlink:href="./img/sprite.svg#icon-user"></use>
+                </svg>
+                <span class="header__detail">Фамилия Имя</span>
+            </a>
+            <a class="header__icon header__icon--count" href="#" aria-label="Избранное">
+                <svg width="24" height="24">
+                    <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                </svg>
+                <span class="header__count">0</span>
+            </a>
+            <button id="button-basket" class="header__icon header__icon--count btn-reset" aria-label="Корзина"
+                    data-graph-path="basket">
+                <svg width="24" height="24">
+                    <use xlink:href="./img/sprite.svg#icon-bag"></use>
+                </svg>
+                <span class="header__count">0</span>
+            </button>
+        </div>
+        <aside class="header__aside fixed-block" data-menu-overlay>
+            <nav class="header__nav nav" data-hold>
+                <ul class="nav__list nav__list--first">
+                    <li class="nav__item nav__item--more">
+                        <span class="nav__category">Женщинам</span>
+                        <ul class="nav__list nav__list--second">
+                            <li class="nav__item">
+                                <a href="#" class="nav__title">Все товары</a>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Сумки
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__title">Все товары</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Лимитированная коллекция</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сумки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сумки-мини</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Клатчи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Портфели</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Рюкзаки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Саквояжи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Суммки-трансформеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Пляжные сумки</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Обувь
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__title">Все товары</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Балетки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Лоферы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сапоги</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Чукки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Мюли</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Туфли</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Аксессуары
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__title">Все товары</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Картхолдеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Ремни</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Органайзеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Несессеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Головные уборы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Портмоне</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Помоламеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Обложки для документов</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Ключницы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Браслеты</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Бабочки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Галстуки</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Одежда
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__title">Все товары</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Меховые изделия</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Изделия из кожи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Одежда</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Спортивная одежда</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Ante KovaĆ cosmetics</a>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Коллекции
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Империя искусств</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Prodragonist</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сказки Рича и Рауля</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Love из</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Великая Россия</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Эксклюзивно на сайте</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item nav__item--more">
+                        <span class="nav__category">Мужчинам</span>
+                        <ul class="nav__list nav__list--second">
+                            <li class="nav__item">
+                                <span class="nav__title">Все товары 2</span>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Сумки 2
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__title">Все товары</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Лимитированная коллекция</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сумки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сумки-мини</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Клатчи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Портфели</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Рюкзаки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Саквояжи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Суммки-трансформеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Пляжные сумки</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Обувь 2
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__title">Все товары</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Балетки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Лоферы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сапоги</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Чукки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Мюли</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Туфли</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Аксессуары 2
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__title">Все товары</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Картхолдеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Ремни</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Органайзеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Несессеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Головные уборы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Портмоне</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Помоламеры</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Обложки для документов</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Ключницы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Браслеты</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Бабочки</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Галстуки</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Одежда 2
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__title">Все товары</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Меховые изделия</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Изделия из кожи</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Одежда</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Спортивная одежда 2</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Ante KovaĆ cosmetics 2</a>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Коллекции 2
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Империя искусств</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Prodragonist</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Сказки Рича и Рауля</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Love из</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Великая Россия</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Эксклюзивно на сайте 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item nav__item--more nav__item--full">
+                        <span class="nav__category">Мир ANTE KOVAĆ</span>
+                        <ul class="nav__list nav__list--second">
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Ателье</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Партнерам</a>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">Новости
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Новости и события</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Fashion-показы</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Лукбук</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Блог</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item nav__item--more">
+                                <a href="#" class="nav__link">О нас
+                                    <svg width="16" height="16" class="nav__icon">
+                                        <use xlink:href="/img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                                <ul class="nav__list nav__list--third">
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">О модном доме Richard & Raul</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Производство</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Наследие</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#" class="nav__link">Команда</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">Контакты</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <search class="header__search search">
+                <form action="/" class="search__form" data-hold>
+                    <label for="search-input" class="search__label label">
+                        <input id="search-input" class="search__input input" name="Поиск" type="text"
+                               placeholder="Что вы ищете?"/>
+                    </label>
+                    <div class="search__dropdown">
+                        <div class="search__loading">
+                            <img class="search__loader" width="50" height="67" src="/upload/demo/img/favicon.png"
+                                 alt="Lion"/>
+                        </div>
+                        <ul class="search__list list-reset" data-hold>
+                            <li class="search__item">
+                                <img width="53" height="60" src="./img/favourites/card-01.png"
+                                     alt="Куртка Авиатор в меху" class="search__image img"/>
+                                <a href="#" class="search__link">Куртка Авиатор в меху</a>
+                                <span class="search__price">350 000 ₽</span>
+                            </li>
+                            <li class="search__item">
+                                <img width="53" height="60" src="./img/favourites/card-02.png"
+                                     alt="Портфель Voyage “Над городом”" class="search__image img"/>
+                                <a href="#" class="search__link">Портфель Voyage «Над городом»</a>
+                                <span class="search__price">750 000 ₽</span>
+                            </li>
+                            <li class="search__item">
+                                <img width="53" height="60" src="./img/favourites/card-03.png" alt="Тренч из Питона"
+                                     class="search__image img"/>
+                                <a href="#" class="search__link">Тренч из Питона</a>
+                                <span class="search__price">680 000 ₽</span>
+                            </li>
+                            <li class="search__item">
+                                <img width="53" height="60" src="./img/favourites/card-04.png" alt="Дубленка Nude Норка"
+                                     class="search__image img"/>
+                                <a href="#" class="search__link">Дубленка Nude Норка</a>
+                                <span class="search__price">1 150 000 ₽</span>
+                            </li>
+                            <li class="search__result">
+                                <a href="#" class="search__button button">
+                                    <span class="button__text">Результаты поиска</span>
+                                    <svg width="12" height="12" class="button__icon">
+                                        <use xlink:href="./img/sprite.svg#arrow"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+                <button class="search__button button button--grey" data-close>
+                    <svg width="12" height="12" class="button__icon" stroke-width="2">
+                        <use xlink:href="./img/sprite.svg#close"></use>
+                    </svg>
+                    <span class="button__text">Закрыть</span>
+                </button>
+            </search>
+        </aside>
+    </div>
+</header>
+
+         <main id="main" class="main main--team">
+            <section class="team">
+   <div class="team__container container">
+      <div class="team__breadcrumbs breadcrumbs">
+         <ul class="breadcrumbs__list list-reset">
+            <li class="breadcrumbs__item">
+               <a href="#" class="breadcrumbs__link" title="Дом моды Richard& Raul"></a>
+            </li>
+            <li class="breadcrumbs__item">Команда</li>
+         </ul>
+      </div>
+      <h1 class="team__title title">Команда</h1>
+      <p class="team__subtitle subtitle">За каждой вещью Ante Kovac стоит команда талантливых людей, увлеченных своим делом и разделяющих ценности бренда: мастерство, качество и индивидуальность.</p>
+      <ul class="team__list list-reset">
+         <li class="team__item">
+            <div class="team__avatar">
+               <picture>
+                  <source srcset="/upload/demo/img/gendir_mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                  <source srcset="/upload/demo/img/gendir_mobile.jpg" media="(max-width: 768px)" />
+                  <source srcset="/upload/demo/img/gendir.webp" type="image/webp" />
+                  <img class="team__image img" width="497" height="745" src="/upload/demo/img/gendir.jpg" alt="Генеральный директор" />
+               </picture>
+            </div>
+            <h2 class="team__name">Хафизова Надежда Рафаиловна</h2>
+            <p class="team__position">Генеральный директор</p>
+         </li>
+         <li class="team__item">
+            <div class="team__avatar">
+               <picture>
+                  <source srcset="/upload/demo/img/artdir_mobile.webp" media="(max-width: 768px)" type="image/webp" />
+                  <source srcset="/upload/demo/img/artdir_mobile.jpg" media="(max-width: 768px)" />
+                  <source srcset="/upload/demo/img/artdir.webp" type="image/webp" />
+                  <img class="team__image img" width="497" height="745" src="/upload/demo/img/artdir.jpg" alt="Арт-директор" />
+               </picture>
+            </div>
+            <h2 class="team__name">Бубнов Алексей Витальевич</h2>
+            <p class="team__position">Арт-директор</p>
+         </li>
+      </ul>
+   </div>
+</section>
+
+            <section class="choose">
+    <div class="choose__container container container--wide">
+        <div class="choose__row">
+            <div class="choose__content content">
+                <h2 class="choose__title title">Подобрать и купить в Шоуруме</h2>
+                <p class="choose__text text">Добро пожаловать в наш модный женский шоурум одежды и сумок! Здесь вы найдёте самые стильные и актуальные образы, высококачественные товары от ведущих мировых брендов. Наши опытные консультанты помогут вам выбрать подходящую одежду и аксессуары, учитывая ваш вкус и особенности фигуры.</p>
+                <a href="#" class="choose__button button button--big button--outline">
+                    <span class="button__text">Хочу в Шоурум</span>
+                    <svg class="button__icon" width="14" height="14">
+                        <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="choose__picture">
+                <picture>
+                    <source srcset="/upload/demo/img/legacy/choose_mobile.webp" media="(max-width: 768px)" type="image/webp">
+                    <source srcset="/upload/demo/img/legacy/choose_mobile.jpg" media="(max-width: 768px)">
+                    <source srcset="/upload/demo/img/legacy/choose.webp" type="image/webp">
+                    <img class="choose__image img" width="900" height="570" src="/upload/demo/img/legacy/choose.jpg" alt="Фото">
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+         </main>
+         <div class="graph-modal">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="callback">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title">Заказать звонок</h2>
+      <form action="#" class="graph-modal__form form">
+        <div class="form__body">
+          <label class="form__label label label--user">
+            <input type="text" name="Имя" class="form__input input" placeholder="Ваше имя">
+          </label>
+          <label class="form__label label label--tel">
+            <input type="tel" name="Телефон" class="form__input input" placeholder="Телефон">
+          </label>
+        </div>
+        <p class="form__descriptions">
+          Нажимая на кнопку «отправить» вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a>
+        </p>
+        <button type="submit" class="form__button button button--big">
+          <span class="button__text">Отправить</span>
+          <svg class="button__icon" width="14" height="14">
+            <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="location">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title title--new">Выберите свой город</h2>
+      <form action="#" class="graph-modal__form form city-form">
+        <div class="form__body">
+          <label class="form__label label label--search">
+            <input type="text" id="city-search" name="Поиск-города" class="form__input input" placeholder="Поиск города">
+          </label>
+          <ul class="form__radio-list list-reset">
+            <li class="form__radio radio city-item">
+              <label class="radio__label">
+                <input class="radio__input input-reset" type="radio" name="Город"
+                       value="Москва">
+                <span class="radio__name">
+                    <span class="radio__text">Москва</span>
+                </span>
+              </label>
+            </li>
+            <li class="form__radio radio city-item">
+              <label class="radio__label">
+                <input class="radio__input input-reset" type="radio" name="Город"
+                       value="Санкт-Петербург">
+                <span class="radio__name">
+                    <span class="radio__text">Санкт-Петербург</span>
+                </span>
+              </label>
+            </li>
+            <li class="form__radio radio city-item">
+              <label class="radio__label">
+                <input class="radio__input input-reset" type="radio" name="Город"
+                       value="Мурманск">
+                <span class="radio__name">
+                    <span class="radio__text">Мурманск</span>
+                </span>
+              </label>
+            </li>
+            <li class="form__radio radio city-item">
+              <label class="radio__label">
+                <input class="radio__input input-reset" type="radio" name="Город"
+                       value="Казань">
+                <span class="radio__name">
+                    <span class="radio__text">Казань</span>
+                </span>
+              </label>
+            </li>
+            <li class="form__radio radio city-item">
+              <label class="radio__label">
+                <input class="radio__input input-reset" type="radio" name="Город"
+                       value="Химки">
+                <span class="radio__name">
+                    <span class="radio__text">Химки</span>
+                </span>
+              </label>
+            </li>
+            <li class="form__radio radio city-item">
+              <label class="radio__label">
+                <input class="radio__input input-reset" type="radio" name="Город"
+                       value="Липецк">
+                <span class="radio__name">
+                    <span class="radio__text">Липецк</span>
+                </span>
+              </label>
+            </li>
+            <li class="form__radio radio city-item">
+              <label class="radio__label">
+                <input class="radio__input input-reset" type="radio" name="Город"
+                       value="Ярославль">
+                <span class="radio__name">
+                    <span class="radio__text">Ярославль</span>
+                </span>
+              </label>
+            </li>
+            <li class="form__radio radio city-item">
+              <label class="radio__label">
+                <input class="radio__input input-reset" type="radio" name="Город"
+                       value="Владивосток">
+                <span class="radio__name">
+                    <span class="radio__text">Владивосток</span>
+                </span>
+              </label>
+            </li>
+            <li class="form__radio radio city-item">
+              <label class="radio__label">
+                <input class="radio__input input-reset" type="radio" name="Город"
+                       value="Воронеж">
+                <span class="radio__name">
+                    <span class="radio__text">Воронеж</span>
+                </span>
+              </label>
+            </li>
+            <li class="form__radio radio city-item">
+              <label class="radio__label">
+                <input class="radio__input input-reset" type="radio" name="Город"
+                       value="Хабаровск">
+                <span class="radio__name">
+                    <span class="radio__text">Хабаровск</span>
+                </span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <button type="submit" class="form__button button button--big button--outline">
+          <span class="button__text">Выбрать</span>
+          <svg class="button__icon" width="14" height="14">
+            <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="graph-modal__container graph-modal__container--message" role="dialog" aria-modal="true" data-graph-target="message">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title title--new">Написать письмо директору</h2>
+      <form action="#" class="graph-modal__form form">
+        <div class="form__body">
+          <label class="form__label label label--user">
+            <input type="text" name="Имя" class="form__input input" required placeholder="Ваше имя *">
+          </label>
+          <label class="form__label label label--email">
+            <input type="email" name="Email" class="form__input input" required placeholder="Email *">
+          </label>
+          <label class="form__label label label--tel">
+            <input type="tel" name="Телефон" class="form__input input" placeholder="Телефон">
+          </label>
+          <span class="form__descriptions">* обязательное поле для заполнения</span>
+          <label class="form__label label label--text">
+            <textarea name="Сообщение" class="form__input input" placeholder="Сообщение"></textarea>
+          </label>
+        </div>
+        <p class="form__descriptions">
+          Нажимая на кнопку «отправить» вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a>
+        </p>
+        <button type="submit" class="form__button button button--big button--outline">
+          <span class="button__text">Отправить</span>
+          <svg class="button__icon" width="14" height="14">
+            <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="product-remove">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title">Вы точно хотите удалить товар?</h2>
+      <p class="graph-modal__subtitle subtitle">Вы точно хотите удалить выбранный товар? Отменить данное действие будет невозможно.</p>
+      <button class="graph-modal__button button button--big">
+        <span class="button__text">Удалить</span>
+        <svg class="button__icon" width="14" height="14">
+          <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="product-callback">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title">Сообщить о поступлении</h2>
+      <form action="#" class="graph-modal__form form">
+        <div class="form__body">
+          <label class="form__label label label--email">
+            <input type="email" name="Email" class="form__input input" placeholder="Email">
+          </label>
+        </div>
+        <p class="form__descriptions">
+          Нажимая на кнопку «отправить» вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a>
+        </p>
+        <button type="submit" class="form__button button button--big">
+          <span class="button__text">Отправить</span>
+          <svg class="button__icon" width="14" height="14">
+            <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="graph-modal__content" style="display: none">
+      <div class="graph-modal__icon icon-confirmation">
+        <svg width="40" height="40">
+          <use xlink:href="./img/sprite.svg#check"></use>
+        </svg>
+      </div>
+      <h2 class="graph-modal__title title">Вы уже подписаны на товар</h2>
+    </div>
+    <div class="graph-modal__content" style="display:none">
+      <div class="graph-modal__icon icon-confirmation">
+        <svg width="40" height="40">
+          <use xlink:href="./img/sprite.svg#check"></use>
+        </svg>
+      </div>
+      <h2 class="graph-modal__title title">Спасибо за подписку на товар</h2>
+      <p class="graph-modal__subtitle subtitle">Мы уведомим вас как только он появится в наличии на указанный email</p>
+    </div>
+  </div>
+  <div class="graph-modal__container graph-modal__container--product" role="dialog" aria-modal="true" data-graph-target="product">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content product-modal">
+      <h2 class="product-modal__title title">Товар добавлен в корзину</h2>
+      <form action="#" class="product-modal__form">
+<!--        <div class="product-modal__wrap">-->
+<!--          <img width="280" height="320" class="product-modal__image img" src="./img/product/bag/picture-01.png" alt="Портфель Voyage «Над городом»">-->
+<!--          <div class="product-modal__body">-->
+<!--            <h3 class="product-modal__heading">Портфель Voyage «Над городом»</h3>-->
+<!--            <ul class="product-modal__list">-->
+<!--              <li class="product-modal__item">-->
+<!--                <span class="product-modal__caption">Размер:</span>-->
+<!--                <span class="product-modal__text">M</span>-->
+<!--              </li>-->
+<!--              <li class="product-modal__item">-->
+<!--                <span class="product-modal__caption">Цвет:</span>-->
+<!--                <span class="product-modal__text">Черный</span>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--            <output class="product-modal__output" name="Итого:" id="product-price-total">2 560 000 ₽</output>-->
+<!--            <div class="product-modal__row">-->
+<!--              <a href="/cart.html" class="product-modal__button button button&#45;&#45;big button&#45;&#45;grey">-->
+<!--                <span class="button__text">Перейти в корзину</span>-->
+<!--                <svg class="button__icon" width="14" height="14">-->
+<!--                  <use xlink:href="./img/sprite.svg#arrow-btn"></use>-->
+<!--                </svg>-->
+<!--              </a>-->
+<!--              <a href="/checkout.html" class="product-modal__button button button&#45;&#45;big">-->
+<!--                <span class="button__text">Оформить заказ</span>-->
+<!--                <svg class="button__icon" width="18" height="18">-->
+<!--                  <use xlink:href="./img/sprite.svg#icon-bag"></use>-->
+<!--                </svg>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+      </form>
+    </div>
+  </div>
+  <div class="graph-modal__container graph-modal__container--order" role="dialog" aria-modal="true" data-graph-target="order">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content order-modal">
+      <div class="order-modal__head">
+        <h2 class="order-modal__title">№ 1244512</h2>
+        <div class="order-modal__status button button--light">
+          <span class="button__text">Принят</span>
+          <svg class="button__icon" width="12" height="12" stroke-width="0">
+            <use xlink:href="./img/sprite.svg#update"></use>
+          </svg>
+        </div>
+        <time class="order-modal__time" datetime="2024-07-18">18 июля 2024</time>
+      </div>
+      <ul class="order-modal__list list-reset">
+        <li class="order-modal__item">
+          <div class="order-modal__picture">
+            <picture>
+              <source srcset="./img/order/image-01.webp" type="image/webp" />
+              <img class="order-modal__image img" width="62" height="70" src="./img/order/image-01.png" alt="Фото" />
+            </picture>
+          </div>
+          <div class="order-modal__info">
+            <h3 class="order-modal__caption">Куртка Авиатор в меху</h3>
+            <p class="order-modal__count">1 шт</p>
+          </div>
+          <div class="order-modal__price">1 580 000 ₽</div>
+        </li>
+        <li class="order-modal__item">
+          <div class="order-modal__picture">
+            <picture>
+              <source srcset="./img/order/image-01.webp" type="image/webp" />
+              <img class="order-modal__image img" width="62" height="70" src="./img/order/image-01.png" alt="Фото" />
+            </picture>
+          </div>
+          <div class="order-modal__info">
+            <h3 class="order-modal__caption">Куртка Авиатор в меху</h3>
+            <p class="order-modal__count">1 шт</p>
+          </div>
+          <div class="order-modal__price">1 580 000 ₽</div>
+        </li>
+        <li class="order-modal__item">
+          <div class="order-modal__picture">
+            <picture>
+              <source srcset="./img/order/image-01.webp" type="image/webp" />
+              <img class="order-modal__image img" width="62" height="70" src="./img/order/image-01.png" alt="Фото" />
+            </picture>
+          </div>
+          <div class="order-modal__info">
+            <h3 class="order-modal__caption">Куртка Авиатор в меху</h3>
+            <p class="order-modal__count">1 шт</p>
+          </div>
+          <div class="order-modal__price">1 580 000 ₽</div>
+        </li>
+        <li class="order-modal__item">
+          <div class="order-modal__picture">
+            <picture>
+              <source srcset="./img/order/image-01.webp" type="image/webp" />
+              <img class="order-modal__image img" width="62" height="70" src="./img/order/image-01.png" alt="Фото" />
+            </picture>
+          </div>
+          <div class="order-modal__info">
+            <h3 class="order-modal__caption">Куртка Авиатор в меху</h3>
+            <p class="order-modal__count">1 шт</p>
+          </div>
+          <div class="order-modal__price">1 580 000 ₽</div>
+        </li>
+        <li class="order-modal__item">
+          <div class="order-modal__picture">
+            <picture>
+              <source srcset="./img/order/image-01.webp" type="image/webp" />
+              <img class="order-modal__image img" width="62" height="70" src="./img/order/image-01.png" alt="Фото" />
+            </picture>
+          </div>
+          <div class="order-modal__info">
+            <h3 class="order-modal__caption">Куртка Авиатор в меху</h3>
+            <p class="order-modal__count">1 шт</p>
+          </div>
+          <div class="order-modal__price">1 580 000 ₽</div>
+        </li>
+        <li class="order-modal__item">
+          <div class="order-modal__picture">
+            <picture>
+              <source srcset="./img/order/delivery.webp" type="image/webp" />
+              <img class="order-modal__image img" width="62" height="70" src="./img/order/delivery.png" alt="Доставка" />
+            </picture>
+          </div>
+          <div class="order-modal__info">
+            <h3 class="order-modal__caption">Стоимость доставки</h3>
+          </div>
+          <div class="order-modal__price">1 200 ₽</div>
+        </li>
+      </ul>
+      <div class="order-modal__details">
+        <div class="order-modal__col">
+          <p class="order-modal__subtitle">Способ доставки:</p>
+          <p class="order-modal__text">Курьером</p>
+        </div>
+        <div class="order-modal__col">
+          <p class="order-modal__subtitle">Способ оплаты:</p>
+          <p class="order-modal__text">Наличными</p>
+        </div>
+        <div class="order-modal__col">
+          <p class="order-modal__subtitle">Итого:</p>
+          <p class="order-modal__total">3 651 200 ₽</p>
+        </div>
+      </div>
+      <div class="order-modal__bottom">
+        <a href="#" class="order-modal__button button" id="button-cancel-order">
+          <span class="button__text">Отменить заказ</span>
+        </a>
+        <a href="#" class="order-modal__button button button--grey">
+          <span class="button__text">Повторить заказ</span>
+          <svg class="button__icon" width="14" height="14">
+            <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="graph-modal__container graph-modal__container--basket" role="dialog" aria-modal="true" data-graph-target="basket">
+    <div class="graph-modal__basket basket">
+      <h2 class="basket__title title">Ваша корзина</h2>
+      <form action="#" class="basket__form">
+        <ul class="basket__list list-reset">
+<!--      <li class="basket__item item-basket">
+            <img width="35" height="40" class="item-basket__image img" src="./img/catalog/card-01.png" alt="Куртка Авиатор в меху">
+            <a href="#" class="item-basket__link">
+              <h3 class="item-basket__title">Куртка Авиатор в меху</h3>
+            </a>
+            <div class="item-basket__quantity quantity">
+              <button class="quantity__button quantity__button--decrement" aria-label="Убавить количество"></button>
+              <span class="quantity__count">1</span>
+              <button class="quantity__button quantity__button--increment" aria-label="Добавить количество"></button>
+            </div>
+            <output class="item-basket__output" name="Цена: ">350 000 ₽</output>
+            <button class="item-basket__remove" aria-label="Удалить товар"></button>
+          </li>-->
+        </ul>
+        <button id="basket-button-more" type="button" class="basket__button button button--grey">
+          <span class="button__text">Смотреть еще <span class="button__count">2 позиции</span></span>
+          <svg class="button__icon button__icon--down" width="12" height="18" stroke-width="0">
+            <use xlink:href="./img/sprite.svg#arrow"></use>
+          </svg>
+        </button>
+        <div class="basket__total">
+          <span class="basket__subtext">Итого:</span>
+          <output class="basket__output" name="Итого:" id="basket-price-total">2 560 000 ₽</output>
+        </div>
+        <div class="basket__row">
+          <a href="/cart.html" class="basket__button button button--big button--grey">
+            <span class="button__text">Перейти в корзину</span>
+            <svg class="button__icon" width="14" height="14">
+              <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+            </svg>
+          </a>
+          <a href="/checkout.html" class="basket__button button button--big">
+            <span class="button__text">Оформить заказ</span>
+            <svg class="button__icon" width="18" height="18">
+              <use xlink:href="./img/sprite.svg#icon-bag"></use>
+            </svg>
+          </a>
+        </div>
+      </form>
+      <a href="#" id="basket-button-null" class="basket__button button button--big button--grey">
+        <span class="button__text">Перейти в каталог</span>
+        <svg class="button__icon" width="14" height="14">
+          <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="detail-order">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title">Индивидуальный заказ по архивной модели</h2>
+      <form action="#" class="graph-modal__form form">
+        <div class="form__body">
+          <label class="form__label label label--user">
+            <input type="text" name="Имя" class="form__input input" placeholder="Имя и Фамилия*" required>
+          </label>
+          <label class="form__label label label--tel">
+            <input type="email" name="Email" class="form__input input" placeholder="e-mail*">
+          </label>
+          <label class="form__label label label--tel">
+            <input type="tel" name="Телефон" class="form__input input" placeholder="Телефон">
+          </label>
+          <label class="form__label label label__select select">
+            <input type="text" name="Изделие" placeholder="Наименование изделия" class="form__input input" value="" readonly required>
+            <div class="select__content">
+              <div class="select__option" data-value="Сумка №19">Сумка № 19</div>
+              <div class="select__option" data-value="Сумка Big bag">Сумка Big bag</div>
+              <div class="select__option" data-value="Клатч Нидзе">Клатч Нидзе</div>
+              <div class="select__option" data-value="Клатч Комета">Клатч Комета</div>
+              <div class="select__option" data-value="Клатч Брик">Клатч Брик</div>
+              <div class="select__option" data-value="Шопер">Шопер</div>
+              <div class="select__option" data-value="Сумка №7">Сумка № 7</div>
+              <div class="select__option" data-value="Сумка №107">Сумка № 107</div>
+              <div class="select__option" data-value="Сумка Мадлен">Сумка Мадлен</div>
+              <div class="select__option" data-value="Портфель">Портфель</div>
+              <div class="select__option" data-value="Портфель Ренард">Портфель Ренард</div>
+              <div class="select__option" data-value="Портфель горизонтальный">Портфель горизонтальный</div>
+            </div>
+          </label>
+          <label class="form__label label label--text">
+            <textarea name="Комментарий" class="form__input input" placeholder="Комментарий"></textarea>
+          </label>
+          <label class="form__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox" name="Согласие">
+            <span class="checkbox__box" aria-label="checkbox"></span>
+            <span class="checkbox__text">Я согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">политикой обработки персональных данных.</a></span>
+          </label>
+          <label class="form__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox" name="Подписка">
+            <span class="checkbox__box" aria-label="checkbox"></span>
+            <span class="checkbox__text">Подписаться на рассылку, чтобы первым получать новости о скидках и новых поступлениях</span>
+          </label>
+        </div>
+        <button type="submit" class="form__button button button--outline">
+          <span class="button__text">Отправить заявку</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+         <footer id="footer" class="footer">
+    <div class="footer__top">
+        <div class="footer__container container">
+            <nav class="footer__nav">
+                <div class="footer__col">
+                    <h2 class="footer__title">Женщинам</h2>
+                    <ul class="footer__list list-reset">
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Сумки</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Обувь</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Аксессуары</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Одежда</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Спортивная одежда</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Ante KovaĆ cosmetics</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Эксклюзивно на сайте</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h2 class="footer__title">Мужчинам</h2>
+                    <ul class="footer__list list-reset">
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Сумки</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Обувь</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Аксессуары</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Одежда</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Эксклюзивно на сайте</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h2 class="footer__title">Мир Ante KovaĆ</h2>
+                    <ul class="footer__list list-reset">
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Ателье Richard & Raul</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Партнерам</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Новости и события</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Fashion-показы</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Блог</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">О модном доме Richard & Raul</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Команда</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Производство</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Наследие</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h2 class="footer__title">Клиентам</h2>
+                    <ul class="footer__list list-reset">
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Доставка и оплата</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Оферта</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="javascript:void(0)" class="footer__link" data-graph-path="message">Написать письмо
+                                директору</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="footer__contact">
+                <div class="footer__enum">
+                    <h2 class="footer__title">Контакты</h2>
+                    <ul class="footer__list list-reset">
+                        <li class="footer__item">
+                            <a href="tel:+79100004539" class="footer__link footer__link--tel" target="_blank">+7 (910)
+                                000 45 39</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="mailto:order@antekovac.ru" class="footer__link footer__link--mail" target="_blank">order@antekovac.ru</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="footer__container container">
+            <a class="footer__logo logo" href="/" aria-label="Логотип ANTE KOVAC">
+                <svg class="logo__svg" width="255" height="38">
+                    <use xlink:href="/upload/demo/img/sprite.svg#logo"></use>
+                </svg>
+                <span class="logo__slogan">Подлинное искусство в ваших руках</span>
+            </a>
+            <!--         <button class="footer__location btn-reset" data-graph-path="location">Санкт-Петербург</button>-->
+            <div class="footer__social social">
+                <ul class="social__list list-reset">
+                   <li class="social__item">
+                      <a href="https://vk.com/antekovac" class="social__link" target="_blank">
+                         <svg class="social__image" width="28" height="28">
+                            <use xlink:href="./img/sprite.svg#vk"></use>
+                         </svg>
+                      </a>
+                   </li>
+                    <li class="social__item">
+                        <a href="https://t.me/antekovac" class="social__link" target="_blank">
+                            <svg class="social__image" width="28" height="28">
+                                <use xlink:href="./img/sprite.svg#telegram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="https://wa.me/79100004539" class="social__link" target="_blank">
+                            <svg class="social__image" width="28" height="28">
+                                <use xlink:href="./img/sprite.svg#whatsapp"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="https://ru.pinterest.com/richandraul/" class="social__link" target="_blank">
+                            <svg class="social__image" width="28" height="28">
+                                <use xlink:href="./img/sprite.svg#pinterest"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <form action="/" class="footer__form form">
+                <label class="form__label label label--nested">
+                    <input class="form__input input" type="email" placeholder="Введите email">
+                    <button type="submit" class="form__button button button--light">
+                        <span class="button__text">Подписаться</span>
+                    </button>
+                </label>
+            </form>
+            <div class="footer__descriptions">
+                <a href="#" class="footer__description">Пользовательское соглашение</a>
+                <span class="footer__description">Торговая марка — RICH&RAUL</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer__chat chat fixed-block">
+        <div class="chat__button">
+            <a href="tel:+79100004539" target="_blank" class="chat__item">
+                <svg class="chat__svg" width="67" height="67">
+                    <use xlink:href="/upload/demo/img/sprite.svg#w-tel"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="chat__button">
+            <a href="https://wa.me/+79100004539" target="_blank" class="chat__item">
+                <svg class="chat__svg" width="67" height="67">
+                    <use xlink:href="/upload/demo/img/sprite.svg#w-wa"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="chat__button">
+            <a href="https://t.me/+79100004539" target="_blank" class="chat__item">
+                <svg class="chat__svg" width="67" height="67">
+                    <use xlink:href="/upload/demo/img/sprite.svg#w-tg"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="chat__button chat__button--main">
+         <span class="chat__item">
+            <svg class="chat__svg" width="67" height="67">
+               <use xlink:href="/upload/demo/img/sprite.svg#w-chat"></use>
+            </svg>
+         </span>
+        </div>
+    </div>
+</footer>
+
+      </div>
+   </body>
+</html>

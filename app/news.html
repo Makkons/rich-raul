@@ -54,7 +54,7 @@
         </button>
     </div>
 </div>
-<header id="header" class="header header--slim fixed-block" data-menu>
+<header id="header" class="header @headerClassName fixed-block" data-menu>
     <div class="header__container container">
         <div class="header__bar">
             <button class="header__burger burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
@@ -590,10 +590,10 @@
             <li class="breadcrumbs__item">
                <a href="#" class="breadcrumbs__link" title="Главная"></a>
             </li>
-            <li class="breadcrumbs__item">Новости</li>
+            <li class="breadcrumbs__item">Новости и события</li>
          </ul>
       </div>
-      <h1 class="news__title title">Новости</h1>
+      <h1 class="news__title title">Новости и события</h1>
       <ul class="news__list list-reset">
          <li class="news__item">
             <article class="news__article article-news">
@@ -720,62 +720,30 @@
    </div>
 </section>
 
-            <section class="showroom">
-   <div class="showroom__container container container--wide">
-      <div class="showroom__content">
-         <h2 class="showroom__title title title--h2">Подобрать и купить в Шоуруме</h2>
-         <p class="showroom__text text">Добро пожаловать в наш модный женский шоурум одежды и сумок! Здесь вы найдёте самые стильные и актуальные образы, высококачественные товары от ведущих мировых брендов. Наши опытные консультанты помогут вам выбрать подходящую одежду и аксессуары, учитывая ваш вкус и особенности фигуры.</p>
-         <a href="#" class="showroom__button button button--big">
-            <span class="button__text">Хочу в шоурум</span>
-            <svg class="button__icon" width="12" height="12">
-               <use xlink:href="./img/sprite.svg#arrow-btn"></use>
-            </svg>
-         </a>
-      </div>
-      <div class="showroom__slide">
-         <picture>
-            <source srcset="./img/showroom/image-01-mobile.webp" media="(max-width: 1024px)" type="image/webp" />
-            <source srcset="./img/showroom/image-01-mobile.png" media="(max-width: 1024px)" />
-            <source srcset="./img/showroom/image-01.webp" type="image/webp" />
-            <img class="showroom__image img" width="633" height="870" src="./img/showroom/image-01.png" alt="Showroom" />
-         </picture>
-      </div>
-      <div class="showroom__slide">
-         <div class="showroom__play play">
-            <video class="play__video" preload="false" width="633" height="415" poster="./img/showroom/video-poster.jpg" playsinline="playsinline" loop="loop" muted="muted">
-               <source data-desktop-src="./video-desktop.webm" data-mobile-src="./video-mobile.webm" type="video/webm" />
-               <source data-desktop-src="./video-desktop.mp4" data-mobile-src="./video-mobile.mp4" type="video/mp4" />
-            </video>
-            <button class="play__button btn-reset" type="button" class="btn-reset"></button>
-         </div>
-      </div>
-      <div class="showroom__slide">
-         <picture>
-            <source srcset="./img/showroom/image-02-mobile.webp" media="(max-width: 1024px)" type="image/webp" />
-            <source srcset="./img/showroom/image-02-mobile.png" media="(max-width: 1024px)" />
-            <source srcset="./img/showroom/image-02.webp" type="image/webp" />
-            <img class="showroom__image img" width="267" height="415" src="./img/showroom/image-02.png" alt="Showroom" />
-         </picture>
-      </div>
-      <div class="showroom__slide">
-         <picture>
-            <source srcset="./img/showroom/image-03-mobile.webp" media="(max-width: 1024px)" type="image/webp" />
-            <source srcset="./img/showroom/image-03-mobile.png" media="(max-width: 1024px)" />
-            <source srcset="./img/showroom/image-03.webp" type="image/webp" />
-            <img class="showroom__image img" width="267" height="415" src="./img/showroom/image-03.png" alt="Showroom" />
-         </picture>
-      </div>
-      <div class="showroom__slide">
-         <picture>
-            <source srcset="./img/showroom/image-04-mobile.webp" media="(max-width: 1024px)" type="image/webp" />
-            <source srcset="./img/showroom/image-04-mobile.png" media="(max-width: 1024px)" />
-            <source srcset="./img/showroom/image-04.webp" type="image/webp" />
-            <img class="showroom__image img" width="633" height="415" src="./img/showroom/image-04.png" alt="Showroom" />
-         </picture>
-      </div>
-   </div>
+            <section class="choose">
+    <div class="choose__container container container--wide">
+        <div class="choose__row">
+            <div class="choose__content content">
+                <h2 class="choose__title title">Подобрать и купить в Шоуруме</h2>
+                <p class="choose__text text">Добро пожаловать в наш модный женский шоурум одежды и сумок! Здесь вы найдёте самые стильные и актуальные образы, высококачественные товары от ведущих мировых брендов. Наши опытные консультанты помогут вам выбрать подходящую одежду и аксессуары, учитывая ваш вкус и особенности фигуры.</p>
+                <a href="#" class="choose__button button button--big button--outline">
+                    <span class="button__text">Хочу в Шоурум</span>
+                    <svg class="button__icon" width="14" height="14">
+                        <use xlink:href="./img/sprite.svg#arrow-btn"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="choose__picture">
+                <picture>
+                    <source srcset="/upload/demo/img/legacy/choose_mobile.webp" media="(max-width: 768px)" type="image/webp">
+                    <source srcset="/upload/demo/img/legacy/choose_mobile.jpg" media="(max-width: 768px)">
+                    <source srcset="/upload/demo/img/legacy/choose.webp" type="image/webp">
+                    <img class="choose__image img" width="900" height="570" src="/upload/demo/img/legacy/choose.jpg" alt="Фото">
+                </picture>
+            </div>
+        </div>
+    </div>
 </section>
-
          </main>
          <div class="graph-modal">
   <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="callback">
@@ -1206,6 +1174,58 @@
           <use xlink:href="./img/sprite.svg#arrow-btn"></use>
         </svg>
       </a>
+    </div>
+  </div>
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="detail-order">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title">Индивидуальный заказ по архивной модели</h2>
+      <form action="#" class="graph-modal__form form">
+        <div class="form__body">
+          <label class="form__label label label--user">
+            <input type="text" name="Имя" class="form__input input" placeholder="Имя и Фамилия*" required>
+          </label>
+          <label class="form__label label label--tel">
+            <input type="email" name="Email" class="form__input input" placeholder="e-mail*">
+          </label>
+          <label class="form__label label label--tel">
+            <input type="tel" name="Телефон" class="form__input input" placeholder="Телефон">
+          </label>
+          <label class="form__label label label__select select">
+            <input type="text" name="Изделие" placeholder="Наименование изделия" class="form__input input" value="" readonly required>
+            <div class="select__content">
+              <div class="select__option" data-value="Сумка №19">Сумка № 19</div>
+              <div class="select__option" data-value="Сумка Big bag">Сумка Big bag</div>
+              <div class="select__option" data-value="Клатч Нидзе">Клатч Нидзе</div>
+              <div class="select__option" data-value="Клатч Комета">Клатч Комета</div>
+              <div class="select__option" data-value="Клатч Брик">Клатч Брик</div>
+              <div class="select__option" data-value="Шопер">Шопер</div>
+              <div class="select__option" data-value="Сумка №7">Сумка № 7</div>
+              <div class="select__option" data-value="Сумка №107">Сумка № 107</div>
+              <div class="select__option" data-value="Сумка Мадлен">Сумка Мадлен</div>
+              <div class="select__option" data-value="Портфель">Портфель</div>
+              <div class="select__option" data-value="Портфель Ренард">Портфель Ренард</div>
+              <div class="select__option" data-value="Портфель горизонтальный">Портфель горизонтальный</div>
+            </div>
+          </label>
+          <label class="form__label label label--text">
+            <textarea name="Комментарий" class="form__input input" placeholder="Комментарий"></textarea>
+          </label>
+          <label class="form__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox" name="Согласие">
+            <span class="checkbox__box" aria-label="checkbox"></span>
+            <span class="checkbox__text">Я согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">политикой обработки персональных данных.</a></span>
+          </label>
+          <label class="form__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox" name="Подписка">
+            <span class="checkbox__box" aria-label="checkbox"></span>
+            <span class="checkbox__text">Подписаться на рассылку, чтобы первым получать новости о скидках и новых поступлениях</span>
+          </label>
+        </div>
+        <button type="submit" class="form__button button button--outline">
+          <span class="button__text">Отправить заявку</span>
+        </button>
+      </form>
     </div>
   </div>
 </div>

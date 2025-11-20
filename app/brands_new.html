@@ -731,10 +731,10 @@
             </div>
             <div class="choose__picture">
                 <picture>
-                    <source srcset="/upload/demo/img/choose/image_01_mobile.webp" media="(max-width: 768px)" type="image/webp">
-                    <source srcset="/upload/demo/img/choose/image_01_mobile.jpg" media="(max-width: 768px)">
-                    <source srcset="/upload/demo/img/choose/image_01.webp" type="image/webp">
-                    <img class="choose__image img" width="900" height="570" src="/upload/demo/img/choose/image_01.jpg" alt="Фото">
+                    <source srcset="/upload/demo/img/legacy/choose_mobile.webp" media="(max-width: 768px)" type="image/webp">
+                    <source srcset="/upload/demo/img/legacy/choose_mobile.jpg" media="(max-width: 768px)">
+                    <source srcset="/upload/demo/img/legacy/choose.webp" type="image/webp">
+                    <img class="choose__image img" width="900" height="570" src="/upload/demo/img/legacy/choose.jpg" alt="Фото">
                 </picture>
             </div>
         </div>
@@ -1170,6 +1170,58 @@
           <use xlink:href="./img/sprite.svg#arrow-btn"></use>
         </svg>
       </a>
+    </div>
+  </div>
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="detail-order">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <h2 class="graph-modal__title title">Индивидуальный заказ по архивной модели</h2>
+      <form action="#" class="graph-modal__form form">
+        <div class="form__body">
+          <label class="form__label label label--user">
+            <input type="text" name="Имя" class="form__input input" placeholder="Имя и Фамилия*" required>
+          </label>
+          <label class="form__label label label--tel">
+            <input type="email" name="Email" class="form__input input" placeholder="e-mail*">
+          </label>
+          <label class="form__label label label--tel">
+            <input type="tel" name="Телефон" class="form__input input" placeholder="Телефон">
+          </label>
+          <label class="form__label label label__select select">
+            <input type="text" name="Изделие" placeholder="Наименование изделия" class="form__input input" value="" readonly required>
+            <div class="select__content">
+              <div class="select__option" data-value="Сумка №19">Сумка № 19</div>
+              <div class="select__option" data-value="Сумка Big bag">Сумка Big bag</div>
+              <div class="select__option" data-value="Клатч Нидзе">Клатч Нидзе</div>
+              <div class="select__option" data-value="Клатч Комета">Клатч Комета</div>
+              <div class="select__option" data-value="Клатч Брик">Клатч Брик</div>
+              <div class="select__option" data-value="Шопер">Шопер</div>
+              <div class="select__option" data-value="Сумка №7">Сумка № 7</div>
+              <div class="select__option" data-value="Сумка №107">Сумка № 107</div>
+              <div class="select__option" data-value="Сумка Мадлен">Сумка Мадлен</div>
+              <div class="select__option" data-value="Портфель">Портфель</div>
+              <div class="select__option" data-value="Портфель Ренард">Портфель Ренард</div>
+              <div class="select__option" data-value="Портфель горизонтальный">Портфель горизонтальный</div>
+            </div>
+          </label>
+          <label class="form__label label label--text">
+            <textarea name="Комментарий" class="form__input input" placeholder="Комментарий"></textarea>
+          </label>
+          <label class="form__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox" name="Согласие">
+            <span class="checkbox__box" aria-label="checkbox"></span>
+            <span class="checkbox__text">Я согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">политикой обработки персональных данных.</a></span>
+          </label>
+          <label class="form__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox" name="Подписка">
+            <span class="checkbox__box" aria-label="checkbox"></span>
+            <span class="checkbox__text">Подписаться на рассылку, чтобы первым получать новости о скидках и новых поступлениях</span>
+          </label>
+        </div>
+        <button type="submit" class="form__button button button--outline">
+          <span class="button__text">Отправить заявку</span>
+        </button>
+      </form>
     </div>
   </div>
 </div>
