@@ -13325,27 +13325,3 @@ footer {
     height: 100vh;
   }
 }
-
-.header--light:not(.header--slim) .logo__picture, .header--light:not(.header--slim) .logo__image {
-  display: none;
-}
-
-.header--light:not(.header--slim) .logo__picture--light, .header--light:not(.header--slim) .logo__image--light {
-  display: block;
-}
-
-.header--light:not(.header--slim) .header__icon svg {
-  fill: var(--light-color);
-}
-
-.header--light:not(.header--slim) .header__burger, .header--light:not(.header--slim) .header__icon, .header--light:not(.header--slim) .header__link {
-  color: var(--light-color);
-}
-
-.header--light:not(.header--slim) .header__burger.burger--active {
-  color: var(--main-color);
-}
-
-.atelier .swiper-slide[data-theme=light] {
-  color: var(--light-color);
-}

@@ -5179,7 +5179,7 @@ function initInterestSwiper() {
       swiper: interestThumbsSwiper
     } : {}
   });
-  if (isMobile && interestThumbsSwiper && document.querySelector('.interest__swiper')) {
+  if (isMobile && interestThumbsSwiper && document.querySelector('.products_new .interest__swiper')) {
     const updateThumbsByHidingActive = () => {
       const mainRealIndex = interestSwiperMain.realIndex;
       const target = (mainRealIndex + 1) % interestThumbsSwiper.slides.length;
