@@ -3836,8 +3836,13 @@ footer {
     gap: calc(20px + 50 * (100vw - 375px) / 1545);
   }
 }
+@media (min-width: 60.0625rem) {
+  .nav__item--full > .nav__list--second > .nav__item {
+    white-space: nowrap;
+  }
+}
 @media (min-width: 60.0625rem) and (any-hover: hover) {
-  .nav__item--full > .nav__list--second > .nav__item:hover {
+  .nav__item--full > .nav__list--second > .nav__item > .nav__link:hover {
     opacity: 0.5;
     text-decoration: underline;
   }
