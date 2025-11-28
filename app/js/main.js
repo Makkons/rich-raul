@@ -1320,6 +1320,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
+/* harmony import */ var browser_sync_dist_default_config_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! browser-sync/dist/default-config.js */ "./node_modules/browser-sync/dist/default-config.js");
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const BREAKPOINT = 620;
@@ -1327,6 +1329,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!root) return;
   const rows = Array.from(root.querySelectorAll('.description-product__row'));
   const captions = Array.from(root.querySelectorAll('.description-product__caption'));
+  const contents = Array.from(root.querySelectorAll('.description-product__content'));
   function init() {
     const isDesktop = window.innerWidth >= BREAKPOINT;
     rows.forEach((row, index) => {
@@ -1340,8 +1343,8 @@ document.addEventListener('DOMContentLoaded', () => {
         row.classList.remove('is-active');
       }
     });
-    attachDynamicBottomPadding();
-    setupShowMore();
+    attachDynamicBottomPadding(isDesktop);
+    setupShowMore(isDesktop);
   }
   captions.forEach(caption => {
     caption.addEventListener('click', e => {
@@ -1352,12 +1355,14 @@ document.addEventListener('DOMContentLoaded', () => {
         row.classList.add('is-active');
       } else {
         row.classList.toggle('is-active');
+        setMaxHeight(caption, isDesktop);
       }
     });
   });
-  function attachDynamicBottomPadding() {
+  function attachDynamicBottomPadding(isDesktop) {
     const root = document.querySelector('.product__description');
     if (!root) return;
+    if (!isDesktop) return;
     const resizeObserver = new ResizeObserver(updatePadding);
     const mutationObserver = new MutationObserver(updatePadding);
     function getActiveContent() {
@@ -1369,6 +1374,7 @@ document.addEventListener('DOMContentLoaded', () => {
         root.style.paddingBottom = '';
         return;
       }
+      if (!isDesktop) return;
       const height = activeContent.offsetHeight;
       root.style.paddingBottom = height + 'px';
     }
@@ -1386,12 +1392,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (activeContentInitial) resizeObserver.observe(activeContentInitial);
     updatePadding();
   }
-  function setupShowMore() {
+  function setupShowMore(isDesktop) {
     rows.forEach(row => {
       const limited = row.classList.contains('is-limited');
       if (!limited) return;
       const buttonShowMore = row.querySelector('.description-product__show-more');
-      const isDesktop = window.innerWidth >= BREAKPOINT;
       if (!isDesktop && buttonShowMore) buttonShowMore.remove();
       if (!isDesktop) return;
       if (buttonShowMore) return;
@@ -1406,6 +1411,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       content.appendChild(btn);
     });
+  }
+  function setMaxHeight(caption, isDesktop) {
+    if (!contents) return;
+    if (isDesktop) {
+      contents.forEach(content => {
+        content.style.maxHeight = null;
+      });
+      return;
+    }
+    ;
+    const container = caption.closest('.description-product__row');
+    const content = container.querySelector('.description-product__content');
+    const children = content.children;
+    let height = null;
+    if (!container.classList.contains('is-active')) {
+      content.style.maxHeight = null;
+      return;
+    }
+    for (let i = 0; i < children.length; i++) {
+      const marginBottom = parseFloat(getComputedStyle(children[i]).marginBottom);
+      height += children[i].offsetHeight + marginBottom;
+    }
+    content.style.maxHeight = height + 'px';
   }
   let throttleInit = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__.throttle)(() => {
     init();

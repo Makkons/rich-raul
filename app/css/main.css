@@ -11669,6 +11669,7 @@ footer {
   }
   .description-product__row.is-active .description-product__content {
     max-height: 62.5rem;
+    height: 100%;
   }
 }
 .description-product__content {
@@ -11691,6 +11692,7 @@ footer {
 @media (max-width: 38.75rem) {
   .description-product__content {
     max-height: 0;
+    height: 0;
     position: initial;
     display: block;
     overflow: hidden;
