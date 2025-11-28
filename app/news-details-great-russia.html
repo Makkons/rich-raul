@@ -1070,21 +1070,31 @@
   <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="product-callback">
     <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
     <div class="graph-modal__content">
-      <h2 class="graph-modal__title title">Сообщить о поступлении</h2>
+      <h2 class="graph-modal__title title">Узнать о поступлении</h2>
       <form action="#" class="graph-modal__form form">
         <div class="form__body">
-          <label class="form__label label label--email">
-            <input type="email" name="Email" class="form__input input" placeholder="Email">
+          <label class="form__label label label--user">
+            <input type="text" name="Имя" class="form__input input" placeholder="Имя и Фамилия*" required>
+          </label>
+          <label class="form__label label label--tel">
+            <input type="email" name="Email" class="form__input input" placeholder="e-mail*">
+          </label>
+          <label class="form__label label label--tel">
+            <input type="tel" name="Телефон" class="form__input input" placeholder="Телефон">
+          </label>
+          <label class="form__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox" name="Согласие">
+            <span class="checkbox__box" aria-label="checkbox"></span>
+            <span class="checkbox__text">Я согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">политикой обработки персональных данных.</a></span>
+          </label>
+          <label class="form__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox" name="Подписка">
+            <span class="checkbox__box" aria-label="checkbox"></span>
+            <span class="checkbox__text">Подписаться на рассылку, чтобы первым получать новости о скидках и новых поступлениях</span>
           </label>
         </div>
-        <p class="form__descriptions">
-          Нажимая на кнопку «отправить» вы соглашаетесь с <a href="#" target="_blank">политикой конфиденциальности</a>
-        </p>
-        <button type="submit" class="form__button button button--big">
-          <span class="button__text">Отправить</span>
-          <svg class="button__icon" width="14" height="14">
-            <use href="./img/sprite.svg#arrow-btn"></use>
-          </svg>
+        <button type="submit" class="form__button button button--outline">
+          <span class="button__text">Узнать о поступлении</span>
         </button>
       </form>
     </div>
