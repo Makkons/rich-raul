@@ -2621,13 +2621,17 @@ footer {
 }
 .card__remove, .card__heart {
   position: absolute;
-  top: 0.625rem;
-  left: 0.625rem;
+  top: 0.3125rem;
+  left: 0.3125rem;
   stroke-width: 0.125rem;
   stroke: var(--main-color);
   z-index: 10;
   -webkit-transition: stroke 0.3s ease 0s, opacity 0.3s ease 0s;
   transition: stroke 0.3s ease 0s, opacity 0.3s ease 0s;
+}
+.card__remove svg, .card__heart svg {
+  width: 1.5625rem;
+  height: 1.5625rem;
 }
 @media (any-hover: hover) {
   .card__remove:hover, .card__heart:hover {
@@ -2637,10 +2641,16 @@ footer {
 .card__remove:focus, .card__heart:focus {
   opacity: 1;
 }
+@media (max-width: 38.75rem) {
+  .card__remove svg, .card__heart svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
 .card__heart {
-  top: 1.25rem;
+  top: 0.3125rem;
+  right: 0.3125rem;
   left: auto;
-  right: 1.25rem;
   opacity: 0.2;
 }
 .card__heart--active {
@@ -11253,8 +11263,8 @@ footer {
   color: rgba(0, 0, 0, 0.4);
 }
 .product__heart svg {
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .product__status {
   top: 1.875rem;
