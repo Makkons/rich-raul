@@ -1352,7 +1352,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const isDesktop = window.innerWidth >= BREAKPOINT;
       if (isDesktop) {
         rows.forEach(r => r.classList.remove('is-active'));
+        const beforeTop = row.getBoundingClientRect().top;
         row.classList.add('is-active');
+        requestAnimationFrame(() => {
+          const afterTop = row.getBoundingClientRect().top;
+          const diff = afterTop - beforeTop;
+          window.scrollBy({
+            top: diff,
+            behavior: 'auto'
+          });
+        });
       } else {
         row.classList.toggle('is-active');
         setMaxHeight(caption, isDesktop);
@@ -1406,8 +1415,17 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.type = 'button';
       btn.textContent = 'Показать ещё';
       btn.addEventListener('click', () => {
+        const beforeTop = row.getBoundingClientRect().top;
         row.classList.remove('is-limited');
         btn.remove();
+        requestAnimationFrame(() => {
+          const afterTop = row.getBoundingClientRect().top;
+          const diff = afterTop - beforeTop;
+          window.scrollBy({
+            top: diff,
+            behavior: 'auto'
+          });
+        });
       });
       content.appendChild(btn);
     });
