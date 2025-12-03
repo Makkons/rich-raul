@@ -1410,6 +1410,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isDesktop) return;
       if (buttonShowMore) return;
       const content = row.querySelector('.description-product__content');
+      const isOverflowing = content.scrollHeight > content.clientHeight;
+      if (!isOverflowing) return;
       const btn = document.createElement('button');
       btn.className = 'description-product__show-more btn-reset';
       btn.type = 'button';
