@@ -617,13 +617,12 @@
                                     <img class="swiper-list__image img" width="247" height="280" src="/upload/demo/img/product/bag/picture-01.png" alt="Сумка">
                                 </picture>
                             </div>
-                            <div class="swiper-slide swiper-list__slide">
-                                <picture>
-                                    <source srcset="/upload/demo/img/product/bag/picture-02-mobile.webp" media="(max-width: 768px)" type="image/webp">
-                                    <source srcset="/upload/demo/img/product/bag/picture-02-mobile.png" media="(max-width: 768px)">
-                                    <source srcset="/upload/demo/img/product/bag/picture-02.webp" type="image/webp">
-                                    <img class="swiper-list__image img" width="247" height="280" src="/upload/demo/img/product/bag/picture-02.png" alt="Сумка">
-                                </picture>
+                            <div class="swiper-slide swiper-details__play play">
+                                <video class="play__video" preload="false" width="766" height="431" poster="./img/product/bag/picture-03.png" playsinline="playsinline" loop="loop" muted="muted">
+                                    <source data-desktop-src="./video-desktop.webm" data-mobile-src="./video-mobile.webm" type="video/webm">
+                                    <source data-desktop-src="./video-desktop.mp4" data-mobile-src="./video-mobile.mp4" type="video/mp4">
+                                </video>
+                                <button class="play__button btn-reset" type="button" class="btn-reset"></button>
                             </div>
                             <div class="swiper-slide swiper-list__slide">
                                 <picture>
@@ -649,136 +648,138 @@
                 </div>
             </div>
             <div class="product__info">
-                <form action="" class="product__form">
-                    <div class="product__head">
-                        <div class="product__brand">
-                            <a href="#">
-                                <img width="247" height="62" src="/upload/demo/img/svg/logo.svg" alt="ANTE KOVAC">
-                            </a>
-                        </div>
-                        <div class="product__bar">
-                            <h1 class="product__title">Портфель Voyage «Над городом»</h1>
-                            <p class="product__name">Клатч</p>
-                            <p class="product__article">Артикул: 00000000</p>
-                        </div>
-                        <button class="product__heart heart btn-reset heart--active" aria-label="Добавить в избранное">
-                            <svg class="heart__icon" width="40" height="40" stroke-width="0">
-                                <use href="/upload/demo/img/sprite.svg#icon-heart"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="product__parameter parameter-product">
-                        <div class="parameter-product__col">
-                            <p class="parameter-product__caption">Похожий дизайн</p>
-                            <ul class="parameter-product__list list-reset">
-                                <li class="parameter-product__item">
-                                    <a href="#" class="parameter-product__similar">
-                                        <img width="170" height="170" src="/upload/demo/img/product/bag/picture-04.png" alt="" class="parameter-product__thumb">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="parameter-product__col">
-                            <p class="parameter-product__caption">Размеры</p>
-                            <ul class="parameter-product__list list-reset">
-                                <li class="parameter-product__item">
-                                    <p class="parameter-product__link is-checked">48-50</p>
-                                </li>
-                                <li class="parameter-product__item">
-                                    <a href="#" class="parameter-product__link">52-54</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="parameter-product__col">
-                            <p class="parameter-product__caption">Аромат</p>
-                            <ul class="parameter-product__list list-reset">
-                                <li class="parameter-product__item">
-                                    <p class="parameter-product__link is-checked">AMBER PEPPER</p>
-                                </li>
-                                <li class="parameter-product__item">
-                                    <a href="#" class="parameter-product__link">BURLEY VANILLA</a>
-                                </li>
-                                <li class="parameter-product__item">
-                                    <a href="#" class="parameter-product__link">AMBER VANILLA PATCHOULI</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="parameter-product__col">
-                            <p class="parameter-product__caption">Объем</p>
-                            <ul class="parameter-product__list list-reset">
-                                <li class="parameter-product__item">
-                                    <p class="parameter-product__link is-checked">300 мл</p>
-                                </li>
-                                <li class="parameter-product__item">
-                                    <a href="#" class="parameter-product__link">500 мл</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product__confirm">
-                        <button type="button" id="product-button-add" class="product__button button button--big">
-                            <span class="button__text">Добавить в корзину</span>
-                            <div class="product__value value">
-                                <output class="value__discount" name="Скидка: ">-20%</output>
-                                <output class="value__old" name="Без-скидки: ">350 000 ₽</output>
-                                <output class="value__price" name="Итого: ">1 610 000 ₽</output>
+                <div class="product__content">
+                    <form action="" class="product__form">
+                        <div class="product__head">
+                            <div class="product__brand">
+                                <a href="#">
+                                    <img width="247" height="62" src="/upload/demo/img/svg/logo.svg" alt="ANTE KOVAC">
+                                </a>
                             </div>
-                        </button>
-                        <button type="button" id="product-button-callback" class="product__button button button--big" data-graph-path="product-callback">
-                            <span class="button__text">Узнать о поступлении</span>
-                        </button>
-                    </div>
-                </form>
-                <div class="product__description description-product">
-                    <div class="description-product__row is-limited">
-                        <p class="description-product__caption">Описание</p>
-                        <div class="description-product__content">
-                            <p>Платье прямого силуэта с умеренным объёмом. Застежка-поло, воротник отложной на отрезной стойке. Линия плеча спущенная, рукав длинный. Машинная вышивка в технике ришелье</p>
-                            <p>Платье прямого силуэта с умеренным объёмом. Застежка-поло, воротник отложной на отрезной стойке. Линия плеча спущенная, рукав длинный. Машинная вышивка в технике ришелье</p>
+                            <div class="product__bar">
+                                <h1 class="product__title">Портфель Voyage «Над городом»</h1>
+                                <p class="product__name">Клатч</p>
+                                <p class="product__article">Артикул: 00000000</p>
+                            </div>
+                            <button class="product__heart heart btn-reset card__heart--active" aria-label="Добавить в избранное">
+                                <svg class="heart__icon" width="40" height="40" stroke-width="0">
+                                    <use href="/upload/demo/img/sprite.svg#icon-heart"></use>
+                                </svg>
+                            </button>
                         </div>
-                    </div>
-                    <div class="description-product__row">
-                        <p class="description-product__caption">Характеристики</p>
-                        <div class="description-product__content">
-                            <ol>
-                                <li>
-                                    <span>Бренд</span>
-                                    <span>ANTE KOVAC</span>
-                                </li>
-                                <li>
-                                    <span>Размер</span>
-                                    <span>48-50</span>
-                                </li>
-                                <li>
-                                    <span>Материал</span>
-                                    <span>Натуральная кожа, кожа питона</span>
-                                </li>
-                                <li>
-                                    <span>Страна</span>
-                                    <span>Россия</span>
-                                </li>
-                            </ol>
+                        <div class="product__parameter parameter-product">
+                            <div class="parameter-product__col">
+                                <p class="parameter-product__caption">Похожий дизайн</p>
+                                <ul class="parameter-product__list list-reset">
+                                    <li class="parameter-product__item">
+                                        <a href="#" class="parameter-product__similar">
+                                            <img width="170" height="170" src="/upload/demo/img/product/bag/picture-04.png" alt="" class="parameter-product__thumb">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="parameter-product__col">
+                                <p class="parameter-product__caption">Размеры</p>
+                                <ul class="parameter-product__list list-reset">
+                                    <li class="parameter-product__item">
+                                        <p class="parameter-product__link is-checked">48-50</p>
+                                    </li>
+                                    <li class="parameter-product__item">
+                                        <a href="#" class="parameter-product__link">52-54</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="parameter-product__col">
+                                <p class="parameter-product__caption">Аромат</p>
+                                <ul class="parameter-product__list list-reset">
+                                    <li class="parameter-product__item">
+                                        <p class="parameter-product__link is-checked">AMBER PEPPER</p>
+                                    </li>
+                                    <li class="parameter-product__item">
+                                        <a href="#" class="parameter-product__link">BURLEY VANILLA</a>
+                                    </li>
+                                    <li class="parameter-product__item">
+                                        <a href="#" class="parameter-product__link">AMBER VANILLA PATCHOULI</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="parameter-product__col">
+                                <p class="parameter-product__caption">Объем</p>
+                                <ul class="parameter-product__list list-reset">
+                                    <li class="parameter-product__item">
+                                        <p class="parameter-product__link is-checked">300 мл</p>
+                                    </li>
+                                    <li class="parameter-product__item">
+                                        <a href="#" class="parameter-product__link">500 мл</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="description-product__row">
-                        <p class="description-product__caption">Уход</p>
-                        <div class="description-product__content">
-                            <ul>
-                                <li>Не воздействовать на изделие какими-либо химикатами, в том числе чистящими средствами.</li>
-                                <li>Не подвергать спиртовой обработке, в том числе спиртовыми влажными салфетками.</li>
-                                <li>Не подвергать воздействию огня, влаги, сильных температурных перепадов.</li>
-                                <li>Не подвергать сильной деформации.</li>
-                                <li>Изделия из экзотической кожи храните чистыми и сухими в сухом прохладном месте — натуральная экзотическая кожа не любит щелочных, жирных и кислотных химических веществ.</li>
-                                <li>Экзотическую кожу чистите мягкой увлажненной тканью, если хотите придать блеск изделию, то используйте только специальные средства, а затем полируйте его сухой тряпкой. Не протирайте кожу агрессивно и не трите ее в направлении, противоположном естественному расположению чешуек или рисунка в зависимости от эксклюзивной кожи.</li>
-                                <li>Гарантия на изделие 1 год.</li>
-                            </ul>
+                        <div class="product__confirm">
+                            <button type="button" id="product-button-add" class="product__button button button--big">
+                                <span class="button__text">Добавить в корзину</span>
+                                <div class="product__value value">
+                                    <output class="value__discount" name="Скидка: ">-20%</output>
+                                    <output class="value__old" name="Без-скидки: ">350 000 ₽</output>
+                                    <output class="value__price" name="Итого: ">1 610 000 ₽</output>
+                                </div>
+                            </button>
+                            <button type="button" id="product-button-callback" class="product__button button button--big" data-graph-path="product-callback">
+                                <span class="button__text">Узнать о поступлении</span>
+                            </button>
                         </div>
-                    </div>
-                    <div class="description-product__row">
-                        <p class="description-product__caption">Оплата и доставка</p>
-                        <div class="description-product__content">
-                            <p>80% норка, 20% хлопок</p>
-                            <a href="#">Подробнее об оплате и доставке</a>
+                    </form>
+                    <div class="product__description description-product">
+                        <div class="description-product__row is-limited">
+                            <p class="description-product__caption">Описание</p>
+                            <div class="description-product__content">
+                                <p>Платье прямого силуэта с умеренным объёмом. Застежка-поло, воротник отложной на отрезной стойке. Линия плеча спущенная, рукав длинный. Машинная вышивка в технике ришелье</p>
+                                <p>Платье прямого силуэта с умеренным объёмом. Застежка-поло, воротник отложной на отрезной стойке. Линия плеча спущенная, рукав длинный. Машинная вышивка в технике ришелье</p>
+                            </div>
+                        </div>
+                        <div class="description-product__row">
+                            <p class="description-product__caption">Характеристики</p>
+                            <div class="description-product__content">
+                                <ol>
+                                    <li>
+                                        <span>Бренд</span>
+                                        <span>ANTE KOVAC</span>
+                                    </li>
+                                    <li>
+                                        <span>Размер</span>
+                                        <span>48-50</span>
+                                    </li>
+                                    <li>
+                                        <span>Материал</span>
+                                        <span>Натуральная кожа, кожа питона</span>
+                                    </li>
+                                    <li>
+                                        <span>Страна</span>
+                                        <span>Россия</span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="description-product__row">
+                            <p class="description-product__caption">Уход</p>
+                            <div class="description-product__content">
+                                <ul>
+                                    <li>Не воздействовать на изделие какими-либо химикатами, в том числе чистящими средствами.</li>
+                                    <li>Не подвергать спиртовой обработке, в том числе спиртовыми влажными салфетками.</li>
+                                    <li>Не подвергать воздействию огня, влаги, сильных температурных перепадов.</li>
+                                    <li>Не подвергать сильной деформации.</li>
+                                    <li>Изделия из экзотической кожи храните чистыми и сухими в сухом прохладном месте — натуральная экзотическая кожа не любит щелочных, жирных и кислотных химических веществ.</li>
+                                    <li>Экзотическую кожу чистите мягкой увлажненной тканью, если хотите придать блеск изделию, то используйте только специальные средства, а затем полируйте его сухой тряпкой. Не протирайте кожу агрессивно и не трите ее в направлении, противоположном естественному расположению чешуек или рисунка в зависимости от эксклюзивной кожи.</li>
+                                    <li>Гарантия на изделие 1 год.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description-product__row">
+                            <p class="description-product__caption">Оплата и доставка</p>
+                            <div class="description-product__content">
+                                <p>80% норка, 20% хлопок</p>
+                                <a href="#">Подробнее об оплате и доставке</a>
+                            </div>
                         </div>
                     </div>
                 </div>

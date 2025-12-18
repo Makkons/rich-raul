@@ -2133,9 +2133,6 @@ footer {
   opacity: 0;
 }
 @media (any-hover: hover) {
-  .play:hover::before {
-    opacity: 0;
-  }
   .play:hover .play__button {
     background-image: url(/upload/demo/img/svg/play.svg);
     background-color: rgba(255, 255, 255, 0.8);
@@ -2152,18 +2149,6 @@ footer {
 }
 .play:has(video).play--active::before {
   opacity: 0;
-}
-.play:has(video)::before {
-  position: absolute;
-  content: "";
-  display: block;
-  inset: 0;
-  background: var(--main-color);
-  opacity: 0.5;
-  z-index: 1;
-  pointer-events: none;
-  -webkit-transition: opacity 0.3s ease 0s;
-  transition: opacity 0.3s ease 0s;
 }
 @media (any-hover: hover) {
   .play:has(.play__button:hover)::before {
@@ -2656,6 +2641,7 @@ footer {
 .card__heart--active {
   opacity: 1;
   fill: var(--accent-color);
+  color: var(--accent-color);
 }
 .card .swiper-pagination {
   bottom: 0;
@@ -2841,6 +2827,7 @@ footer {
 .heart--active {
   opacity: 1;
   fill: var(--accent-color);
+  color: var(--accent-color);
 }
 @media (any-hover: hover) {
   .heart:hover {
@@ -11053,9 +11040,24 @@ footer {
     grid-row: 1/2;
   }
 }
-.product__info {
-  position: sticky;
-  top: calc(var(--marquee-height) + var(--header-height) + var(--nav-height) + 4.25rem);
+@media (min-width: 961px) {
+  .product .product__info {
+    min-width: 32.5rem;
+  }
+}
+@media (min-width: 961px) {
+  .product .product__info {
+    position: sticky;
+    top: calc(var(--header-height) + var(--nav-height) + var(--marquee-height));
+    height: calc(100vh - (var(--header-height) + var(--nav-height) + var(--marquee-height)));
+    overflow: hidden;
+  }
+  .product .product__content {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+    padding-bottom: 2.5rem;
+  }
 }
 .product__head {
   display: -webkit-box;
@@ -11273,6 +11275,11 @@ footer {
   width: 1.875rem;
   height: 1.875rem;
 }
+@media (max-width: 60rem) {
+  .product__heart {
+    right: auto;
+  }
+}
 .product__status {
   top: 1.875rem;
 }
@@ -11404,8 +11411,7 @@ footer {
   overflow: hidden;
 }
 .swiper-details__slide, .swiper-details__play {
-  width: 100% !important;
-  height: 100% !important;
+  height: auto;
 }
 .swiper-details__slide video,
 .swiper-details__slide img,
@@ -11414,8 +11420,8 @@ footer {
 .swiper-details__play picture {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 .swiper-details .swiper-button-close {
   display: none;

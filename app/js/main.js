@@ -1258,6 +1258,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_accordTab_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/accordTab.js */ "./src/js/components/accordTab.js");
 /* harmony import */ var _components_footer_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/footer.js */ "./src/js/components/footer.js");
 /* harmony import */ var _components_widgetChat_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/widgetChat.js */ "./src/js/components/widgetChat.js");
+/* harmony import */ var _components_productScroll_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/productScroll.js */ "./src/js/components/productScroll.js");
 
 
 
@@ -1280,6 +1281,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import './components/simplebar.js';
+
 
 
 
@@ -3155,6 +3157,76 @@ if (productButtonAdd) {
   }
   updateButton();
 }
+
+/***/ }),
+
+/***/ "./src/js/components/productScroll.js":
+/*!********************************************!*\
+  !*** ./src/js/components/productScroll.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function initProductInfoScroll() {
+  const wrapper = document.querySelector('.product__wrapper');
+  const info = wrapper?.querySelector('.product__info');
+  const content = info?.querySelector('.product__content');
+  if (!wrapper || !info || !content) return;
+  const media = window.matchMedia('(min-width: 961px)');
+  let enabled = false;
+  let lastScrollY = window.scrollY;
+  function update() {
+    if (!enabled) return;
+    const fixedOffset = getFixedOffset();
+    const viewportHeight = window.innerHeight - fixedOffset;
+    const contentHeight = content.offsetHeight;
+    if (contentHeight <= viewportHeight) {
+      content.style.transform = 'translateY(0)';
+      info.style.height = 'auto';
+      return;
+    }
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const maxOffset = contentHeight - viewportHeight;
+    let offset = 0;
+    if (wrapperRect.top >= fixedOffset) {
+      offset = 0;
+    } else if (wrapperRect.bottom <= window.innerHeight) {
+      offset = maxOffset;
+    } else {
+      const delta = window.scrollY - lastScrollY;
+      const current = -(parseFloat(content.style.transform.replace('translateY(', '')) || 0);
+      offset = Math.min(maxOffset, Math.max(0, current + delta));
+    }
+    info.style.removeProperty('height');
+    content.style.transform = `translateY(${-offset}px)`;
+    lastScrollY = window.scrollY;
+  }
+  function enable() {
+    enabled = true;
+    lastScrollY = window.scrollY;
+    window.addEventListener('scroll', update, {
+      passive: true
+    });
+  }
+  function disable() {
+    enabled = false;
+    content.style.transform = '';
+    window.removeEventListener('scroll', update);
+  }
+  function getFixedOffset() {
+    const styles = getComputedStyle(document.documentElement);
+    return parseFloat(styles.getPropertyValue('--header-height')) + parseFloat(styles.getPropertyValue('--marquee-height')) + parseFloat(styles.getPropertyValue('--nav-height')) || 0;
+  }
+  function check() {
+    media.matches ? enable() : disable();
+  }
+  media.addEventListener('change', check);
+  check();
+  new ResizeObserver(update).observe(content);
+  window.addEventListener('resize', update);
+}
+initProductInfoScroll();
 
 /***/ }),
 
