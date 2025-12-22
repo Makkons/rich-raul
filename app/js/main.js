@@ -4126,7 +4126,8 @@ if (play.length > 0) {
     play.forEach(item => {
       const video = item.querySelector('video');
       if ((0,_functions_isElementInViewport_js__WEBPACK_IMPORTED_MODULE_1__.isElementInViewport)(item)) {
-        const isMobile = window.innerWidth <= 768;
+        const mobileWidth = Number(video.dataset.mobileWidth) || 768;
+        const isMobile = window.innerWidth <= mobileWidth;
         let source = video.querySelectorAll('.play__video source');
         if (source[0].closest('.swiper')) {
           source = source[0].closest('.swiper').querySelectorAll('.play__video source');
