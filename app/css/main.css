@@ -4083,7 +4083,7 @@ footer {
   width: 100%;
   background: var(--light-color);
   z-index: 55;
-  background: #d3d1c8;
+  background: #e7e7e7;
 }
 .marquee--active {
   display: block;
@@ -9513,6 +9513,12 @@ footer {
 @media (max-width: 38.75rem) {
   .main__new .slider-about {
     margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 38.75rem) {
+  .hero ~ .slider-about .swiper {
+    height: 25rem;
   }
 }
 
