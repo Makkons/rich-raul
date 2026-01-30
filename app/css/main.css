@@ -340,6 +340,11 @@ footer {
   -ms-scroll-chaining: none;
   overscroll-behavior: none;
 }
+@media (min-width: 112.5rem) {
+  .disable-scroll .nav__item--full {
+    padding-right: var(--scroll-bar-width);
+  }
+}
 
 .page-ios .disable-scroll {
   position: relative;
@@ -843,7 +848,6 @@ footer {
   color: var(--main-color);
   padding: 1.4375rem 2.5rem 1.75rem;
   background: rgba(255, 255, 255, 0.7);
-  -webkit-backdrop-filter: blur(0.9375rem);
   backdrop-filter: blur(0.9375rem);
   -webkit-transition: background 0.3s ease 0s, color 0.3s ease 0s;
   transition: background 0.3s ease 0s, color 0.3s ease 0s;
@@ -2169,7 +2173,6 @@ footer {
   background-size: 3.125rem 3.125rem;
   background-position: 55% center;
   background-color: rgba(255, 255, 255, 0.08);
-  -webkit-backdrop-filter: blur(0.9375rem);
   backdrop-filter: blur(0.9375rem);
   border-radius: 100%;
   opacity: 1;
@@ -2917,7 +2920,6 @@ footer {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 1;
-  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   background: rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -3081,13 +3083,15 @@ footer {
   height: 0;
   min-height: 0;
   overflow: hidden;
+}
+.tags__button:not(.tags__button--active) {
+  padding: 0;
+}
+.tags__button {
   -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, visibility 0.3s ease, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, -webkit-transform 0.3s ease;
-}
-.tags__button:not(.tags__button--active) {
-  padding: 0;
 }
 @media (max-width: 48rem) {
   .tags__button--active {
@@ -4655,7 +4659,6 @@ footer {
   font-weight: 400;
   line-height: 111%;
   text-align: center;
-  -webkit-backdrop-filter: blur(0.9375rem);
   backdrop-filter: blur(0.9375rem);
   background: rgba(255, 255, 255, 0.1);
   margin: 1.875rem;
@@ -5019,7 +5022,6 @@ footer {
   justify-content: center;
   padding: 2.25rem 3.125rem;
   background: rgba(255, 255, 255, 0.75);
-  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
 }
 @media (any-hover: hover) {
@@ -5295,7 +5297,6 @@ footer {
   transform: translate(-50%, -60%);
   text-align: center;
   background: rgba(255, 255, 255, 0.7);
-  -webkit-backdrop-filter: blur(0.9375rem);
   backdrop-filter: blur(0.9375rem);
   padding: 2.25rem 3.5rem 2rem;
 }
@@ -5340,7 +5341,6 @@ footer {
 .main__new .atelier__wrap {
   padding: 0;
   background: transparent;
-  -webkit-backdrop-filter: none;
   backdrop-filter: none;
   margin-top: 2.5rem;
 }
