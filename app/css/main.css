@@ -7090,6 +7090,12 @@ footer {
   width: 100%;
   min-width: 0;
 }
+.graph-modal__picture:not(:last-child) {
+  margin-bottom: 0.875rem;
+}
+.graph-modal__picture img {
+  width: 100%;
+}
 
 .graph-modal__container {
   border-radius: 0;
@@ -7188,6 +7194,31 @@ footer {
 }
 .graph-modal__container .city-form .city-item .radio__input:checked ~ .radio__name {
   color: var(--accent-color);
+}
+.graph-modal__container[data-graph-target=bonus] {
+  max-width: 31.25rem;
+  padding: 2.1875rem 2.5rem;
+}
+@media (max-width: 38.75rem) {
+  .graph-modal__container[data-graph-target=bonus] {
+    padding: 1.5625rem 1.25rem;
+  }
+}
+.graph-modal__container[data-graph-target=bonus] .title {
+  line-height: 127%;
+  letter-spacing: 0.12em;
+}
+.graph-modal__container[data-graph-target=bonus] .title:not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+.graph-modal__container[data-graph-target=bonus] .text {
+  text-align: center;
+}
+.graph-modal__container[data-graph-target=bonus] .text:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+.graph-modal__container[data-graph-target=bonus] .button {
+  min-height: 3.75rem;
 }
 .graph-modal__container .checkbox__box::before {
   border-color: var(--main-color);

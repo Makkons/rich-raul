@@ -11938,8 +11938,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/throttle.js */ "./src/js/functions/throttle.js");
-/* harmony import */ var browser_sync_dist_default_config_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! browser-sync/dist/default-config.js */ "./node_modules/browser-sync/dist/default-config.js");
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const BREAKPOINT = 620;
@@ -12019,35 +12017,61 @@ document.addEventListener('DOMContentLoaded', () => {
     if (activeContentInitial) resizeObserver.observe(activeContentInitial);
     updatePadding();
   }
+  const showMoreObservers = new Map();
+  let isChecking = false;
   function setupShowMore(isDesktop) {
     rows.forEach(row => {
       const limited = row.classList.contains('is-limited');
-      if (!limited) return;
+      const content = row.querySelector('.description-product__content');
       const buttonShowMore = row.querySelector('.description-product__show-more');
+      if (showMoreObservers.has(content)) {
+        showMoreObservers.get(content).disconnect();
+        showMoreObservers.delete(content);
+      }
+      if (!limited) return;
       if (!isDesktop && buttonShowMore) buttonShowMore.remove();
       if (!isDesktop) return;
-      if (buttonShowMore) return;
-      const content = row.querySelector('.description-product__content');
-      const isOverflowing = content.scrollHeight > content.clientHeight;
-      if (!isOverflowing) return;
-      const btn = document.createElement('button');
-      btn.className = 'description-product__show-more btn-reset';
-      btn.type = 'button';
-      btn.textContent = 'Показать ещё';
-      btn.addEventListener('click', () => {
-        const beforeTop = row.getBoundingClientRect().top;
-        row.classList.remove('is-limited');
-        btn.remove();
-        requestAnimationFrame(() => {
-          const afterTop = row.getBoundingClientRect().top;
-          const diff = afterTop - beforeTop;
-          window.scrollBy({
-            top: diff,
-            behavior: 'auto'
+      function checkAndToggleButton() {
+        if (isChecking) return;
+        isChecking = true;
+        const existingBtn = row.querySelector('.description-product__show-more');
+        const needsButton = isLineClamped(content);
+        isChecking = false;
+        if (needsButton && !existingBtn) {
+          const btn = document.createElement('button');
+          btn.className = 'description-product__show-more btn-reset';
+          btn.type = 'button';
+          btn.textContent = 'Показать ещё';
+          btn.addEventListener('click', () => {
+            const beforeTop = row.getBoundingClientRect().top;
+            row.classList.remove('is-limited');
+            btn.remove();
+            if (showMoreObservers.has(content)) {
+              showMoreObservers.get(content).disconnect();
+              showMoreObservers.delete(content);
+            }
+            requestAnimationFrame(() => {
+              const afterTop = row.getBoundingClientRect().top;
+              const diff = afterTop - beforeTop;
+              window.scrollBy({
+                top: diff,
+                behavior: 'auto'
+              });
+            });
           });
+          content.appendChild(btn);
+        } else if (!needsButton && existingBtn) {
+          existingBtn.remove();
+        }
+      }
+      checkAndToggleButton();
+      const observer = new ResizeObserver(() => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(checkAndToggleButton);
         });
       });
-      content.appendChild(btn);
+      observer.observe(content);
+      showMoreObservers.set(content, observer);
     });
   }
   function setMaxHeight(caption, isDesktop) {
@@ -12058,7 +12082,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       return;
     }
-    ;
     const container = caption.closest('.description-product__row');
     const content = container.querySelector('.description-product__content');
     const children = content.children;
@@ -12073,11 +12096,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     content.style.maxHeight = height + 'px';
   }
+  function isLineClamped(el) {
+    const btn = el.querySelector('.description-product__show-more');
+    if (btn) btn.style.display = 'none';
+    const original = {
+      webkitLineClamp: el.style.webkitLineClamp,
+      display: el.style.display,
+      webkitBoxOrient: el.style.webkitBoxOrient,
+      overflow: el.style.overflow,
+      width: el.style.width
+    };
+    const targetHeight = el.clientHeight;
+    const currentWidth = el.offsetWidth;
+    el.style.width = currentWidth + 'px';
+    el.style.webkitLineClamp = 'unset';
+    el.style.display = 'block';
+    el.style.webkitBoxOrient = 'unset';
+    el.style.overflow = 'visible';
+    const fullHeight = el.scrollHeight;
+    el.style.width = original.width;
+    el.style.webkitLineClamp = original.webkitLineClamp;
+    el.style.display = original.display;
+    el.style.webkitBoxOrient = original.webkitBoxOrient;
+    el.style.overflow = original.overflow;
+    if (btn) btn.style.display = '';
+    return fullHeight - targetHeight > 1;
+  }
   let throttleInit = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__.throttle)(() => {
     init();
   });
   window.addEventListener('resize', throttleInit);
-  init();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      requestAnimationFrame(() => {
+        init();
+      });
+    });
+  } else {
+    requestAnimationFrame(() => {
+      init();
+    });
+  }
 });
 
 /***/ },
@@ -13634,9 +13693,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var graph_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graph-modal */ "./node_modules/graph-modal/src/graph-modal.js");
 
-const modal = new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
-
-// modal.open('product-callback')
+const modal = new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  isClose: modal => {
+    const container = modal.modalContainer;
+    const targetContainer = container.dataset.graphTarget;
+    if (targetContainer === 'bonus') {
+      localStorage.setItem('bonus', Date.now().toString());
+    }
+  }
+});
+const TIMEOUT_OPEN_MODAL = 15 * 1000;
+const TIMEOUT_RESET_CLOSE = 7 * (24 * 60 * 60 * 1000);
+if (!isBlockedModal('bonus')) {
+  setTimeout(() => {
+    modal.open('bonus');
+  }, TIMEOUT_OPEN_MODAL);
+}
+function isBlockedModal(key) {
+  const timestamp = Number(localStorage.getItem(key));
+  if (!timestamp) return false;
+  const timeout = Date.now() - timestamp;
+  if (timeout > TIMEOUT_RESET_CLOSE) {
+    localStorage.removeItem(key);
+    return false;
+  }
+  return true;
+}
 
 /***/ },
 
