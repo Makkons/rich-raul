@@ -13702,6 +13702,15 @@ const modal = new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]({
     }
   }
 });
+const modalBonus = document.querySelector('[data-graph-target="bonus"]');
+if (modalBonus) {
+  modalBonus.addEventListener('click', e => {
+    if (e.target.closest('a')) {
+      localStorage.setItem('bonus', Date.now().toString());
+      modal.close('bonus');
+    }
+  });
+}
 const TIMEOUT_OPEN_MODAL = 15 * 1000;
 const TIMEOUT_RESET_CLOSE = 7 * (24 * 60 * 60 * 1000);
 if (!isBlockedModal('bonus')) {
