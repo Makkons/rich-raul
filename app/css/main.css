@@ -4046,7 +4046,7 @@ footer {
     min-width: 0;
     left: 0;
     max-height: 100%;
-    top: 8.125rem;
+    top: calc(var(--nav__list--first-height) + var(--header-height) + 2.8125rem);
   }
 }
 .nav__title {

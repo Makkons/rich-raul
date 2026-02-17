@@ -13019,6 +13019,7 @@ let throttleGetHeight = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_2__.t
   (0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__.setElHeight)('header');
   (0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__.setElHeight)('marquee');
   (0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__.setElHeight)('nav');
+  (0,_functions_set_el_height_js__WEBPACK_IMPORTED_MODULE_3__.setElHeight)('nav__list--first');
   (0,_functions_breadcrumbs_height_js__WEBPACK_IMPORTED_MODULE_0__.getBreadcrumbsHeight)();
 });
 let throttleSetClassOnScroll = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_2__.throttle)(() => {
@@ -14940,6 +14941,8 @@ const getBreadcrumbsHeight = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_disable_scroll_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/disable-scroll.js */ "./src/js/functions/disable-scroll.js");
 /* harmony import */ var _functions_enable_scroll_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/enable-scroll.js */ "./src/js/functions/enable-scroll.js");
+/* harmony import */ var _set_el_height_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./set-el-height.js */ "./src/js/functions/set-el-height.js");
+
 
 
 (function () {
@@ -14965,6 +14968,7 @@ __webpack_require__.r(__webpack_exports__);
       setAttribute(burger, 'false', 'Открыть меню');
       (0,_functions_enable_scroll_js__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
     }
+    (0,_set_el_height_js__WEBPACK_IMPORTED_MODULE_2__.setElHeight)('nav__list--first');
   });
   search?.addEventListener('click', e => {
     search?.classList.toggle('search--active');
