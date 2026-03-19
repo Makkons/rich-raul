@@ -15066,7 +15066,7 @@ __webpack_require__.r(__webpack_exports__);
 const disableScroll = () => {
   const fixBlocks = document?.querySelectorAll('.fixed-block');
   const pagePosition = window.scrollY;
-  const paddingOffset = `${window.innerWidth - _vars_js__WEBPACK_IMPORTED_MODULE_0__["default"].bodybEl.offsetWidth}px`;
+  const paddingOffset = `${window.innerWidth - _vars_js__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.offsetWidth}px`;
 
   // vars.htmlEl.style.scrollBehavior = 'none';
   fixBlocks.forEach(el => {
@@ -15294,4 +15294,3 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map
