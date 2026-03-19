@@ -468,7 +468,7 @@ footer {
     color: var(--accent-color);
   }
 }
-.content img {
+.content img:not(:last-child) {
   margin-bottom: 2.5rem;
 }
 .content ul,
@@ -9371,6 +9371,92 @@ footer {
 .theses--resort .theses__picture--main:not(:last-child) {
   margin-bottom: 5rem;
 }
+.theses--bulanova {
+  padding: 0;
+  gap: 6.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.theses--bulanova .theses__hero .theses__text {
+  margin-bottom: 2.5rem;
+  padding-block: 2.5rem;
+}
+@media (max-width: 48rem) {
+  .theses--bulanova .theses__hero .theses__text {
+    padding-block: 1.25rem;
+  }
+}
+.theses--bulanova .theses__title {
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+  line-height: 158%;
+  max-width: 100%;
+}
+.theses--bulanova .theses__text {
+  font-size: 20px;
+  line-height: 150%;
+  opacity: 1;
+}
+.theses--bulanova .theses__text:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+.theses--bulanova .theses__image {
+  max-height: 100%;
+}
+@media (max-width: 60rem) {
+  .theses--bulanova {
+    gap: 3.125rem;
+  }
+}
+@media (max-width: 1386px) {
+  .theses--bulanova .theses__picture--clip {
+    width: calc(100% + var(--container-offset) * 2);
+    margin: 0 calc(var(--container-offset) * -1);
+  }
+}
+.theses--bulanova .theses__picture--slim {
+  max-width: 62.5rem;
+}
+.theses--bulanova .theses__grid {
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+@media (max-width: 60rem) {
+  .theses--bulanova .theses__grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.theses--bulanova .theses__grid--free-two {
+  -ms-grid-columns: 3fr 2fr;
+  grid-template-columns: 3fr 2fr;
+}
+@media (max-width: 48rem) {
+  .theses--bulanova .theses__grid--free-two {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.theses--bulanova .theses__grid--three {
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 48rem) {
+  .theses--bulanova .theses__grid--three {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
 
 .why {
   padding-bottom: 6.875rem;
@@ -13740,4 +13826,4 @@ footer {
   .chat:hover::before {
     height: 100vh;
   }
-}
+}/*# sourceMappingURL=main.css.map */
