@@ -10338,15 +10338,15 @@ footer {
   margin-bottom: 1.8125rem;
   height: calc((100vw - var(--container-offset) * 2 - 1.25rem * 2) / 3 * 1.4136125654);
 }
-@media (max-width: 48rem) {
+@media (max-width: 60rem) {
   .feedback__swiper .swiper-slide img {
-    height: 28.125rem;
+    height: calc((100vw - var(--container-offset) * 2 - 1.25rem) / 2 * 1.4136125654);
     margin-bottom: 1.25rem;
   }
 }
 @media (max-width: 38.75rem) {
   .feedback__swiper .swiper-slide img {
-    height: 29.375rem;
+    height: 141.3612565445vw;
   }
 }
 
@@ -10836,6 +10836,7 @@ footer {
 }
 @media (max-width: 48rem) {
   .about-section__photo-center {
+    max-width: initial;
     margin-left: calc(var(--container-offset) * -1);
     margin-right: calc(var(--container-offset) * -1);
   }
@@ -12606,6 +12607,14 @@ footer {
 @media (max-width: 1920px) {
   .team-profile__member:last-child {
     margin-bottom: calc(30px + 90 * (100vw - 375px) / 1545);
+  }
+}
+.team-profile__member:not(:has(img)) {
+  margin-top: 3.125rem;
+}
+@media (max-width: 38.75rem) {
+  .team-profile__member:not(:has(img)) {
+    margin-top: 1.875rem;
   }
 }
 .team-profile__photo {
