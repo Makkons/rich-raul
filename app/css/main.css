@@ -8724,6 +8724,12 @@ footer {
     margin-bottom: 1.25rem;
   }
 }
+.theses__link {
+  opacity: 0.6;
+  font-size: 20px;
+  line-height: 150%;
+  text-decoration: underline;
+}
 .theses__subtitle {
   text-align: center;
   margin-bottom: 3.25rem;
@@ -8879,6 +8885,12 @@ footer {
     order: -1;
   }
 }
+.theses__picture .theses__link:not(.button) {
+  text-align: center;
+  margin: 1.5625rem auto 0;
+  display: inline-block;
+  width: 100%;
+}
 .theses__picture picture, .theses__picture img {
   width: 100%;
   height: 100%;
@@ -8937,8 +8949,10 @@ footer {
     text-align: center;
   }
 }
+.theses__content.content--center .theses__link,
 .theses__content.content--center .theses__title {
   text-align: center;
+  margin: 0 auto;
 }
 .theses__content .theses__list {
   -ms-flex-wrap: nowrap;
@@ -9394,6 +9408,15 @@ footer {
     padding-block: 1.25rem;
   }
 }
+.theses--bulanova .button {
+  font-family: "Manrope", cursive;
+  min-width: 10.625rem;
+  text-decoration: underline;
+  text-transform: none;
+}
+.theses--bulanova .button:not(:last-child) {
+  margin-bottom: 3.125rem;
+}
 .theses--bulanova .theses__title {
   font-family: Roboto, sans-serif;
   text-transform: uppercase;
@@ -9456,6 +9479,62 @@ footer {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
+}
+.theses--spring .theses__picture:not(.theses__picture--clip) {
+  max-width: 43.125rem;
+}
+.theses--spring .theses__grid .theses__link {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  text-align: center;
+}
+@media (max-width: 60rem) {
+  .theses--spring .theses__grid .theses__link {
+    grid-column: auto;
+  }
+}
+.theses--spring .theses__text {
+  max-width: 62.5rem;
+}
+.theses--spring .button {
+  font-family: "Manrope", cursive;
+  min-width: 10.625rem;
+  text-decoration: underline;
+  text-transform: none;
+}
+.theses--spring .button:not(:last-child) {
+  margin-bottom: 3.125rem;
+}
+
+.writer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+  grid-template-columns: repeat(2, auto);
+  gap: 2.5rem;
+  max-width: 62.5rem;
+  padding: 3.125rem 0;
+}
+@media (max-width: 48rem) {
+  .writer {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.writer__text, .writer__name {
+  font-size: 1.25rem;
+}
+@media (max-width: 48rem) {
+  .writer__text, .writer__name {
+    text-align: center;
+  }
+}
+.writer__text:has(+ p.writer__name), .writer__name:has(+ p.writer__name) {
+  margin-bottom: 2.5rem;
+}
+.writer img {
+  margin: 0 auto;
 }
 
 .why {

@@ -12122,8 +12122,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btn) btn.style.display = '';
     return fullHeight - targetHeight > 1;
   }
+  let lastWidth = window.innerWidth;
   let throttleInit = (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_0__.throttle)(() => {
-    init();
+    const currentWidth = window.innerWidth;
+    if (currentWidth !== lastWidth) {
+      lastWidth = currentWidth;
+      init();
+    }
   });
   window.addEventListener('resize', throttleInit);
   if (document.fonts && document.fonts.ready) {
