@@ -13734,6 +13734,7 @@ function isBlockedModal(key) {
   }
   return true;
 }
+modal.open('product-callback');
 
 /***/ },
 
