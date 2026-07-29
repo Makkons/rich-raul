@@ -207,6 +207,34 @@
                                 <span class="checkbox__count">73</span>
                             </label>
                         </fieldset>
+                        <fieldset class="form-control__fieldset">
+                            <legend class="form-control__legend">Наличие</legend>
+                            <label class="form-control__radio radio radio--filter">
+                                <input class="radio__input input-reset" type="radio" name="filter[stock]" value="" checked>
+                                <span class="radio__text">Все</span>
+                                <span class="radio__count">100</span>
+                            </label>
+                            <label class="form-control__radio radio radio--filter">
+                                <input class="radio__input input-reset" type="radio" name="filter[stock]" value="В наличии">
+                                <span class="radio__text">В&nbsp;наличии</span>
+                                <span class="radio__count">80</span>
+                            </label>
+                            <label class="form-control__radio radio radio--filter">
+                                <input class="radio__input input-reset" type="radio" name="filter[stock]" value="Под заказ">
+                                <span class="radio__text">Под&nbsp;заказ</span>
+                                <span class="radio__count">20</span>
+                            </label>
+                            <label class="form-control__radio radio radio--filter radio--disabled">
+                                <input class="radio__input input-reset" type="radio" name="filter[stock]" value="Распродано">
+                                <span class="radio__text">Распродано</span>
+                                <span class="radio__count">0</span>
+                            </label>
+                            <label class="form-control__radio radio radio--filter">
+                                <input class="radio__input input-reset" type="radio" disabled name="filter[stock]" value="Архив">
+                                <span class="radio__text">Архив</span>
+                                <span class="radio__count">0</span>
+                            </label>
+                        </fieldset>
                     </div>
                     <div class="form-control__bottom">
                         <button type="reset" class="form-control__button button button--grey">Сбросить фильтр</button>

@@ -16011,7 +16011,6 @@
                     }
                 }
             });
-            modal.open("location");
             const modalBonus = document.querySelector('[data-graph-target="bonus"]');
             if (modalBonus) {
                 modalBonus.addEventListener("click", e => {

@@ -6327,7 +6327,7 @@ footer {
     margin-bottom: 0.625rem;
   }
 }
-.form-control__checkbox:not(:last-child) {
+.form-control__checkbox:not(:last-child), .form-control__radio:not(:last-child) {
   margin-bottom: 0.625rem;
 }
 .form-control__bottom {
@@ -6375,6 +6375,74 @@ footer {
 }
 .checkbox__icon {
   margin-right: 0.625rem;
+}
+
+.radio--filter {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+@media (any-hover: hover) {
+  .radio--filter:hover .radio__input::before {
+    border-color: var(--main-color);
+  }
+}
+.radio--filter .radio__input {
+  position: relative;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  margin-right: 0.625rem;
+}
+.radio--filter .radio__input::before {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.0625rem solid transparent;
+  -webkit-transition: border 0.3s ease 0s;
+  transition: border 0.3s ease 0s;
+}
+.radio--filter .radio__input::after {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.radio--filter .radio__input:checked::after {
+  border-width: 0.4375rem;
+}
+.radio--filter .radio__text {
+  font-size: 0.8125rem;
+}
+.radio--filter .radio__count {
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 0.625rem;
+}
+@media (max-width: 38.75rem) {
+  .radio--filter .radio__count {
+    font-size: 1rem;
+  }
+}
+.radio--filter .radio__icon {
+  margin-right: 0.625rem;
+}
+.radio--filter.radio--disabled, .radio--filter:has(.radio__input:disabled) {
+  pointer-events: none;
+}
+.radio--filter.radio--disabled .radio__input::before, .radio--filter:has(.radio__input:disabled) .radio__input::before {
+  background: #e8e8e8;
+}
+.radio--filter.radio--disabled .radio__input:checked::after, .radio--filter:has(.radio__input:disabled) .radio__input:checked::after {
+  opacity: 0.2;
+}
+.radio--filter.radio--disabled .radio__text, .radio--filter:has(.radio__input:disabled) .radio__text {
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .search-details__list {
