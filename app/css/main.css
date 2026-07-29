@@ -3858,6 +3858,7 @@ footer {
     height: auto;
     min-width: 0;
     background: transparent;
+    border-top: 0;
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
@@ -3900,9 +3901,7 @@ footer {
     gap: 1.125rem;
     padding: 1.25rem 1.25rem 2.5rem 2.5rem;
     background: var(--light-color);
-    -webkit-transform: translateY(1.875rem);
-    -ms-transform: translateY(1.875rem);
-    transform: translateY(1.875rem);
+    border-top: 1.875rem solid transparent;
     min-width: 22.5rem;
     max-height: calc(100vh - var(--header-height) - var(--marquee-height) - var(--nav-height));
     height: auto;
@@ -4023,9 +4022,7 @@ footer {
   gap: 1.125rem;
   padding: 1.25rem 1.375rem 2.5rem 2.5rem;
   background: var(--light-color);
-  -webkit-transform: translateY(1.875rem);
-  -ms-transform: translateY(1.875rem);
-  transform: translateY(1.875rem);
+  border-top: 1.875rem solid transparent;
   min-width: 22.5rem;
   max-height: calc(100vh - var(--header-height) - var(--marquee-height) - var(--nav-height));
   height: auto;
@@ -4043,6 +4040,7 @@ footer {
     padding: 2.8125rem 1.375rem 2.5rem 1.5625rem;
     width: 100%;
     height: auto;
+    border-top: 0;
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
@@ -5821,6 +5819,10 @@ footer {
   width: 100% !important;
 }
 
+.catalog {
+  overflow-x: clip;
+  overflow-y: visible;
+}
 .catalog .title {
   font-family: var(--font-title);
   text-transform: uppercase;
