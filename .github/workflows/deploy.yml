@@ -4,6 +4,12 @@ on:
   push:
     branches: ["main"]
 
+# FTP-сервер не принимает второе соединение, пока идёт заливка: параллельный
+# деплой падает с Timeout (control socket), поэтому ждём завершения текущего
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
