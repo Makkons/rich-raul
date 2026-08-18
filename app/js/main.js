@@ -14589,23 +14589,24 @@
             var _components_map_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("./src/js/components/map.js");
             var _components_smoothScroll_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("./src/js/components/smoothScroll.js");
             var _components_control_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("./src/js/components/control.js");
-            var _components_cart_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("./src/js/components/cart.js");
-            var _components_masker_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("./src/js/components/masker.js");
-            var _components_getCode_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("./src/js/components/getCode.js");
-            var _components_datePicker_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__("./src/js/components/datePicker.js");
-            var _components_confirmPassword_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__("./src/js/components/confirmPassword.js");
-            var _components_checkInput_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__("./src/js/components/checkInput.js");
-            var _components_modal_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__("./src/js/components/modal.js");
-            var _components_product_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__("./src/js/components/product.js");
-            var _components_customSelect_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__("./src/js/components/customSelect.js");
-            var _components_search_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__("./src/js/components/search.js");
-            var _components_citySearch_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__("./src/js/components/citySearch.js");
-            var _components_tags_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__("./src/js/components/tags.js");
-            var _components_inputValidator_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__("./src/js/components/inputValidator.js");
-            var _components_accordTab_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__("./src/js/components/accordTab.js");
-            var _components_footer_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__("./src/js/components/footer.js");
-            var _components_widgetChat_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__("./src/js/components/widgetChat.js");
-            var _components_productScroll_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__("./src/js/components/productScroll.js");
+            var _components_range_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("./src/js/components/range.js");
+            var _components_cart_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("./src/js/components/cart.js");
+            var _components_masker_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("./src/js/components/masker.js");
+            var _components_getCode_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__("./src/js/components/getCode.js");
+            var _components_datePicker_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__("./src/js/components/datePicker.js");
+            var _components_confirmPassword_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__("./src/js/components/confirmPassword.js");
+            var _components_checkInput_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__("./src/js/components/checkInput.js");
+            var _components_modal_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__("./src/js/components/modal.js");
+            var _components_product_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__("./src/js/components/product.js");
+            var _components_customSelect_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__("./src/js/components/customSelect.js");
+            var _components_search_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__("./src/js/components/search.js");
+            var _components_citySearch_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__("./src/js/components/citySearch.js");
+            var _components_tags_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__("./src/js/components/tags.js");
+            var _components_inputValidator_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__("./src/js/components/inputValidator.js");
+            var _components_accordTab_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__("./src/js/components/accordTab.js");
+            var _components_footer_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__("./src/js/components/footer.js");
+            var _components_widgetChat_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__("./src/js/components/widgetChat.js");
+            var _components_productScroll_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__("./src/js/components/productScroll.js");
         },
         "./src/js/_vars.js"(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
             "use strict";
@@ -16197,6 +16198,96 @@
                 window.addEventListener("resize", update);
             }
             initProductInfoScroll();
+        },
+        "./src/js/components/range.js"(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            const numberFormat = new Intl.NumberFormat("ru-RU");
+            const getThumbs = range => [ range.querySelector('[data-range-thumb="min"]'), range.querySelector('[data-range-thumb="max"]') ];
+            const format = (range, value) => {
+                const unit = range.dataset.rangeUnit;
+                return unit ? `${numberFormat.format(value)} ${unit}` : numberFormat.format(value);
+            };
+            const render = range => {
+                const [thumbMin, thumbMax] = getThumbs(range);
+                if (!thumbMin || !thumbMax) {
+                    return;
+                }
+                const min = Number(thumbMin.min);
+                const max = Number(thumbMax.max);
+                const from = Number(thumbMin.value);
+                const to = Number(thumbMax.value);
+                const scale = max - min || 1;
+                range.style.setProperty("--range-min", (from - min) / scale);
+                range.style.setProperty("--range-max", (to - min) / scale);
+                thumbMin.classList.toggle("range__input--priority", from > (min + max) / 2);
+                range.querySelectorAll("[data-range-value]").forEach(element => {
+                    element.textContent = format(range, element.dataset.rangeValue === "min" ? from : to);
+                });
+            };
+            const keepGap = (range, thumb) => {
+                const [thumbMin, thumbMax] = getThumbs(range);
+                const step = Number(thumbMin.step) || 1;
+                const from = Number(thumbMin.value);
+                const to = Number(thumbMax.value);
+                if (from <= to - step) {
+                    return;
+                }
+                if (thumb === thumbMin) {
+                    thumbMin.value = to - step;
+                } else {
+                    thumbMax.value = from + step;
+                }
+            };
+            const getPointerValue = (range, event) => {
+                const [thumbMin, thumbMax] = getThumbs(range);
+                const slider = range.querySelector(".range__slider");
+                const {left, width} = slider.getBoundingClientRect();
+                const thumbSize = slider.offsetHeight;
+                const ratio = (event.clientX - left - thumbSize / 2) / (width - thumbSize);
+                const min = Number(thumbMin.min);
+                const max = Number(thumbMax.max);
+                const step = Number(thumbMin.step) || 1;
+                return min + Math.round(Math.min(Math.max(ratio, 0), 1) * (max - min) / step) * step;
+            };
+            document.addEventListener("click", event => {
+                const slider = event.target.closest?.(".range__slider");
+                if (!slider || event.target.closest("[data-range-thumb]")) {
+                    return;
+                }
+                const range = slider.closest(".range");
+                const [thumbMin, thumbMax] = getThumbs(range);
+                if (!thumbMin || !thumbMax) {
+                    return;
+                }
+                const value = getPointerValue(range, event);
+                const nearest = Math.abs(value - Number(thumbMin.value)) <= Math.abs(value - Number(thumbMax.value)) ? thumbMin : thumbMax;
+                nearest.value = value;
+                nearest.dispatchEvent(new Event("input", {
+                    bubbles: true
+                }));
+                nearest.dispatchEvent(new Event("change", {
+                    bubbles: true
+                }));
+            });
+            document.addEventListener("input", event => {
+                const thumb = event.target.closest?.("[data-range-thumb]");
+                const range = thumb?.closest(".range");
+                if (!range) {
+                    return;
+                }
+                keepGap(range, thumb);
+                render(range);
+            }, true);
+            document.addEventListener("reset", event => {
+                event.target.querySelectorAll?.(".range").forEach(range => {
+                    getThumbs(range).forEach(thumb => {
+                        thumb.value = thumb.defaultValue;
+                    });
+                    render(range);
+                });
+            });
+            document.querySelectorAll(".range").forEach(render);
         },
         "./src/js/components/search.js"(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
             "use strict";

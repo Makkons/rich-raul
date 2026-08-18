@@ -6445,6 +6445,101 @@ footer {
   color: rgba(0, 0, 0, 0.4);
 }
 
+.range__values {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  margin-bottom: 0.625rem;
+}
+@media (max-width: 38.75rem) {
+  .range__values {
+    font-size: 1rem;
+  }
+}
+.range__slider {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 1.5rem;
+  margin: 0 -0.3125rem;
+  cursor: pointer;
+}
+.range__track {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin: 0 0.3125rem;
+  height: 0.125rem;
+  background: rgba(0, 0, 0, 0.15);
+}
+.range__progress {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--range-min, 0) * (100% - 0.875rem) + 0.4375rem);
+  right: calc((1 - var(--range-max, 1)) * (100% - 0.875rem) + 0.4375rem);
+  background: var(--main-color);
+}
+.range__input {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5rem;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+.range__input--priority {
+  z-index: 1;
+}
+.range__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.3125rem;
+  border: none;
+  border-radius: 50%;
+  background: var(--main-color);
+  background-clip: content-box;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.range__input::-moz-range-thumb {
+  box-sizing: border-box;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.3125rem;
+  border: none;
+  border-radius: 50%;
+  background: var(--main-color);
+  background-clip: content-box;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.range__input:focus-visible {
+  outline: none;
+}
+.range__input:focus-visible::-webkit-slider-thumb {
+  outline: 0.125rem solid var(--main-color);
+  outline-offset: 0;
+}
+.range__input:focus-visible::-moz-range-thumb {
+  outline: 0.125rem solid var(--main-color);
+  outline-offset: 0;
+}
+
 .search-details__list {
   display: -ms-grid;
   display: grid;

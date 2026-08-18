@@ -816,6 +816,22 @@
                                 <span class="radio__count">0</span>
                             </label>
                         </fieldset>
+                        <fieldset class="form-control__fieldset">
+                            <legend class="form-control__legend">Цена</legend>
+                            <div class="form-control__range range" data-range-unit="₽">
+                                <div class="range__values">
+                                    <span class="range__value" data-range-value="min">100 000 ₽</span>
+                                    <span class="range__value" data-range-value="max">1 500 000 ₽</span>
+                                </div>
+                                <div class="range__slider">
+                                    <div class="range__track">
+                                        <span class="range__progress"></span>
+                                    </div>
+                                    <input class="range__input input-reset" type="range" name="filter[price][min]" min="100000" max="1500000" step="10000" value="100000" data-range-thumb="min" aria-label="Цена от">
+                                    <input class="range__input input-reset" type="range" name="filter[price][max]" min="100000" max="1500000" step="10000" value="1500000" data-range-thumb="max" aria-label="Цена до">
+                                </div>
+                            </div>
+                        </fieldset>
                     </div>
                     <div class="form-control__bottom">
                         <button type="reset" class="form-control__button button button--grey">Сбросить фильтр</button>
