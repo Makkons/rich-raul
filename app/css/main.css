@@ -6501,9 +6501,17 @@ footer {
 .range__input--priority {
   z-index: 1;
 }
+.range__input::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+}
 .range__input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 1.5rem;
