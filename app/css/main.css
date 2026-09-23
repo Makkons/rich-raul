@@ -9561,7 +9561,7 @@ footer {
 .theses--resort .theses__picture--main:not(:last-child) {
   margin-bottom: 5rem;
 }
-.theses--bulanova {
+.theses--bulanova, .theses--news {
   padding: 0;
   gap: 6.25rem;
   display: -webkit-box;
@@ -9575,91 +9575,107 @@ footer {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.theses--bulanova .theses__hero .theses__text {
+.theses--bulanova .theses__hero .theses__text, .theses--news .theses__hero .theses__text {
   margin-bottom: 2.5rem;
   padding-block: 2.5rem;
 }
 @media (max-width: 48rem) {
-  .theses--bulanova .theses__hero .theses__text {
+  .theses--bulanova .theses__hero .theses__text, .theses--news .theses__hero .theses__text {
     padding-block: 1.25rem;
   }
 }
-.theses--bulanova .button {
+.theses--bulanova .button, .theses--news .button {
   font-family: "Manrope", cursive;
   min-width: 10.625rem;
   text-decoration: underline;
   text-transform: none;
 }
-.theses--bulanova .button:not(:last-child) {
+.theses--bulanova .button:not(:last-child), .theses--news .button:not(:last-child) {
   margin-bottom: 3.125rem;
 }
-.theses--bulanova .theses__title {
+.theses--bulanova .theses__title, .theses--news .theses__title {
   font-family: Roboto, sans-serif;
   text-transform: uppercase;
   font-weight: 200;
   line-height: 158%;
   max-width: 100%;
 }
-.theses--bulanova .theses__text {
+.theses--bulanova .theses__text, .theses--news .theses__text {
   font-size: 20px;
   line-height: 150%;
   opacity: 1;
 }
-.theses--bulanova .theses__text:not(:last-child) {
+.theses--bulanova .theses__text:not(:last-child), .theses--news .theses__text:not(:last-child) {
   margin-bottom: 2.5rem;
 }
-.theses--bulanova .theses__image {
+.theses--bulanova .theses__text--small, .theses--news .theses__text--small {
+  font-size: 16px;
+  line-height: 133%;
+}
+.theses--bulanova .theses__image, .theses--news .theses__image {
   max-height: 100%;
 }
 @media (max-width: 60rem) {
-  .theses--bulanova {
+  .theses--bulanova, .theses--news {
+    gap: 3.125rem;
+  }
+}
+.theses--bulanova.theses--gap-60, .theses--news.theses--gap-60 {
+  gap: 3.75rem;
+}
+@media (max-width: 60rem) {
+  .theses--bulanova.theses--gap-60, .theses--news.theses--gap-60 {
     gap: 3.125rem;
   }
 }
 @media (max-width: 1386px) {
-  .theses--bulanova .theses__picture--clip {
+  .theses--bulanova .theses__picture--clip, .theses--news .theses__picture--clip {
     width: calc(100% + var(--container-offset) * 2);
     margin: 0 calc(var(--container-offset) * -1);
   }
 }
-.theses--bulanova .theses__picture--slim {
+.theses--bulanova .theses__picture--slim, .theses--news .theses__picture--slim {
   max-width: 62.5rem;
 }
-.theses--bulanova .theses__grid {
+.theses--bulanova .theses__grid, .theses--news .theses__grid {
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
 }
 @media (max-width: 60rem) {
-  .theses--bulanova .theses__grid {
+  .theses--bulanova .theses__grid, .theses--news .theses__grid {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
-.theses--bulanova .theses__grid--free-two {
+.theses--bulanova .theses__grid--free-two, .theses--news .theses__grid--free-two {
   -ms-grid-columns: 3fr 2fr;
   grid-template-columns: 3fr 2fr;
 }
 @media (max-width: 48rem) {
-  .theses--bulanova .theses__grid--free-two {
+  .theses--bulanova .theses__grid--free-two, .theses--news .theses__grid--free-two {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
-.theses--bulanova .theses__grid--three {
+.theses--bulanova .theses__grid--three, .theses--news .theses__grid--three {
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
 }
 @media (max-width: 48rem) {
-  .theses--bulanova .theses__grid--three {
+  .theses--bulanova .theses__grid--three, .theses--news .theses__grid--three {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
-.theses--spring .theses__picture:not(.theses__picture--clip) {
+.theses--spring .theses__picture:not(.theses__picture--clip, .theses__picture--slim), .theses--news .theses__picture:not(.theses__picture--clip, .theses__picture--slim) {
   max-width: 43.125rem;
 }
-.theses--spring .theses__link {
+.theses--spring .theses__grid > .theses__picture, .theses--news .theses__grid > .theses__picture {
+  width: 100%;
+  margin-inline: auto;
+}
+.theses--spring .theses__link, .theses--news .theses__link {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1/3;
@@ -9673,25 +9689,25 @@ footer {
   transition: color 0.3s ease 0s;
 }
 @media (any-hover: hover) {
-  .theses--spring .theses__link:hover {
+  .theses--spring .theses__link:hover, .theses--news .theses__link:hover {
     color: var(--accent-color);
   }
 }
 @media (max-width: 60rem) {
-  .theses--spring .theses__link {
+  .theses--spring .theses__link, .theses--news .theses__link {
     grid-column: auto;
   }
 }
-.theses--spring .theses__text {
+.theses--spring .theses__text, .theses--news .theses__text {
   max-width: 62.5rem;
 }
-.theses--spring .button {
+.theses--spring .button, .theses--news .button {
   font-family: "Manrope", cursive;
   min-width: 10.625rem;
   text-decoration: underline;
   text-transform: none;
 }
-.theses--spring .button:not(:last-child) {
+.theses--spring .button:not(:last-child), .theses--news .button:not(:last-child) {
   margin-bottom: 3.125rem;
 }
 .writer {
